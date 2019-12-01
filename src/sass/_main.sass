@@ -1,0 +1,191 @@
+body
+	+main
+	font-size: 24px
+	color: #3C3D40
+	opacity: 0
+	transition: opacity .5s ease
+
+h1, h2
+	+header
+	color: #292B33
+
+h1
+	font-size: 100px
+	text-transform: uppercase
+	line-height: 1em
+	opacity: 0
+	span
+		opacity: 0
+		transform: translateX(40px)
+		display: inline-block
+	// .char8, .char9, .char10, .char11, .char12, .char13, .char14
+	// 	color: white
+
+.header
+	height: 100vh
+	&__img
+		width: 1100px
+		height: 689px
+		position: absolute
+		top: 50%
+		left: 55.3%
+		transform: translate(-50%, -50%)
+		opacity: 0
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			position: relative
+	&__text-content
+		position: absolute
+		top: 60%
+		transform: translateY(-50%)
+		z-index: 2
+		mix-blend-mode: exclusion
+		pointer-events: none
+	.descriptor
+		margin-top: 35px
+		line-height: 1em
+		opacity: 0
+		transform: translateX(60px)
+		+medium
+	&__button
+		margin-top: 60px
+		opacity: 0
+		pointer-events: auto
+.container
+	padding-left: 6vw
+	padding-right: 6vw
+	width: 100%
+	height: 100%
+
+.button
+	font-size: 18px
+	border: 1px #292B33 solid
+	width: fit-content
+	padding: 14px 50px
+	cursor: pointer
+	position: relative
+	overflow: hidden
+	transition: color .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+	&__bg
+		width: 100%
+		height: 100%
+		background: $dark-color
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+		transform: translateY(100%)
+		transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1)
+	&:hover
+		color: white
+		.button__bg
+			transform: translateY(0%)	
+
+.navbar
+	padding-top: 40px
+	width: 100%
+	z-index: 101
+	position: fixed
+	top: 0
+	left: 0
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.logo
+	position: relative
+	svg
+		display: block
+
+.nav
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	z-index: 100
+	display: none
+	&__items
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+		height: 100%
+		margin-left: 200px
+	&__item
+		font-size: 36px
+		+header
+		margin-top: 40px
+		a
+			text-decoration: none
+			color: white
+	&__rewealers
+		width: 100%
+		height: 100%
+		display: flex
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+	&__rewealer
+		width: 34%
+		height: 100%
+		background: $dark-color
+
+
+.grid__item-img-2
+	position: relative
+	overflow: hidden
+	canvas
+		position: absolute
+		top: 0
+		left: 0
+		object-fit: cover
+
+.section
+	width: 100%
+	position: relative
+	&__container
+		padding-top: 140px
+		&.last
+			padding-bottom: 140px
+
+h2
+	font-size: 60px
+
+h3
+	font-size: 24px
+	+medium
+
+.directions
+	margin-top: 80px
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	&__item
+		flex-basis: 32%
+		text-decoration: none
+		color: inherit
+		.img-wrapper
+			margin-top: 15px
+			max-width: 100%
+			opacity: 0
+			transform: translateY(60px)
+		h3
+			width: fit-content
+			overflow: hidden
+			&:after
+				content: ''
+				width: 100%
+				height: 2px
+				display: block
+				background: $dark-color
+				transform: translateX(-100%)
+				transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+		&:hover
+			h3
+				&:after
+					transform: translateX(0%)
