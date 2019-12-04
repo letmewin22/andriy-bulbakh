@@ -9,6 +9,10 @@ body
 a
 	text-decoration: none
 
+img
+	display: block
+	max-width: 100%
+
 .custom 
   scrollbar-width: none 
   -ms-overflow-style: none 
@@ -36,8 +40,8 @@ h1
 	height: 100vh
 	position: relative
 	&__img
-		width: 1100px
-		height: 689px
+		width: 51vw
+		// height: 689px
 		position: absolute
 		top: 50%
 		left: 55.3%
@@ -141,7 +145,7 @@ h1
 	svg
 		display: block
 		&.active
-			fill: white
+			opacity: 0
 
 .nav
 	position: fixed
@@ -157,7 +161,7 @@ h1
 		flex-direction: column
 		justify-content: center
 		height: 100%
-		margin-left: 200px
+		margin-left: 10vw
 	&__item
 		font-size: 40px
 		+header
@@ -201,7 +205,7 @@ h1
 	&__contacts
 		display: flex
 		flex-direction: column
-		margin-right: 200px
+		margin-right: 10vw
 		+main
 		font-size: 21px
 		margin-top: 70px
@@ -303,6 +307,9 @@ h3
 	align-items: center
 	&__right
 		margin-left: 8.3vw
+		width: 50%
+	&__left
+		width: 50%
 	&__first
 		margin-top: 80px
 	p
@@ -310,7 +317,10 @@ h3
 	.has-margin
 		margin-top: 60px 
 	&__second
-		margin-top: 140px
+		.content-wrapper__right
+			width: 62%
+		.content-wrapper__left
+			width: 38%
 
 .footer
 	background: $dark-color
@@ -343,7 +353,7 @@ h3
 					color: rgba(white, 0.7)
 					margin-top: 27px
 					transition: color .4s ease
-					font-size: 20px
+					font-size: 1.1rem
 					&:hover
 						color: white
 		&__right-content
