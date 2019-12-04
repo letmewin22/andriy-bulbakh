@@ -161,6 +161,7 @@ $gray: gray;
   height: 50px;
   position: relative;
   border-radius: 4px;
+  margin-left: 10px;
   
   span {
     @include burger(30px, 3px, 6px, $main-color); // gray

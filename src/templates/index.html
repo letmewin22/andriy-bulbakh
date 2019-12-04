@@ -6,23 +6,34 @@ title: Index page
 <div class="navbar">
   <div class="container navbar__container">
     <a href="#" class="logo">
-      <svg width="37" height="41" viewBox="0 0 37 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M36 1.37414C36 14.2224 36 27.5938 36 40.4421C24.3301 40.4421 12.6796 40.4421 1 40.4421C1 27.6047 1 14.2224 1 1.38504C1.17447 1.33055 35.7092 1.31965 36 1.37414ZM33.4993 12.098C33.4993 10.7794 33.4993 5.49344 33.4993 4.18573C23.4965 4.18573 13.5228 4.18573 3.54916 4.18573C3.54916 15.1705 3.54916 26.6893 3.54916 37.6741C13.5422 37.6741 23.5159 37.6741 33.4993 37.6741C33.4993 28.9342 33.4993 23.6604 33.4993 14.8987C28.1393 14.8987 22.789 14.8987 17.4387 14.8987C17.4387 13.9615 17.4387 13.0461 17.4387 12.098C22.789 12.098 28.1296 12.098 33.4993 12.098Z" fill="#292B33" stroke="#292B33" />
-      </svg>
+      {% include "partials/_logo.html" %}
     </a>
-    <div class="burger">
-      <span></span>
+    <div class="burger-wrapper">
+      <span id="menu-text" data-alter='Закрити'>Меню</span>
+      <div class="burger">
+        <span></span>
+      </div>
     </div>
   </div>
 </div>
 <nav class="nav">
   <div class="container">
-    <ul class="nav__items">
-      <li class="nav__item"><a href="">Главная</a></li>
-      <li class="nav__item"><a href="">О нас</a></li>
-      <li class="nav__item"><a href="">Архитектура</a></li>
-      <li class="nav__item"><a href="">Контакты</a></li>
-    </ul>
+    <div class="nav__wrapper">
+      <ul class="nav__items">
+        <li class="nav__item"><a href=""><span>01</span>Головна</a></li>
+        <li class="nav__item"><a href=""><span>02</span>Архітектура</a></li>
+        <li class="nav__item"><a href=""><span>03</span>Інтер’єр</a></li>
+        <li class="nav__item"><a href=""><span>04</span>Прикладний дизайн</a></li>
+        <li class="nav__item"><a href=""><span>05</span>Про нас</a></li>
+        <li class="nav__item"><a href=""><span>06</span>Контакти</a></li>
+      </ul>
+      <div class="nav__contacts">
+        {% include "partials/_logo.html" %}
+        <a href="#" class="contact">+38 (067) 629 4813</a>
+        <a href="#" class="contact">vulbach2@gmail.com</a>
+        <a href="#" class="contact">Україна, Київ<br>вул. Парково-Сирецька, 4В</a>
+      </div>
+    </div>
   </div>
   <div class="nav__rewealers">
     <div class="nav__rewealer"></div>
@@ -36,12 +47,12 @@ title: Index page
       <h1>Андрій&nbsp;Бульбах</h1>
       <p class="descriptor">Архітектура та дизайн</p>
       <div class="button header__button">
-        Зв’язатися зі мною
-        <div class="button__bg"></div>
+        <span class="main-text">Зв’язатися зі мною</span>
+        <div class="button__bg"><span>Зв’язатися зі мною</span></div>
       </div>
     </div>
     <div class="header__img">
-      <div class="img-wrapper grid__item-img-2" data-displacement="img/displacement/10.jpg" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
+      <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
         <img src="img/header-img.jpg" alt="house">
       </div>
     </div>
@@ -55,24 +66,106 @@ title: Index page
       <div class="directions">
         <a href="#" class="directions__item">
           <h3>Архітектура</h3>
-          <div class="img-wrapper grid__item-img-2" data-displacement="img/displacement/10.jpg" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
             <img src="img/direction-1.jpg" alt="">
           </div>
         </a>
         <a href="#" class="directions__item">
           <h3>Інтер’єр</h3>
-          <div class="img-wrapper grid__item-img-2" data-displacement="img/displacement/10.jpg" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
             <img src="img/direction-2.jpg" alt="">
           </div>
         </a>
         <a href="#" class="directions__item">
           <h3>Прикладний дизайн</h3>
-          <div class="img-wrapper grid__item-img-2" data-displacement="img/displacement/10.jpg" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
             <img src="img/direction-3.jpg" alt="">
           </div>
         </a>
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="slider slider__main">
+      {% include "./partials/_slider.html" %}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container section__container last">
+      <h2>Підхід до роботи</h2>
+      <div class="content-wrapper content-wrapper__first">
+        <div class="content-wrapper__left">
+          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+            <img src="img/Andriy-Bulbakh.jpg" alt="Andriy Bulbakh">
+          </div>
+        </div>
+        <div class="content-wrapper__right">
+          <h3>Я та моя команда працюємо неспішно, з насолодою, смакуючи кожну деталь майбутнього об'єкту</h3>
+          <p>Архітектура — це сенс нашого життя вже протягом 25 років. Ми створюємо архітектуру, інтер’єри, меблі та декорування. Не конкуруємо з іншими, а просто рухаємося у своєму векторі.</p>
+          <h3 class="has-margin">Проєктуємо комерційну та житлову нерухомість</h3>
+          <p>Ретельно аналізуємо, вивчаємо історію, а також методи проектування архітектури та дизайну. В роботі враховуємо напрямок вітру, сторони світу, довколишнє середовище, пропорції «золотого перетину» та безліч, на перший погляд, дріб'язкових деталей.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container section__container last">
+      <div class="content-wrapper">
+        <div class="content-wrapper__left">
+          <h3>Наш дизайн — це ручна робота</h3>
+          <p>Спочатку ми робимо усі ескізи традиційним шляхом — на папері та з олівцем в руках.
+            Не соромимося цього, оскільки вважаємо, що саме так можна віднайти необхідну ідею для вашого будинку.</p>
+        </div>
+        <div class="content-wrapper__right">
+          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+            <img src="img/handmade.jpg" alt="handmade house">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container section__container footer__container">
+      <div class="main-footer__content">
+        <div class="main-footer__content__left-content">
+          <h2>Запрошуємо вас<br>на каву до нас в офіс!</h2>
+          <p>Обговоримо спільні погляди на майбутній<br> будинок чи інтер'єр.</p>
+          <div class="main-footer__content__left-content__contacts-items">
+            <a href="#">+38 (067) 629 4813</a>
+            <a href="mailto:vulbach2@gmail.com">vulbach2@gmail.com</a>
+            <a href="#">Україна, Київ<br>вул. Парково-Сирецька, 4В
+            </a>
+          </div>
+        </div>
+        <div class="main-footer__content__right-content">
+          <form class="form" name="form">
+            <!-- Hidden Required Fields -->
+            <input type="hidden" name="project_name" value="DayTripBali site">
+            <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
+            <input type="hidden" name="form_subject" value="Заявка с главной">
+            <!-- END Hidden Required Fields -->
+            <div class="input-wrapper first">
+              <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
+              <label for="name" class="label">
+                <span class="label-content">Ім’я</span>
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <input type="text" class="text-field" maxlength="256" name="phone" id="phone" autocomplete="off">
+              <label for="phone" class="label">
+                <span class="label-content">Номер телефону *</span>
+              </label>
+              <span class="form-validate-text"></span>
+            </div>
+            <button type="submit" class="button button__white">
+              <span class="main-text">Надіслати</span>
+              <div class="button__bg"><span>Надіслати</span></div>
+            </button>
+          </form>
+        </div>
+      </div>
+		{% include "./partials/_e.html" %}
+    </div>
+  </footer>
 </main>
 {% endblock %}
