@@ -146,7 +146,7 @@ export default function distort() {
     animNew.style.pointerEvents = 'none';
     tl2
       .delay(0.7)
-      .fromTo(mat.uniforms.dispFactor, 0.9, { value: 0 }, { value: 1 });
+      .fromTo(mat.uniforms.dispFactor, 1.2, { value: 0 }, { value: 1 });
 
     function animComplete() {
       animNew.style.pointerEvents = 'auto';

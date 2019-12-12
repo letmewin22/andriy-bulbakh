@@ -3,6 +3,8 @@ body
 	font-size: 24px
 	color: #3C3D40
 	transition: opacity .5s ease
+	overflow-x: hidden
+	overflow-y: scroll 
 	&.loading
 		opacity: 0
 
@@ -57,7 +59,7 @@ h1
 		top: 60%
 		transform: translateY(-50%)
 		z-index: 2
-		mix-blend-mode: exclusion
+		mix-blend-mode: difference 
 		pointer-events: none
 	.descriptor
 		margin-top: 35px

@@ -16,10 +16,10 @@ const loader = () => {
   let tl = new TimelineMax();
   h1.style.opacity = 1;
   tl
-    .staggerTo(h1Span, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.06, 0.3)
+    .staggerTo(h1Span, 1.8, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.07, 0.3)
     .to(h1Desc, 1.5, { opacity: 1, x: 0, ease: Expo.easeOut }, 0.3)
     .to(button, 1, { opacity: 1, ease: Power2.easeOut }, 0.9)
-    .to(animNew, 0.9, { opacity: 1 }, 0.7);
+    .to(animNew, 1.2, { opacity: 1 }, 0.7);
 };
 
 if (body.classList.contains('loading') === true) {

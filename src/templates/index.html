@@ -41,89 +41,92 @@ title: Index page
     <div class="nav__rewealer"></div>
   </div>
 </nav>
-<header class="header">
-  <div class="container">
-    <div class="header__text-content">
-      <h1>Андрій&nbsp;Бульбах</h1>
-      <p class="descriptor">Архітектура та дизайн</p>
-      <div class="button header__button">
-        <span class="main-text">Зв’язатися зі мною</span>
-        <div class="button__bg"><span>Зв’язатися зі мною</span></div>
-      </div>
-    </div>
-    <div class="header__img">
-      <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
-        <img src="img/header-img.jpg" alt="house">
-      </div>
-    </div>
-    <div class="scroll-down"></div>
-  </div>
-</header>
-<main>
-  <section class="section">
-    <div class="container section__container last">
-      <h2>Працюємо в напрямах:</h2>
-      <div class="directions">
-        <a href="#" class="directions__item">
-          <h3>Архітектура</h3>
-          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-            <img src="img/direction-1.jpg" alt="">
-          </div>
-        </a>
-        <a href="#" class="directions__item">
-          <h3>Інтер’єр</h3>
-          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-            <img src="img/direction-2.jpg" alt="">
-          </div>
-        </a>
-        <a href="#" class="directions__item">
-          <h3>Прикладний дизайн</h3>
-          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-            <img src="img/direction-3.jpg" alt="">
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="slider slider__main">
-      {% include "./partials/_slider.html" %}
-    </div>
-  </section>
-  <section class="section">
-    <div class="container section__container">
-      <h2>Підхід до роботи</h2>
-      <div class="content-wrapper content-wrapper__first">
-        <div class="content-wrapper__left">
-          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-            <img src="img/Andriy-Bulbakh.jpg" alt="Andriy Bulbakh">
-          </div>
-        </div>
-        <div class="content-wrapper__right">
-          <h3>Я та моя команда працюємо неспішно, з насолодою, смакуючи кожну деталь майбутнього об'єкту</h3>
-          <p>Архітектура — це сенс нашого життя вже протягом 25 років. Ми створюємо архітектуру, інтер’єри, меблі та декорування. Не конкуруємо з іншими, а просто рухаємося у своєму векторі.</p>
-          <h3 class="has-margin">Проєктуємо комерційну та житлову нерухомість</h3>
-          <p>Ретельно аналізуємо, вивчаємо історію, а також методи проектування архітектури та дизайну. В роботі враховуємо напрямок вітру, сторони світу, довколишнє середовище, пропорції «золотого перетину» та безліч, на перший погляд, дріб'язкових деталей.</p>
+<div class="scroll-wrap">
+<div id="js-scroll" data-scroll-repeat="false" data-scroll-speed="1000" style="will-change: transform">
+  <header class="header">
+    <div class="container">
+      <div class="header__text-content">
+        <h1>Андрій&nbsp;Бульбах</h1>
+        <p class="descriptor">Архітектура та дизайн</p>
+        <div class="button header__button">
+          <span class="main-text">Зв’язатися зі мною</span>
+          <div class="button__bg"><span>Зв’язатися зі мною</span></div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container section__container last">
-      <div class="content-wrapper content-wrapper__second">
-        <div class="content-wrapper__left">
-          <h3>Наш дизайн — це ручна робота</h3>
-          <p>Спочатку ми робимо усі ескізи традиційним шляхом — на папері та з олівцем в руках.
-            Не соромимося цього, оскільки вважаємо, що саме так можна віднайти необхідну ідею для вашого будинку.</p>
+      <div class="header__img">
+        <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
+          <img src="img/header-img.jpg" alt="house">
         </div>
-        <div class="content-wrapper__right">
-          <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-            <img src="img/handmade.jpg" alt="handmade house">
+      </div>
+      <div class="scroll-down"></div>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container section__container last">
+        <h2>Працюємо в напрямах:</h2>
+        <div class="directions">
+          <a href="#" class="directions__item">
+            <h3>Архітектура</h3>
+            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+              <img src="img/direction-1.jpg" alt="">
+            </div>
+          </a>
+          <a href="#" class="directions__item">
+            <h3>Інтер’єр</h3>
+            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+              <img src="img/direction-2.jpg" alt="">
+            </div>
+          </a>
+          <a href="#" class="directions__item">
+            <h3>Прикладний дизайн</h3>
+            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+              <img src="img/direction-3.jpg" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="slider slider__main">
+        {% include "./partials/_slider.html" %}
+      </div>
+    </section>
+    <section class="section">
+      <div class="container section__container">
+        <h2>Підхід до роботи</h2>
+        <div class="content-wrapper content-wrapper__first">
+          <div class="content-wrapper__left">
+            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+              <img src="img/Andriy-Bulbakh.jpg" alt="Andriy Bulbakh">
+            </div>
+          </div>
+          <div class="content-wrapper__right">
+            <h3>Я та моя команда працюємо неспішно, з насолодою, смакуючи кожну деталь майбутнього об'єкту</h3>
+            <p>Архітектура — це сенс нашого життя вже протягом 25 років. Ми створюємо архітектуру, інтер’єри, меблі та декорування. Не конкуруємо з іншими, а просто рухаємося у своєму векторі.</p>
+            <h3 class="has-margin">Проєктуємо комерційну та житлову нерухомість</h3>
+            <p>Ретельно аналізуємо, вивчаємо історію, а також методи проектування архітектури та дизайну. В роботі враховуємо напрямок вітру, сторони світу, довколишнє середовище, пропорції «золотого перетину» та безліч, на перший погляд, дріб'язкових деталей.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="section">
+      <div class="container section__container last">
+        <div class="content-wrapper content-wrapper__second">
+          <div class="content-wrapper__left">
+            <h3>Наш дизайн — це ручна робота</h3>
+            <p>Спочатку ми робимо усі ескізи традиційним шляхом — на папері та з олівцем в руках.
+              Не соромимося цього, оскільки вважаємо, що саме так можна віднайти необхідну ідею для вашого будинку.</p>
+          </div>
+          <div class="content-wrapper__right">
+            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
+              <img src="img/handmade.jpg" alt="handmade house">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer class="footer">
     <div class="container section__container footer__container">
       <div class="main-footer__content">
@@ -164,8 +167,9 @@ title: Index page
           </form>
         </div>
       </div>
-		{% include "./partials/_e.html" %}
+      {% include "./partials/_e.html" %}
     </div>
   </footer>
-</main>
+</div>
+</div>
 {% endblock %}
