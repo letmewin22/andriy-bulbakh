@@ -1,39 +1,17 @@
-varying vec2 vUv;
-
-        uniform sampler2D texture;
-        uniform sampler2D texture2;
-        uniform sampler2D disp;
-
-        // uniform float time;
-        // uniform float _rot;
-        uniform float dispFactor;
-        uniform float effectFactor;
-
-        // vec2 rotate(vec2 v, float a) {
-        //  float s = sin(a);
-        //  float c = cos(a);
-        //  mat2 m = mat2(c, -s, s, c);
-        //  return m * v;
-        // }
-
-        void main() {
-
-            vec2 uv = vUv;
-
-            // uv -= 0.5;
-            // vec2 rotUV = rotate(uv, _rot);
-            // uv += 0.5;
-
-            vec4 disp = texture2D(disp, uv);
-
-            vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);
-            vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);
-
-            vec4 _texture = texture2D(texture, distortedPosition);
-            vec4 _texture2 = texture2D(texture2, distortedPosition2);
-
-            vec4 finalTexture = mix(_texture, _texture2, dispFactor);
-
-            gl_FragColor = finalTexture;
-            // gl_FragColor = disp;
-        }
+uniform sampler2D texture;
+      uniform float hasTexture;
+      uniform float shift;
+      uniform float scale;
+      uniform vec3 color;
+      uniform float opacity;
+      varying vec2 vUv;
+      void main() {
+        float angle = 1.55;
+        vec2 p = (vUv - vec2(0.5, 0.5)) * (1.0 - scale) + vec2(0.5, 0.5);
+        vec2 offset = shift / 2000.0 * vec2(cos(angle), sin(angle));
+        vec4 cr = texture2D(texture, p + offset);
+        vec4 cga = texture2D(texture, p);
+        vec4 cb = texture2D(texture, p - offset);
+        if (hasTexture == 1.0) gl_FragColor = vec4(cr.r, cga.g, cb.b, cga.a);
+        else gl_FragColor = vec4(color, opacity);
+      }
