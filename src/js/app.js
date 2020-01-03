@@ -1,4 +1,4 @@
-import ScrollDistort from './distortion.js'
+import ScrollDistort from './distortion/distortion.js'
 import Nav from './nav.js'
 import Slideshow from './slider/Slideshow.js'
 import FormSubmit from './form/FormSubmit.js'
@@ -29,13 +29,14 @@ window.addEventListener('load', (e) => {
   new Slideshow(document.querySelector('.slideshow'))
 
   const imgArr = [...document.querySelectorAll('.grid__item-img-2')]
-
-  const imgs = document.querySelector('.grid__item-img-2 img')
-  new ScrollDistort({
-    parent: document.querySelector('#js-scroll'),
-    height: imgs.getBoundingClientRect().height,
-    width: imgs.getBoundingClientRect().width,
-    image: imgs.getAttribute('src')
+  imgArr.forEach((el) => {
+    const imgs = el.querySelector('img')
+    new ScrollDistort({
+      parent: el,
+      height: imgs.getBoundingClientRect().height,
+      width: imgs.getBoundingClientRect().width,
+      image: imgs.getAttribute('src')
+    })
   })
 	
   // if (screen.width > 1439) {
