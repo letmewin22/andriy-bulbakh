@@ -1,7 +1,7 @@
 import ScrollDistort from './distortion.js'
 import Nav from './nav.js'
 import Slideshow from './slider/Slideshow.js'
-import FormInputs from './form.js'
+import FormSubmit from './form/FormSubmit.js'
 import './scroll.js'
 import './loader.js'
 // import LocomotiveScroll from 'locomotive-scroll'
@@ -29,16 +29,15 @@ window.addEventListener('load', (e) => {
   new Slideshow(document.querySelector('.slideshow'))
 
   const imgArr = [...document.querySelectorAll('.grid__item-img-2')]
-  imgArr.forEach((el) => {
-    const imgs = el.querySelector('img')
-    new ScrollDistort({
-      parent: el,
-      height: imgs.getBoundingClientRect().height,
-      width: imgs.getBoundingClientRect().width,
-      image: imgs.getAttribute('src')
-    })
-  })
 
+  const imgs = document.querySelector('.grid__item-img-2 img')
+  new ScrollDistort({
+    parent: document.querySelector('#js-scroll'),
+    height: imgs.getBoundingClientRect().height,
+    width: imgs.getBoundingClientRect().width,
+    image: imgs.getAttribute('src')
+  })
+	
   // if (screen.width > 1439) {
   //   setTimeout(() => {
   //     const scroll = new LocomotiveScroll({
@@ -62,7 +61,9 @@ window.addEventListener('load', (e) => {
 // if (screen.width > 960) {
 // }
 
-FormInputs()
+if (document.querySelector('form')) {
+  new FormSubmit()
+}
 let h1 = document.querySelector('h1')
 const h1Span = h1.querySelectorAll('span')
 

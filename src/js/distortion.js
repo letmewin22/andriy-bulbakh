@@ -1,5 +1,3 @@
-import imagesLoaded from 'imagesloaded'
-import { TimelineMax } from 'gsap'
 import * as THREE from 'three'
 import fragmentShader from './shaders/fragmentShader.glsl'
 import vertexShader from './shaders/vertexShader.glsl'
@@ -12,7 +10,7 @@ export default class ScrollDistort {
       parent: opts.parent || console.warn('no parent'),
       width: opts.width || 800,
       height: opts.height || 600,
-      image: opts.image || console.warn('first image missing')
+      image: opts.image || console.warn('image missing')
     }
 
     this.setup()
@@ -48,6 +46,7 @@ export default class ScrollDistort {
     this.renderer.setClearColor(0xffffff, 0)
     this.renderer.setSize(this.store.width, this.store.height)
     this.store.parent.appendChild(this.renderer.domElement)
+    this.renderer.domElement.style.position = 'absolute'
   }
 
   init() {
@@ -72,7 +71,7 @@ export default class ScrollDistort {
     }
 
     this.mesh = new THREE.Mesh(this.geo, this.mat)
-    this.mesh.scale.set(this.store.width, this.store.height, 1)
+    this.mesh.scale.set(this.store.width * 0.8, this.store.height * 0.8, 1)
     this.scene.add(this.mesh)
 
   }
@@ -120,10 +119,10 @@ export default class ScrollDistort {
 
       this.mat.uniforms.uVelo.value = lerp(this.mat.uniforms.uVelo.value, this.diff, 0.1)
       // mat.uniforms.uScale.value = lerp(mat.uniforms.uScale.value, diff/100, 0.1)
-      this.mesh.position.y = lerp(this.mesh.position.y, this.diff, 0.1)
+      //this.mesh.position.y = lerp(this.mesh.position.y, this.diff, 0.1)
       this.currentPixel = this.newPixel
 
-      requestAnimationFrame(this.looper)
+      window.requestAnimationFrame(this.looper)
 
     }
 
