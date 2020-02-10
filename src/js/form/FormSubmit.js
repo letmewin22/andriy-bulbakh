@@ -47,6 +47,7 @@ export default class FormSubmit extends FormInputs {
     that.thislabel.pseudoStyle('after', 'border-color', '#F44336!important')
   }
 
+
   submit() {
 
     let that = this
@@ -63,7 +64,6 @@ export default class FormSubmit extends FormInputs {
           return false
 
           break
-
 
         default:
 

@@ -37,7 +37,7 @@ class ScrollAnimation {
 
     for (let i = 0; i !== this.footerElements.length; i++) {
 
-      if (this.footerElements[i].getBoundingClientRect().top <= window.innerHeight * 0.5 && this.footerElements[i].getBoundingClientRect().top > 0) {
+      if (this.footerElements[i].getBoundingClientRect().top <= window.innerHeight * 0.75 && this.footerElements[i].getBoundingClientRect().top > 0) {
 
         if (!this.footerElements[i].classList.contains('activated')) {
           this.footerElements[i].classList.add('activated')

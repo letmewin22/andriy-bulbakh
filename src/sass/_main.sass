@@ -1,15 +1,14 @@
 body
 	+main
 	font-size: 24px
-	color: #3C3D40
+	color: #54555C
 	transition: opacity .5s ease
 	overflow-x: hidden
 	overflow-y: scroll 
+	background: $bg-color
 	&.loading
 		opacity: 0
 
-a
-	text-decoration: none
 
 img
 	display: block
@@ -22,354 +21,150 @@ img
     width: 0px 
     background: transparent 
 
-h1, h2
-	+header
-	color: #292B33
-
-h1
-	font-size: 100px
-	text-transform: uppercase
-	line-height: 1em
-	opacity: 0
-	span
-		opacity: 0
-		transform: translateX(40px)
-		display: inline-block
-	// .char8, .char9, .char10, .char11, .char12, .char13, .char14
-	// 	color: white
 
 .header
 	height: 100vh
 	position: relative
+	display: flex
+	justify-content: flex-end
 	&__img
-		width: 51vw
+		// width: 76vw
+		height: 73vh
 		// height: 689px
-		position: absolute
-		top: 50%
-		left: 55.3%
-		transform: translate(-50%, -50%)
-		opacity: 0
+		position: relative
+		bottom: 0
 		img
-			width: 100%
+			// width: 100%
 			height: 100%
 			object-fit: cover
 			position: relative
+
 	&__text-content
-		position: absolute
-		top: 60%
-		transform: translateY(-50%)
-		z-index: 2
-		mix-blend-mode: difference 
-		pointer-events: none
+		margin-bottom: 4vh
+		width: fit-content 
 	.descriptor
-		margin-top: 35px
+		margin-top: 15px
 		line-height: 1em
-		opacity: 0
-		transform: translateX(60px)
+		float: right
 		+medium
-	&__button
-		margin-top: 60px
-		opacity: 0
-		pointer-events: auto
-.container
-	padding-left: 6vw
-	padding-right: 6vw
-	width: 100%
-	height: 100%
-
-.button
-	font-size: 18px
-	border: 1px #292B33 solid
-	width: fit-content
-	padding: 14px 50px
-	cursor: pointer
-	position: relative
-	overflow: hidden
-	transition: color .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-	background: transparent
-	.main-text
-		transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-		display: inline-block
-	&__bg
-		width: 100%
-		height: 100%
-		background: $dark-color
-		position: absolute
-		top: 0
-		left: 0
-		z-index: 1
-		transform: translateY(100%)
-		transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1)
-		display: flex
-		justify-content: center
-		align-items: center
-		text-align: center
-		span
-			transform: translateY(100%)
-			display: inline-block
-			transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-			transition-delay: .2s
-	&:hover
-		color: white
-		span
-			transform: translateY(-100%)
-		.button__bg
-			transform: translateY(0%)
-			span
-				transform: translateY(0%)
-	&__white
-		border: 1px white solid
-		color: white
-		.button__bg
-			background: white
-		&:hover
-			color: $dark-color
-	&__slider
-		margin-top: 80px
-		margin-left: auto
-		margin-right: auto
-		opacity: 0
-
-.navbar
-	padding-top: 40px
-	width: 100%
-	z-index: 1101
-	position: fixed
-	top: 0
-	left: 0
 	&__container
-		display: flex
-		justify-content: space-between
-		align-items: center
-
-.logo
-	position: relative
-	svg
-		display: block
-		&.active
-			opacity: 0
-
-.nav
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	height: 100vh
-	z-index: 1100
-	display: none
-	&__items
-		position: relative
+		padding-left: 0px
+		padding-right: 0px
 		display: flex
 		flex-direction: column
-		justify-content: center
-		height: 100%
-		margin-left: 10vw
-	&__item
-		font-size: 40px
-		+header
-		margin-top: 5vh
-		&:nth-child(1)
-			margin-top: 0px
-		a
-			text-decoration: none
-			transition: opacity .4s ease
-			color: white
-			opacity: 0.7
-			&:hover
-				opacity: 1
-				span 
-					color: $accent-color
-			span
-				display: inline-block
-				font-size: 14px
-				margin-right: 25px
-				transition: color .4s ease
-	&__rewealers
-		width: 100%
-		height: 100%
-		display: flex
-		position: absolute
-		top: 0
-		left: 0
-		z-index: -1
-	&__rewealer
-		width: 34%
-		height: 100%
-		background: #131417
-	&__wrapper
-		width: 100%
-		height: 100%
-		display: flex
-		justify-content: space-between
-		align-items: center
-		svg
-			fill: white
-	&__contacts
-		display: flex
-		flex-direction: column
-		margin-right: 10vw
-		+main
-		font-size: 21px
-		margin-top: 70px
-		.contact
-			text-decoration: none
-			color: white
-			margin-top: 27px
-			&:nth-child(1)
-				margin-top: 35px
+		align-items: flex-start
+		justify-content: flex-end
+		width: auto
+		padding-top: 8vh
 
 
 
-.grid__item-img-2
+
+.img-wrapper
 	position: relative
-	// overflow: hidden
+	// width: 100%
+	height: 100%
 	canvas
 		position: absolute
 		top: 0
 		left: 0
 		object-fit: cover
-		transform: scale(1.25)
+		// transform: scale(1.25)
 	img
 		opacity: 0
-		// display: none
 
-.thiscanvas
-	position: fixed
-	top: 0
+
+.header-img-shadow
+	position: absolute
+	left: 0
+	bottom: 0
+	background: $main-color
+	width: 48vw
+	height: 65vh
 	z-index: -1
-	// top: 50%
-	// left: 50%
-	// transform: translate(-50%, -50%)
 
-.section
-	width: 100%
-	position: relative
-	&__container
-		padding-top: 140px
-		&.last
-			padding-bottom: 140px
-		&.min-margin
-			padding-top: 100px
-			&.last
-				padding-bottom: 100px
-	p
-		opacity: 0
-	&__dark
-		background: $dark-color
-		color: white
-		h1, h2
-			color: white
-
-h2
-	font-size: 60px
-	opacity: 0
-	transform: translateY(40px)
-	line-height: 1em 
-
-h3
-	font-size: 24px
-	+medium
-	opacity: 0
-
-.directions
-	margin-top: 80px
-	display: flex
-	justify-content: space-between
-	flex-wrap: wrap
-	&__item
-		flex-basis: 32%
-		text-decoration: none
-		color: inherit
+.service-item
+	&__content-wrapper
+		display: flex
+		align-items: flex-end
+		&.reverse
+			flex-direction: row-reverse
 		.img-wrapper
-			margin-top: 15px
-			max-width: 100%
-			opacity: 0
-			transform: translateY(60px)
-		h3
-			width: fit-content
-			overflow: hidden
-			&:after
-				content: ''
-				width: 100%
-				height: 2px
-				display: block
-				background: $dark-color
-				transform: translateX(-100%)
-				transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-		&:hover
-			h3
-				&:after
-					transform: translateX(0%)
+			max-width: 50%
+			// img
+			// 	width: 100%
 
-
-.burger-wrapper
-	font-size: 18px
+.service-name
 	display: flex
-	justify-content: center
-	align-items: center
-	line-height: 1em
-	cursor: pointer
+	align-items: flex-start
+	margin-left: 3.6vw
+	padding-bottom: 15px
+	&.right
+		margin-right: 3.6vw
+	&.left
+		margin-left: 3.6vw
+	&__num
+		font-size: 30px
+		display: inline-block
+		margin-top: -25px
+		margin-right: 10px
+		+serif
 
-#menu-text
-	&.active
-		color: white
-
-.content-wrapper
+.img-shadow
 	width: 100%
-	display: flex
-	justify-content: space-between
-	align-items: center
-	&__right
-		margin-left: 8.3vw
-		width: 50%
-	&__left
-		width: 50%
-	&__first
-		margin-top: 80px
-	p
-		margin-top: 40px
-	.has-margin
-		margin-top: 60px 
-	&__second
-		.content-wrapper__right
-			width: 62%
-		.content-wrapper__left
-			width: 38%
+	height: 100%
+	position: absolute
+	z-index: -1
+	background: $main-color
+	top: 2.2vh
+	&.right
+		right: 1.15vw
+	&.left
+		left: 1.15vw
 
-.footer
-	background: $dark-color
-	position: relative
-	h2
-		color: white
-	p
-		color: white
-		margin-top: 50px
-		opacity: 0
-	a
-		opacity: 0
-		width: fit-content
-	&__container
-		padding-top: 100px
-		padding-bottom: 200px
-		position: relative
 
-.main-footer
-	&__content
+.default-item
+	&__content-wrapper
 		width: 100%
 		display: flex
-		justify-content: space-between
-		&__left-content
-			width: 44%
-			&__contacts-items
-				margin-top: 115px
-				a
-					display: block
-					color: rgba(white, 0.7)
-					margin-top: 27px
-					transition: color .4s ease
-					font-size: 1.1rem
-					&:hover
-						color: white
-		&__right-content
-			width: 40%
-			margin-top: 100px 
+		align-items: center 
+		&.reverse
+			flex-direction: row-reverse
+			justify-content: space-between
+		.img-wrapper
+			max-width: 50%
+			// img
+			// 	width: 100%
+
+.default-text
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding-top: 20px
+	padding-bottom: 20px
+	width: 35%
+	position: relative
+	p
+		line-height: 1.6em
+		margin-top: 40%
+	&.right
+		margin-right: 3.6vw
+		h2
+			left: 12vw 
+			width: 130%
+			position: relative
+	&.left
+		margin-left: 11.8vw
+		h2
+			left: -17vw 
+			width: 120%
+			position: relative
+
+.extra-text
+	p
+		width: 45vw
+		+serif
+		font-size: 35px
+		color: #54555C
+		line-height: 1.7em
+		letter-spacing: 0.05em

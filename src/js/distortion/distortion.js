@@ -71,7 +71,7 @@ export default class ScrollDistort {
     }
 
     this.mesh = new THREE.Mesh(this.geo, this.mat)
-    this.mesh.scale.set(this.store.width * 0.8, this.store.height * 0.8, 1)
+    this.mesh.scale.set(this.store.width, this.store.height, 1)
     this.scene.add(this.mesh)
 
 

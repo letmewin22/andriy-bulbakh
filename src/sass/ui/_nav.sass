@@ -1,0 +1,93 @@
+.nav
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	z-index: 1100
+	display: none
+	&__items
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+		height: 100%
+		margin-left: 10vw
+	&__item
+		font-size: 40px
+		+serif
+		margin-top: 5vh
+		&:nth-child(1)
+			margin-top: 0px
+		a
+			text-decoration: none
+			transition: opacity .4s ease
+			color: #292B33
+			opacity: 0.7
+			&:hover
+				opacity: 1
+				span 
+					color: $accent-color
+			span
+				display: inline-block
+				font-size: 14px
+				margin-right: 25px
+				transition: color .4s ease
+	&__rewealer
+		width: 100%
+		height: 100%
+		display: flex
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+		// background: #FEF5E8
+
+	&__wrapper
+		width: 100%
+		height: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		svg
+			fill: white
+	&__contacts
+		display: flex
+		flex-direction: column
+		margin-right: 10vw
+		+main
+		font-size: 21px
+		margin-top: 70px
+		.contact
+			text-decoration: none
+			color: #292B33
+			margin-top: 27px
+			&:nth-child(1)
+				margin-top: 35px
+
+.burger-wrapper
+	font-size: 18px
+	display: flex
+	justify-content: center
+	align-items: center
+	line-height: 1em
+	cursor: pointer
+
+.navbar
+	padding-top: 40px
+	width: 100%
+	z-index: 1101
+	position: fixed
+	top: 0
+	left: 0
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.logo
+	position: relative
+	svg
+		display: block
+		&.active
+			opacity: 0

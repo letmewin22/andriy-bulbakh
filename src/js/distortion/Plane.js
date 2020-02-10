@@ -1,7 +1,16 @@
 import GlObject from './GlObject.js'
+import fragmentShader from '../shaders/fragmentShader.glsl'
+import vertexShader from '../shaders/vertexShader.glsl'
+
+const planeGeo = new THREE.PlaneBufferGeometry(1, 1, 32, 32)
+const planeMat = new THREE.ShaderMaterial({
+  transparent: true,
+  fragmentShader,
+  vertexShader
+})
 
 export default class Plane extends GlObject {
-	
+
   init(el) {
     super.init(el)
 

@@ -4,7 +4,7 @@ title: Index page
 {% extends "layouts/_layout.html" %}
 {% block content %}
 <div class="navbar">
-  <div class="container navbar__container">
+  <div class="navbar__container container">
     <a href="#" class="logo">
       {% include "partials/_logo.html" %}
     </a>
@@ -17,7 +17,7 @@ title: Index page
   </div>
 </div>
 <nav class="nav">
-  <div class="container">
+  <div class="nav__container container">
     <div class="nav__wrapper">
       <ul class="nav__items">
         <li class="nav__item"><a href=""><span>01</span>Головна</a></li>
@@ -35,141 +35,158 @@ title: Index page
       </div>
     </div>
   </div>
-  <div class="nav__rewealers">
-    <div class="nav__rewealer"></div>
-    <div class="nav__rewealer"></div>
-    <div class="nav__rewealer"></div>
+  <div class="nav__rewealer">
+    <svg id="svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="#FEF5E8" xmlns="http://www.w3.org/2000/svg">
+      <path id="from" d="M0 671.486V0H1920V671.486C1403.1 1207.09 547.856 1216 19.9142 691.278L0 671.486Z" />
+      <path id="to" d="M0 1060.09V0H1920V1060.09H954.5H0Z" style="display: none" />
+    </svg>
   </div>
 </nav>
-<div class="scroll-wrap">
-<div id="js-scroll" data-scroll-repeat="false" data-scroll-speed="2000" style="will-change: transform">
-  <header class="header">
-    <div class="container">
-      <div class="header__text-content">
-        <h1>Андрій&nbsp;Бульбах</h1>
-        <p class="descriptor">Архітектура та дизайн</p>
-        <div class="button header__button">
-          <span class="main-text">Зв’язатися зі мною</span>
-          <div class="button__bg"><span>Зв’язатися зі мною</span></div>
-        </div>
-      </div>
-      <div class="header__img">
-        <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
-          <img src="img/header-img.jpg" alt="house">
-        </div>
-      </div>
-      <div class="scroll-down"></div>
+<header class="header">
+  <div class="container header__container">
+    <div class="header__text-content">
+      <h1>Andriy&nbsp;Bulbakh</h1>
+      <p class="descriptor">Architects and design</p>
     </div>
-  </header>
-  <main>
-    <section class="section">
-      <div class="container section__container last">
-        <h2>Працюємо в напрямах:</h2>
-        <div class="directions">
-          <a href="#" class="directions__item">
-            <h3>Архітектура</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-1.jpg" alt="">
-            </div>
-          </a>
-          <a href="#" class="directions__item">
-            <h3>Інтер’єр</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-2.jpg" alt="">
-            </div>
-          </a>
-          <a href="#" class="directions__item">
-            <h3>Прикладний дизайн</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-3.jpg" alt="">
-            </div>
-          </a>
-        </div>
+    <div class="header__img">
+      <div class="header__img__wrapper img-wrapper">
+        <img src="img/header-img.jpg" alt="house">
       </div>
-    </section>
-    <section class="section">
-      <div class="slider slider__main">
-        {% include "./partials/_slider.html" %}
-      </div>
-    </section>
-    <section class="section">
-      <div class="container section__container">
-        <h2>Підхід до роботи</h2>
-        <div class="content-wrapper content-wrapper__first">
-          <div class="content-wrapper__left">
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/Andriy-Bulbakh.jpg" alt="Andriy Bulbakh">
-            </div>
+    </div>
+    <div class="header-img-shadow"></div>
+  </div>
+</header>
+<main>
+  <section class="section service">
+    <div class="service-item">
+      <div class="container">
+        <div class="service-item__content-wrapper">
+          <div class="img-wrapper">
+            <img src="img/services-main/1.jpg" alt="">
+            <div class="img-shadow left"></div>
           </div>
-          <div class="content-wrapper__right">
-            <h3>Я та моя команда працюємо неспішно, з насолодою, смакуючи кожну деталь майбутнього об'єкту</h3>
-            <p>Архітектура — це сенс нашого життя вже протягом 25 років. Ми створюємо архітектуру, інтер’єри, меблі та декорування. Не конкуруємо з іншими, а просто рухаємося у своєму векторі.</p>
-            <h3 class="has-margin">Проєктуємо комерційну та житлову нерухомість</h3>
-            <p>Ретельно аналізуємо, вивчаємо історію, а також методи проектування архітектури та дизайну. В роботі враховуємо напрямок вітру, сторони світу, довколишнє середовище, пропорції «золотого перетину» та безліч, на перший погляд, дріб'язкових деталей.</p>
+          <div class="service-name left">
+            <span class="service-name__num">01</span>
+            <h2>Architecture</h2>
           </div>
         </div>
       </div>
-    </section>
-    <section class="section">
-      <div class="container section__container last">
-        <div class="content-wrapper content-wrapper__second">
-          <div class="content-wrapper__left">
-            <h3>Наш дизайн — це ручна робота</h3>
-            <p>Спочатку ми робимо усі ескізи традиційним шляхом — на папері та з олівцем в руках.
-              Не соромимося цього, оскільки вважаємо, що саме так можна віднайти необхідну ідею для вашого будинку.</p>
+    </div>
+  </section>
+  <section class="section service">
+    <div class="service-item">
+      <div class="container">
+        <div class="service-item__content-wrapper reverse">
+          <div class="img-wrapper">
+            <img src="img/services-main/2.jpg" alt="">
+            <div class="img-shadow right"></div>
           </div>
-          <div class="content-wrapper__right">
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/handmade.jpg" alt="handmade house">
-            </div>
+          <div class="service-name right">
+            <span class="service-name__num">02</span>
+            <h2>Interior</h2>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container section__container footer__container">
-      <div class="main-footer__content">
-        <div class="main-footer__content__left-content">
-          <h2>Запрошуємо вас<br>на каву до нас в офіс!</h2>
-          <p>Обговоримо спільні погляди на майбутній будинок чи інтер'єр.</p>
-          <div class="main-footer__content__left-content__contacts-items">
-            <a href="#">+38 (067) 629 4813</a>
-            <a href="mailto:vulbach2@gmail.com">vulbach2@gmail.com</a>
-            <a href="#">Україна, Київ<br>вул. Парково-Сирецька, 4В
-            </a>
+    </div>
+  </section>
+  <section class="section service">
+    <div class="service-item">
+      <div class="container">
+        <div class="service-item__content-wrapper">
+          <div class="img-wrapper">
+            <img src="img/services-main/3.jpg" alt="">
+            <div class="img-shadow left"></div>
+          </div>
+          <div class="service-name left">
+            <span class="service-name__num">03</span>
+            <h2>Handmade</h2>
           </div>
         </div>
-        <div class="main-footer__content__right-content">
-          <form class="form" name="form">
-            <!-- Hidden Required Fields -->
-            <input type="hidden" name="project_name" value="DayTripBali site">
-            <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
-            <input type="hidden" name="form_subject" value="Заявка с главной">
-            <!-- END Hidden Required Fields -->
-            <div class="input-wrapper first">
-              <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
-              <label for="name" class="label">
-                <span class="label-content">Ім’я</span>
-              </label>
-            </div>
+      </div>
+    </div>
+  </section>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container last">
+        <div class="default-item__content-wrapper reverse">
+          <div class="img-wrapper">
+            <img src="img/Andriy-Bulbakh.jpg" alt="">
+            <div class="img-shadow right"></div>
+          </div>
+          <div class="default-text right">
+            <h2>We have our own unique approach to work</h2>
+            <p>Me and my team work slowly, enjoying the taste of every detail of a future object <br><br>
+              Architecture has been the meaning of our lives for 25 years. We create architecture, interiors, furniture and decor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="extra-text">
+    <div class="container second-line">
+      <p>We design commercial and residential real estate <br><br>
+        The work takes into account the direction of the wind, the sides of the world, the environment, the proportions of the "golden intersection" and many, at first glance, small details.</p>
+    </div>
+  </div>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container last">
+        <div class="default-item__content-wrapper">
+          <div class="img-wrapper">
+            <img src="img/handmade.jpg" alt="">
+            <div class="img-shadow left"></div>
+          </div>
+          <div class="default-text left">
+            <h2>Our design is handmade</h2>
+            <p>First, we do all the sketches the traditional way - on paper and with a pencil in our hands.
+              We are not ashamed of this because we believe that this is the way to find the right idea for your home.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-left">
+      <h2>Contacts</h2>
+      <div class="contacts-cols">
+        <div class="contacts-first-col">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+        </div>
+        <div class="contacts-second-col">
+          <a href="mailto:vulbach2@gmail.com">vulbach2@gmail.com</a>
+          <a href="tel:+380676294813">+38 (067) 629 4813</a>
+          <a href="#">Ukraine, Kiev<br>st. Parkovo-Syretskaya, 4V</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <h2>Have a question?</h2>
+      <div class="form-wrapper">
+        <form class="form" name="form">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="emotiON site">
+          <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
+          <input type="hidden" name="form_subject" value="Заявка с главной emotiON">
+          <!-- END Hidden Required Fields -->
+          <div class="input-wrapper first">
             <div class="input-wrapper">
-              <input type="text" class="text-field" maxlength="256" name="phone" id="phone" autocomplete="off">
+              <input type="tel" class="text-field" maxlength="256" name="Телефон" id="phone" autocomplete="off">
               <label for="phone" class="label">
-                <span class="label-content">Номер телефону *</span>
+                <span class="label-content">enter your phone</span>
               </label>
-              <span class="form-validate-text"></span>
             </div>
-            <button type="submit" class="button button__white">
-              <span class="main-text">Надіслати</span>
-              <div class="button__bg"><span>Надіслати</span></div>
-            </button>
-          </form>
-        </div>
+          </div>
+          <span class="form-validate-text"></span>
+            <input type="submit" value="send" class="form-button">
+        </form>
       </div>
-      {% include "./partials/_e.html" %}
     </div>
-  </footer>
-</div>
-</div>
+    <div class="footer-shadow"></div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
 {% endblock %}

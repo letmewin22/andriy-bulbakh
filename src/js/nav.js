@@ -15,8 +15,9 @@ export default class Nav {
       menuText: opts.menuText,
       navItems: opts.navItems
     }
-
-    this.store.burgerWrapper.addEventListener('click', () => this.events())
+    // this.svgOpen()
+    this.store.burgerWrapper.addEventListener('click', this.events.bind(this))
+    // document.body.addEventListener('click', this.svgOpen.bind(this))
   }
 
   events() {
@@ -27,6 +28,18 @@ export default class Nav {
     } else {
       this.open()
     }
+  }
+
+  svgOpen() {
+    let pathFrom = Snap.select('#from')
+    let pathTo = Snap.select('#to')
+    pathFrom.animate({d: pathTo}, 1000, mina.easeout)
+  }
+
+  svgClose() {
+    let pathFrom = Snap.select('#from')
+    let pathTo = 'M0 1060.09V0H1920V1060.09L1321.46 1170.08C1082.49 1213.99 837.513 1213.99 598.539 1170.08L0 1060.09Z'
+    pathFrom.animate({d: pathTo}, 1000, mina.easeout)
   }
 
   open() {
@@ -46,7 +59,7 @@ export default class Nav {
   }
 
   close() {
-
+    // this.svgClose()
     this.store.navItems = this.store.navItems.reverse()
 
     this.closeAnim()
@@ -62,7 +75,7 @@ export default class Nav {
   }
 
   openAnim() {
-
+    this.svgOpen()
     let tl = new TimelineMax({
       onComplete: () => {
         this.store.body.style.pointerEvents = 'auto'
@@ -70,9 +83,9 @@ export default class Nav {
     })
 
     tl
-      .staggerFromTo(this.store.navRewealer, 1, { y: '-100%' }, { y: '0%' }, 0.15)
-      .staggerFromTo(this.store.navItems, 1, { x: -80, opacity: 0 }, { x: 0, opacity: 1 }, 0.15, 0.2)
-      .fromTo(this.store.navContacts, 0.7, { opacity: 0 }, { opacity: 1 }, 0.5)
+      .fromTo(this.store.navRewealer, 1.5, { y: '-100%' }, { y: '0%', ease: Power3.easeOut })
+      .staggerFromTo(this.store.navItems, 1, { x: -80, opacity: 0 }, { x: 0, opacity: 1 }, 0.15, 0.7)
+      .fromTo(this.store.navContacts, 0.7, { opacity: 0 }, { opacity: 1 }, 1)
   }
 
   closeAnim() {
@@ -85,7 +98,7 @@ export default class Nav {
 
     tl2
       .fromTo(this.store.navContacts, 0.7, { opacity: 1 }, { opacity: 0 })
-      .staggerFromTo(this.store.navRewealer, 1, { y: '0%' }, { y: '-100%' }, 0.15, 0.3)
+      .fromTo(this.store.navRewealer, 1, { y: '0%' }, { y: '-100%' }, 0.3)
       .staggerFromTo(this.store.navItems, 0.7, { x: 0, opacity: 1 }, { x: -80, opacity: 0 }, 0.1, 0)
       .to(this.store.nav, 0.1, { display: 'none' })
   }

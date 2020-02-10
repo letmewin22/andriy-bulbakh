@@ -1,23 +1,22 @@
 import ScrollDistort from './distortion/distortion.js'
 import Nav from './nav.js'
-import Slideshow from './slider/Slideshow.js'
 import FormSubmit from './form/FormSubmit.js'
 import './scroll.js'
 import './loader.js'
 // import LocomotiveScroll from 'locomotive-scroll'
 import './lib/smoothscroll.js'
 
-window.addEventListener('beforeunload', (e) => {
-  document.body.style.opacity = 0
-  window.scrollTo(0, 0)
-})
+// window.addEventListener('beforeunload', (e) => {
+//   document.body.style.opacity = 0
+//   window.scrollTo(0, 0)
+// })
 
 window.addEventListener('load', (e) => {
 
   new Nav({
     burger: document.querySelector('.burger'),
     nav: document.querySelector('.nav'),
-    navRewealer: document.querySelectorAll('.nav__rewealer'),
+    navRewealer: document.querySelector('.nav__rewealer'),
     navContacts: document.querySelectorAll('.nav__contacts'),
     body: document.body,
     burgerWrapper: document.querySelector('.burger-wrapper'),
@@ -26,9 +25,8 @@ window.addEventListener('load', (e) => {
     navItems: [...document.querySelectorAll('.nav__item')].reverse()
   })
 
-  new Slideshow(document.querySelector('.slideshow'))
 
-  const imgArr = [...document.querySelectorAll('.grid__item-img-2')]
+  const imgArr = [...document.querySelectorAll('.img-wrapper')]
   imgArr.forEach((el) => {
     const imgs = el.querySelector('img')
     new ScrollDistort({
@@ -38,6 +36,15 @@ window.addEventListener('load', (e) => {
       image: imgs.getAttribute('src')
     })
   })
+
+  // const imgArr = [...document.querySelectorAll('.grid__item-img-2')]
+  // const imgs = document.querySelector('.grid__item-img-2 img')
+  // new ScrollDistort({
+  //   parent: document.body,
+  //   height: imgs.getBoundingClientRect().height,
+  //   width: imgs.getBoundingClientRect().width,
+  //   image: imgs.getAttribute('src')
+  // })
 	
   // if (screen.width > 1439) {
   //   setTimeout(() => {
