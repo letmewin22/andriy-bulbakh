@@ -4,118 +4,85 @@
 	h1
 		font-size: 90px
 	h2
-		font-size: 50px
+		font-size: 45px
 	h3
 		font-size: 22px
-	.button
-		font-size: 16px
+	.service-name__num
+		font-size: 23px
+	.extra-text
+		p
+			font-size: 30px
+			width: 50vw
 
 @media (max-width: 1368px)
 	h1
 		font-size: 88px
 
-@media (max-width: 1240px)
+@media (max-height: 714px)
 	.header
-		&__button
-			margin-top: 40px
-		&__img
-			// position: relative
-			left: auto
-			right: 6vw
-			// top: 0
-			transform: translateY(-50%)
+		justify-content: center
+
+@media (max-width: 1260px)
+	h1
+		font-size: 70px
+	.header
+		&__container
+			align-items: center
+	.extra-text
+		p
+			font-size: 25px
 			width: 60vw
 
 @media (max-width: 1150px)
 	.header
 		&__img
-			position: absolute
-			left: 0
-			top: 0
-			transform: none
-			width: 100%
-		&__text-content
-			color: white
-			mix-blend-mode: normal
-			h1
-				color: white
-		&__button
-			border-color: white
-	.content-wrapper
-		flex-direction: column
+			height: auto
+			width: 70vw
+			img
+				width: 100%
+		&__container
+			align-items: flex-start
+	.img-wrapper
+		width: 100%
+	.header__container
 		justify-content: flex-start
-		align-items: flex-start
-		&__left, &__right
-			width: 60%
-		&__left
-			margin-right: 0px
-		&__right
-			margin-left: 0px
-			margin-top: 30px
-		&__second
-			flex-direction: column-reverse
-			.content-wrapper__left
-				margin-top: 30px
-				width: 60%
-			.content-wrapper__right
-				margin-top: 0px
-		p
-			margin-top: 20px
 	body
 		font-size: 18px
 	h1
-		font-size: 72px
-	h2
-		font-size: 46px
+		font-size: 60px
 	h3
 		font-size: 20px
+	h2
+		font-size: 36px
+	.default-text p
+		margin-top: 30%
 	.section
-		&__container
-			padding-top: 80px
+		.container
+			padding-top: 140px
 			&.last
-				padding-bottom: 80px
-	.scroll-down
-		display: none
+				padding-bottom: 140px
 	.nav__contacts
 		display: none
+	footer 
+		.contacts-cols
+			margin-top: 0px
+			a
+				font-size: 18px
 
-@media (max-width: 860px)
-	.section
-		&__container
-			padding-top: 60px
-			&.last
-				padding-bottom: 60px
-	.content-wrapper
-		&__left, &__right
-			width: 100%
-		&__second
-			.content-wrapper__left
-				width: 100%
-			.content-wrapper__right
-				width: 100%
-		.has-margin
-			margin-top: 30px
+@media (max-width: 880px)
 	.header
-		&__img
-			width: 100%
-			height: 100vh
-		.img-wrapper
-			width: 100%
-			height: 100%
+		&__container
+			justify-content: center
+	.header-img-shadow
+		height: 55vh
+		width: 80vw 
+	.section
+		.container
+			padding-top: 100px
+			&.last
+				padding-bottom: 100px
 	.nav__item
 		font-size: 20px
-	.directions
-		flex-direction: column
-		margin-top: 0px
-		&__item
-			width: 100%
-			height: 300px
-			margin-top: 30px
-			img
-				width: 100%
-				object-fit: cover
-				display: block
-				height: 350px
 	#menu-text
 		display: none
 
@@ -127,41 +94,37 @@
 			&__right-content
 				width: 100%
 	h1
-		font-size: 36px
+		font-size: 48px
 	h2
 		font-size: 32px
-	.button
-		padding: 10px 30px
-	.header
-		&__img
-			height: 43vh
-		&__text-content
-			color: $dark-color
-			top: 65%
-			h1
-				color: $dark-color
-			.descriptor
-				margin-top: 25px
-		&__button
-			border-color: $dark-color
-	.directions
-		&__item
-			height: auto
-			img
-				height: 250px
+
 	.boxnav__item
 		width: 20vw
 		height: 18vw
 	.container
 		padding-left: 20px
 		padding-right: 20px
-	.content-wrapper__first
-		margin-top: 60px
-	.main-footer__content__left-content__contacts-items
-		margin-top: 40px
-	.main-footer__content__right-content
-		margin-top: 40px
 	.navbar
 		padding-top: 20px
-	.logo-tail
-		display: none
+	footer 
+		.container
+			flex-direction: column
+			padding-right: 20px
+			.footer-left
+				width: 100%
+			.footer-right
+				width: 100%
+				margin-top: 80px
+			.footer-shadow
+				left: 0
+				right: auto
+				height: 68vh
+				width: 100%
+
+
+@media (max-width: 760px)
+	.service-item
+		&__content-wrapper
+			flex-direction: column
+		.img-wrapper
+			max-width: 80%

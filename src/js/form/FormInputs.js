@@ -17,13 +17,12 @@ export default class FormInputs {
     this.thankYouScreenBg = document.querySelector('.thank-you-bg'),
     this.thankYouScreenBg2 = document.querySelector('.thank-you-bg-white'),
     this.thankYouScreenContent = document.querySelector('.thank-you-content'),
-    this.thislabel = document.querySelectorAll('label')[1]
+    this.thislabel = document.querySelectorAll('label')[0]
 
     this.formPopUpEvents()
     this.focus()
     this.blur()
     this.reset()
-    // this.submit()
 
   }
 

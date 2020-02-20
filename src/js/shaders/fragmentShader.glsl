@@ -32,10 +32,10 @@ void main() {
   vec2 texScale = (texUv - texCenter) * uScale + texCenter;
   vec4 texture = texture2D(uTexture, texScale);
 
-  texScale.y += 0.0005 * uVelo;
+  texScale.y += 0.00005 * uVelo;
   if(uv.y < 1.) texture.g = texture2D(uTexture, texScale).g;
 
-  texScale.y += 0.0004 * uVelo;
+  texScale.y += 0.00004 * uVelo;
   if(uv.y < 1.) texture.b = texture2D(uTexture, texScale).b;
 
   gl_FragColor = texture;

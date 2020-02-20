@@ -3,7 +3,7 @@ import { TimelineMax } from 'gsap'
 export default class Nav {
 
   constructor(opts) {
-    
+
     this.store = {
       burger: opts.burger,
       nav: opts.nav,
@@ -18,6 +18,7 @@ export default class Nav {
     // this.svgOpen()
     this.store.burgerWrapper.addEventListener('click', this.events.bind(this))
     // document.body.addEventListener('click', this.svgOpen.bind(this))
+    this.svg()
   }
 
   events() {
@@ -30,17 +31,34 @@ export default class Nav {
     }
   }
 
-  svgOpen() {
-    let pathFrom = Snap.select('#from')
-    let pathTo = Snap.select('#to')
-    pathFrom.animate({d: pathTo}, 1000, mina.easeout)
+  svg() {
+    let svg = document.getElementById('curves')
+    let s = Snap(svg)
+    let baseCurve = Snap.select('.curve-base')
+    let inverseCurve = Snap.select('.curve-inverse')
+    let baseCurvePoints = baseCurve.node.getAttribute('d')
+    let inverseCurvePoints = inverseCurve.node.getAttribute('d')
+
+    let toInverseCurve = function() {
+      baseCurve.animate({ d: baseCurvePoints }, 3000, mina.linear, toBaseCurve)
+    }
+    let toBaseCurve = function() {
+      baseCurve.animate({ d: inverseCurvePoints }, 3000, mina.linear, toInverseCurve)
+    }
+    toBaseCurve()
   }
 
-  svgClose() {
-    let pathFrom = Snap.select('#from')
-    let pathTo = 'M0 1060.09V0H1920V1060.09L1321.46 1170.08C1082.49 1213.99 837.513 1213.99 598.539 1170.08L0 1060.09Z'
-    pathFrom.animate({d: pathTo}, 1000, mina.easeout)
-  }
+  // svgOpen() {
+  //   let pathFrom = Snap.select('#from')
+  //   let pathTo = Snap.select('#to')
+  //   pathFrom.animate({ d: pathTo }, 1000, mina.easeout)
+  // }
+
+  // svgClose() {
+  //   let pathFrom = Snap.select('#from')
+  //   let pathTo = 'M0 1060.09V0H1920V1060.09L1321.46 1170.08C1082.49 1213.99 837.513 1213.99 598.539 1170.08L0 1060.09Z'
+  //   pathFrom.animate({ d: pathTo }, 1000, mina.easeout)
+  // }
 
   open() {
 
@@ -75,7 +93,6 @@ export default class Nav {
   }
 
   openAnim() {
-    this.svgOpen()
     let tl = new TimelineMax({
       onComplete: () => {
         this.store.body.style.pointerEvents = 'auto'
