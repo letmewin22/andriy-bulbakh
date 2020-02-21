@@ -8,8 +8,7 @@ export default class FormSubmit extends FormInputs {
     super()
     pseudoPrototype()
 
-    this.koef = 5
-
+    this.koef = +this.validateText.getAttribute('data-value')
     this.submit()
 
     this.phone.oninput = () => this.onInput()
@@ -44,15 +43,17 @@ export default class FormSubmit extends FormInputs {
 
   validation() {
 
-    let that = this
-    that.validateText.querySelector('span').innerHTML = that.koef - that.phone.value.length
-    that.validateText.style.opacity = '1'
-    that.phone.focus()
-    that.thislabel.pseudoStyle('after', 'border-color', '#F44336!important')
+    this.validateText.querySelector('.koef-inp').innerHTML = this.koef
+    this.validateText.querySelector('.koef-outp').innerHTML = this.koef - this.phone.value.length
+    this.validateText.style.opacity = '1'
+
+    this.phone.focus()
+    this.thislabel.pseudoStyle('after', 'border-color', '#F44336!important')
   }
 
   onInput() {
-    if (this.phone.value.length < 5) {
+
+    if (this.phone.value.length < this.koef) {
       this.validation()
     } else {
       this.validateText.style.opacity = '0'
@@ -65,17 +66,15 @@ export default class FormSubmit extends FormInputs {
 
     let that = this
 
-
     that.form.onsubmit = (e) => {
 
-      console.log(that.phone.value.length)
-      if (that.phone.value.length < 6) {
-        that.validation.bind(that)()
+      if (that.phone.value.length < that.koef) {
+        that.validation()
         e.preventDefault()
 
         return false
+
       } else {
-        that.validateText.style.opacity = '0'
 
         let request = new XMLHttpRequest()
         request.open('POST', './mail.php', true)
@@ -98,22 +97,4 @@ export default class FormSubmit extends FormInputs {
   }
 }
 
-//   onchange() {
-//     this.input.addEventListener('input', function (e) {
-
-//     }, false);
-//     that.form.onsubmit = (e) => {
-//     switch (that.phone.value) {
-
-//         case '':
-
-//           that.validation()
-//           e.preventDefault()
-
-//           return false
-
-//           break
-//   }
-// }
-// }
 

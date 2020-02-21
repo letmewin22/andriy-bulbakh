@@ -7,10 +7,10 @@ class ScrollAnimation {
     this.elements = document.querySelectorAll('section')
     this.footerElements = document.querySelectorAll('footer')
     this.extraTextElems = document.querySelectorAll('.extra-text')
-    this.intersectionRatio = screen.width > 460 ? 0.5 : 0.75
+    this.intersectionRatio = screen.width > 460 ? 0.6 : 0.75
     
     this.sectionInView()
-    this.footer()
+    // this.footer()
     this.extraText()
 
   }
