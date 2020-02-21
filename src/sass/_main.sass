@@ -1,7 +1,12 @@
+*
+	::selection
+		background: $main-color
+		// color: white
+
 body
 	+main
 	font-size: 24px
-	color: #54555C
+	color: $dark-light
 	transition: opacity .5s ease
 	overflow-x: hidden
 	overflow-y: scroll 
@@ -28,13 +33,13 @@ img
 	display: flex
 	justify-content: flex-end
 	&__img
-		// width: 76vw
+		width: 76vw
 		height: 73vh
 		// height: 689px
 		position: relative
 		bottom: 0
 		img
-			// width: 100%
+			width: 100%
 			height: 100%
 			object-fit: cover
 			position: relative
@@ -64,14 +69,22 @@ img
 	position: relative
 	// width: 100%
 	height: 100%
-	canvas
+	overflow: hidden
+	// canvas
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	object-fit: cover
+	.img-rewealer
+		width: 100%
+		height: 100%
 		position: absolute
 		top: 0
 		left: 0
-		object-fit: cover
-		transform: scale(1.25) 
+		background: #FFFBF6
+		z-index: 5
 	img
-		opacity: 0
+		transform: scale(1.12)
 
 
 .header-img-shadow
@@ -146,25 +159,50 @@ img
 	position: relative
 	p
 		line-height: 1.6em
-		margin-top: 40%
+		margin-top: 30%
 	&.right
 		margin-right: 3.6vw
 		h2
 			left: 12vw 
 			width: 130%
 			position: relative
+			z-index: 10
 	&.left
 		margin-left: 11.8vw
 		h2
 			left: -17vw 
 			width: 120%
 			position: relative
+			z-index: 10
 
 .extra-text
 	p
-		width: 45vw
+		width: 46vw
 		+serif
 		font-size: 35px
-		color: #54555C
+		color: $dark-light
 		line-height: 1.7em
 		letter-spacing: 0.05em 
+		.word
+			display: inline-block
+			opacity: 0
+			transform: translateY(60px)
+	&.center
+		p
+			text-align: center
+
+.stroke-a
+	position: relative
+	svg
+		position: absolute
+		top: 0
+		left: -10px
+		pointer-events: none
+		display: block
+		path
+			transition: stroke-dashoffset .5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+	a
+		position: relative
+
+.stroke-link
+	cursor: pointer

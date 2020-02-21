@@ -1,3 +1,5 @@
+$vertical-distance: 30vh
+
 .container
 	padding-left: 6vw
 	padding-right: 6vw
@@ -6,14 +8,20 @@
 	&.second-line
 		padding-left: 17vw
 		padding-right: 0px
+	&.margin-top
+		padding-top: $vertical-distance
+	&.center-container
+		display: flex
+		justify-content: center
+		align-items: center
 
 .section
 	width: 100%
 	position: relative
 	.container
-		padding-top: 300px
+		padding-top: $vertical-distance
 		&.last
-			padding-bottom: 300px
+			padding-bottom: $vertical-distance
 
 footer
 	width: 100%
@@ -41,7 +49,7 @@ footer
 			display: flex
 			flex-direction: column
 			margin-left: 100px
-		a
+		.stroke-a
 			margin-top: 20px
 			+serif
 			font-size: 24px

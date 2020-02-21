@@ -8,7 +8,11 @@ export default class FormSubmit extends FormInputs {
     super()
     pseudoPrototype()
 
+    this.koef = 5
+
     this.submit()
+
+    this.phone.oninput = () => this.onInput()
   }
 
   requestLoad() {
@@ -41,56 +45,62 @@ export default class FormSubmit extends FormInputs {
   validation() {
 
     let that = this
-    that.validateText.innerHTML = 'поле не може бути порожнім'
+    that.validateText.querySelector('span').innerHTML = that.koef - that.phone.value.length
     that.validateText.style.opacity = '1'
     that.phone.focus()
     that.thislabel.pseudoStyle('after', 'border-color', '#F44336!important')
+  }
+
+  onInput() {
+    if (this.phone.value.length < 5) {
+      this.validation()
+    } else {
+      this.validateText.style.opacity = '0'
+      this.thislabel.pseudoStyle().classList = 'label'
+    }
   }
 
 
   submit() {
 
     let that = this
-    
+
 
     that.form.onsubmit = (e) => {
-      switch (that.phone.value) {
 
-        case '':
+      console.log(that.phone.value.length)
+      if (that.phone.value.length < 6) {
+        that.validation.bind(that)()
+        e.preventDefault()
 
-          that.validation.bind(that)()
-          e.preventDefault()
+        return false
+      } else {
+        that.validateText.style.opacity = '0'
 
-          return false
+        let request = new XMLHttpRequest()
+        request.open('POST', './mail.php', true)
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
 
-          break
+        let data = serialize(that.form)
 
-        default:
+        request.onload = function() {
+          if (this.status >= 200 && this.status < 400) {
 
-          that.validateText.style.opacity = '0'
-
-          let request = new XMLHttpRequest()
-          request.open('POST', './mail.php', true)
-          request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-
-          let data = serialize(that.form)
-
-          request.onload = function() {
-            if (this.status >= 200 && this.status < 400) {
-              
-              that.requestLoad()
-            }
+            that.requestLoad()
           }
+        }
 
-          request.send(data)
-          return false
+        request.send(data)
+        return false
       }
+
     }
   }
+}
 
 //   onchange() {
 //     this.input.addEventListener('input', function (e) {
-      
+
 //     }, false);
 //     that.form.onsubmit = (e) => {
 //     switch (that.phone.value) {
@@ -107,4 +117,3 @@ export default class FormSubmit extends FormInputs {
 // }
 // }
 
-}
