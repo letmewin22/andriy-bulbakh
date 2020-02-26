@@ -201,7 +201,8 @@ $vertical-distance-mob: 80px
 
 @media (max-width: 480px)
 	h1
-		width: min-content
+		width: fit-content
+		display: grid
 		line-height: 1.3em
 	.header
 		overflow: hidden
@@ -232,6 +233,11 @@ $vertical-distance-mob: 80px
 	.default-item__content-wrapper
 		.default-text
 			margin-top: 30px
+	.loader	
+		svg
+			width: 15vh
+		.loader-text
+			font-size: 3vh
 
 @media(max-width: 330px)
 	.form-validate-text

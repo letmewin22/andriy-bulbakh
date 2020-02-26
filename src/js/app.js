@@ -1,46 +1,80 @@
+import Highway from '@dogstudio/highway'
+
+import { extraTextSplit, h2Split, navLinksDetect } from './defaultFuncs.js'
+
 import Nav from './ui/nav/nav.js'
 import FormSubmit from './form/FormSubmit.js'
-import './scroll.js'
-import './loader.js'
+import ScrollAnimation from './scroll.js'
+import LinkStroke from './ui/linksStroke.js'
+
+import './loaders/loader.js'
+import './loaders/pageLoader.js'
 import './ui/nav/navbarScrolling.js'
-// import LocomotiveScroll from 'locomotive-scroll'
 import './lib/smoothscroll.js'
-import './ui/linksStroke.js'
-import { strokeSize } from './ui/linksStroke.js'
-import Splitting from 'splitting'
-// window.addEventListener('beforeunload', (e) => {
-//   document.body.style.opacity = 0
-//   window.scrollTo(0, 0)
-// })
+
+import CustomRendererMain from './pageRenders/CustomRenderMain'
+import CustomRendererServices from './pageRenders/CustomRenderServices'
+import Transition from './Transition'
+
+
+window.addEventListener('beforeunload', (e) => {
+  window.scrollTo(0, 0)
+})
 
 window.addEventListener('load', (e) => {
 
-  new Nav({
-    burger: document.querySelector('.burger'),
-    nav: document.querySelector('.nav'),
-    navRewealers: [document.querySelector('.nav__rewealer'), document.querySelector('.nav__rewealer-white')],
-    navContacts: document.querySelectorAll('.nav__contacts'),
-    burgerWrapper: document.querySelector('.burger-wrapper'),
-    logo: document.querySelector('.logo svg'),
-    navItems: [...document.querySelectorAll('.nav__item')].reverse()
-  })
+  new Nav()
 
 })
-
-
 
 if (document.querySelector('form')) {
   new FormSubmit()
 }
 
 window.addEventListener('load', (e) => {
-  const strokeSvgWrap = document.querySelectorAll('.stroke-a')
-  strokeSvgWrap.forEach(elem => strokeSize.bind(elem)())
+
+  LinkStroke.strokeSvgEvents()
+
+
+  setTimeout(() => {
+    new ScrollAnimation()
+  }, 500)
+
+  extraTextSplit()
+  h2Split()
+  navLinksDetect()
+
 
 })
 
-const texts = document.querySelectorAll('.extra-text p')
-for(let text of texts) {
-  Splitting({ target: text, by: 'words' })
-}
 
+const H = new Highway.Core({
+  renderers: {
+    main: CustomRendererMain,
+    services: CustomRendererServices
+  },
+  transitions: {
+    default: Transition
+  }
+})
+
+
+H.on('NAVIGATE_IN', ({ to, location }) => {
+  navLinksDetect()
+})
+
+H.on('NAVIGATE_END', ({ from, to, location }) => {
+
+  LinkStroke.strokeSvgEvents()
+
+  setTimeout(() => {
+    new ScrollAnimation()
+  }, 500)
+
+  if (document.querySelector('form')) {
+    new FormSubmit()
+  }
+
+  extraTextSplit()
+  h2Split()
+})

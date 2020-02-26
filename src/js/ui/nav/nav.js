@@ -1,22 +1,22 @@
 import { TimelineMax } from 'gsap'
-import {strokeSize} from '../linksStroke.js'
-
+import LinkStroke from '../linksStroke.js'
 export default class Nav {
 
-  constructor(opts) {
+  constructor() {
 
     this.store = {
-      burger: opts.burger,
-      nav: opts.nav,
-      navRewealers: opts.navRewealers,
-      navContacts: opts.navContacts,
+      burger: document.querySelector('.burger'),
+      nav: document.querySelector('.nav'),
+      navRewealers: [document.querySelector('.nav__rewealer'), document.querySelector('.nav__rewealer-white')],
+      navContacts: document.querySelectorAll('.nav__contacts'),
       body: document.body,
-      burgerWrapper: opts.burgerWrapper,
-      logo: opts.logo,
-      navItems: opts.navItems
+      burgerWrapper: document.querySelector('.burger-wrapper'),
+      logo: document.querySelector('.logo img'),
+      navItems: [...document.querySelectorAll('.nav__item')].reverse()
     }
 
     this.store.burgerWrapper.addEventListener('click', this.events.bind(this))
+    this.store.navItems.forEach(elem => elem.addEventListener('click', this.events.bind(this)))
   }
 
   events() {
@@ -57,12 +57,11 @@ export default class Nav {
   }
 
   openAnim() {
+    
+    LinkStroke.strokeSvgEvents()
     let tl = new TimelineMax({
       onComplete: () => {
         this.store.body.style.pointerEvents = 'auto'
-
-        const strokeSvgWrap = document.querySelectorAll('.stroke-a')
-        strokeSvgWrap.forEach(elem => strokeSize.bind(elem)())
       }
     })
 
@@ -84,7 +83,7 @@ export default class Nav {
     tl2
       .fromTo(this.store.navContacts, 0.7, { opacity: 1 }, { opacity: 0 })
       .fromTo(this.store.navRewealers[0], 1, { y: '0%' }, { y: '-100%', ease: Power1.easeInOut }, 0.3)
-      .fromTo(this.store.navRewealers[1], 1, { opacity: 0.8 }, {opacity: 0, ease: Power1.easeInOut }, 0.5)
+      .fromTo(this.store.navRewealers[1], 1, { opacity: 0.8 }, { opacity: 0, ease: Power1.easeInOut }, 0.5)
       .staggerFromTo(this.store.navItems, 0.5, { x: 0, opacity: 1 }, { x: -80, opacity: 0 }, 0.1, 0)
       .to(this.store.nav, 0.1, { display: 'none' })
   }

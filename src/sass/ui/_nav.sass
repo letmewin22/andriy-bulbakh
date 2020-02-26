@@ -28,6 +28,11 @@
 				opacity: 1
 				span 
 					color: $accent-color
+			&.active
+				opacity: 1
+				pointer-events: none
+				span 
+					color: $accent-color
 			span
 				display: inline-block
 				font-size: 14px
@@ -112,7 +117,7 @@
 .logo
 	position: relative
 	width: 37px
-	svg
+	img
 		display: block
 		&.active
 			opacity: 0

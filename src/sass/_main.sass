@@ -38,11 +38,21 @@ img
 		// height: 689px
 		position: relative
 		bottom: 0
+		overflow: hidden
+		&__rewealer
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 100
+			background: $bg-color
 		img
 			width: 100%
 			height: 100%
 			object-fit: cover
 			position: relative
+			transform: scale(1.25)
 
 	&__text-content
 		margin-bottom: 4vh
@@ -51,6 +61,8 @@ img
 		margin-top: 15px
 		line-height: 1em
 		float: right
+		opacity: 0
+		// transform: translateX(40px)
 		+medium
 	&__container
 		padding-left: 0px
@@ -95,6 +107,8 @@ img
 	width: 48vw
 	height: 65vh
 	z-index: -1
+	transform-origin: 50% 100% 0
+	transform: scaleY(0)
 
 .service-item
 	&__content-wrapper
@@ -106,6 +120,9 @@ img
 			max-width: 50%
 			// img
 			// 	width: 100%
+	h2
+		opacity: 0
+		transform: translateY(50px)
 
 .service-name
 	display: flex
@@ -160,6 +177,8 @@ img
 	p
 		line-height: 1.6em
 		margin-top: 30%
+		opacity: 0
+		transform: translateY(30px)
 	&.right
 		margin-right: 3.6vw
 		h2
@@ -167,6 +186,10 @@ img
 			width: 130%
 			position: relative
 			z-index: 10
+			.word
+				display: inline-block
+				transform: translateY(50px)
+				opacity: 0
 	&.left
 		margin-left: 11.8vw
 		h2
@@ -174,6 +197,10 @@ img
 			width: 120%
 			position: relative
 			z-index: 10
+			.word
+				display: inline-block
+				transform: translateY(50px)
+				opacity: 0
 
 .extra-text
 	p
@@ -201,8 +228,14 @@ img
 		display: block
 		path
 			transition: stroke-dashoffset .5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+			&.stroked
+				stroke-dashoffset: 0px !important
 	a
 		position: relative
 
 .stroke-link
 	cursor: pointer
+	&.active
+		+ svg
+			path
+				stroke-dashoffset: 0px !important

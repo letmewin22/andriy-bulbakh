@@ -1,13 +1,21 @@
 {% include "../partials/_media-tags.html" %}
-  <body class="custom loading">
 
-    <!-- BEGIN content -->
+<body class="custom loading">
+  <div class="loader">
+    {% include "partials/_loader-logo.html" %}
+    <span class="loader-text">Aesthetics of living space</span>
+  </div>
+  {% include "partials/_nav.html" %}
+  <div class="site-wrapper" data-router-wrapper>
+    <div data-router-view="{% if route %}{{ route }}{% else %}Template{% endif %}">
+      <!-- BEGIN content -->
       {% block content %}{% endblock %}
-    <!-- END content -->
+      <!-- END content -->
+    </div>
+  </div>
+  <!-- BEGIN scripts -->
+  <script src="js/app.js"></script>
+  <!-- END scripts -->
+</body>
 
-    <!-- BEGIN scripts -->
-    <script src="js/app.js"></script>
-    <!-- END scripts -->
-
-  </body>
 </html>
