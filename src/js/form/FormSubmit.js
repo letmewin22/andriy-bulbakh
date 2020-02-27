@@ -19,12 +19,12 @@ export default class FormSubmit extends FormInputs {
     let that = this
 
     setTimeout(() => {
-      let tl = new TimelineMax()
-      tl
-        .to(that.thankYouScreen, 0.01, { display: 'flex', ease: Power1.easeInOut })
-        .to(that.thankYouScreenBg2, 1, { opacity: 0.8, ease: Power1.easeInOut })
-        .fromTo(that.thankYouScreenBg, 1.5, { y: '100%' }, { y: '0%', ease: Power1.easeInOut }, 0.2)
-        .to(that.thankYouScreenContent, 1, { opacity: 1, ease: Power1.easeInOut }, 0.8)
+      // let tl = new TimelineMax()
+      // tl
+      //   .to(that.thankYouScreen, 0.01, { display: 'flex', ease: Power1.easeInOut })
+      //   .to(that.thankYouScreenBg2, 1, { opacity: 0.8, ease: Power1.easeInOut })
+      //   .fromTo(that.thankYouScreenBg, 1.5, { y: '100%' }, { y: '0%', ease: Power1.easeInOut }, 0.2)
+      //   .to(that.thankYouScreenContent, 1, { opacity: 1, ease: Power1.easeInOut }, 0.8)
 
       that.form.reset()
       // dataLayer.push({ 'event': 'otpravka_form' })

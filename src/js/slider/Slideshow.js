@@ -1,4 +1,3 @@
-import { TimelineMax } from 'gsap'
 import Slide from './Slide.js'
 import Navigation from './Navigation.js'
 

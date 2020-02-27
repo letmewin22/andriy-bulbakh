@@ -1,4 +1,4 @@
-import { TimelineMax } from 'gsap'
+import { TweenMax } from 'gsap'
 
 // The navigation class. Controls the .boxnav animations (e.g. pagination animation).
 export default class Navigation {

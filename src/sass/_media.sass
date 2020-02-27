@@ -63,6 +63,8 @@ $vertical-distance-mob: 80px
 			padding-top: 140px
 			&.last
 				padding-bottom: 140px
+			&.img-container
+				padding-top: 70px
 	.nav__contacts
 		display: none
 	footer 
@@ -85,10 +87,33 @@ $vertical-distance-mob: 80px
 			margin-top: 50px
 			&.left
 				margin-left: 0px
+				margin-right: 0px
 				h2
 					left: 0
+					width: 100%
+					&.big-width
+						width: 100%
 				p
 					margin-top: 30px
+		&.reverse
+			flex-direction: column
+			.img-wrapper
+				width: 100%
+				max-width: none
+				margin-right: -6vw
+				align-self: flex-end
+			.default-text
+				width: 100%
+				margin-top: 50px
+				padding-top: 0px
+				&.right
+					margin-left: 0px
+					margin-right: 0px
+					h2
+						left: 0
+						width: 100%
+					p
+						margin-top: 30px
 
 @media (max-width: 880px)
 	.header
@@ -102,6 +127,8 @@ $vertical-distance-mob: 80px
 			padding-top: 100px
 			&.last
 				padding-bottom: 100px
+			&.img-container
+				padding-top: 100px
 	.nav__item
 		font-size: 20px
 	#menu-text
@@ -116,6 +143,10 @@ $vertical-distance-mob: 80px
 				width: 100%
 	h1
 		font-size: 48px
+	
+	.services-h1
+		font-size: 36px
+
 	h2
 		font-size: 32px
 
@@ -125,6 +156,14 @@ $vertical-distance-mob: 80px
 	.container
 		padding-left: 20px
 		padding-right: 20px
+	.center-content
+		p
+			margin-top: 42px
+			line-height: 1.7em
+			width: 100%
+			align-self: flex-start
+		h2
+			width: 100%
 	.navbar
 		padding-top: 20px
 	footer 
@@ -147,6 +186,8 @@ $vertical-distance-mob: 80px
 			width: 60vw
 	.default-item__content-wrapper
 		flex-direction: column
+
+
 
 
 @media (max-width: 760px)
@@ -182,6 +223,8 @@ $vertical-distance-mob: 80px
 			padding-top: $vertical-distance-mob
 			&.last
 				padding-bottom: $vertical-distance-mob
+			&.img-container
+				padding-top: $vertical-distance-mob / 2 
 	.default-text
 		&.left
 			h2
@@ -219,6 +262,9 @@ $vertical-distance-mob: 80px
 	.container
 		&.second-line
 			padding-left: 20px
+			padding-right: 20px
+			&.both
+				padding-right: 20px
 	footer 
 		.contacts-cols
 			flex-direction: column

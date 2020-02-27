@@ -8,20 +8,30 @@ $vertical-distance: 30vh
 	&.second-line
 		padding-left: 17vw
 		padding-right: 0px
+		&.both
+			padding-right: 17vw
+			flex-direction: column
+			align-items: flex-start
 	&.margin-top
 		padding-top: $vertical-distance
 	&.center-container
 		display: flex
 		justify-content: center
 		align-items: center
+		img
+			max-width: 100%
+			display: block
 
 .section
 	width: 100%
 	position: relative
+	overflow: hidden
 	.container
 		padding-top: $vertical-distance
 		&.last
 			padding-bottom: $vertical-distance
+		&.img-container
+			padding-top: $vertical-distance / 2
 
 footer
 	width: 100%

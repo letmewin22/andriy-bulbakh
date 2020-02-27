@@ -1,16 +1,15 @@
 import Highway from '@dogstudio/highway'
 import mainLoader from '../loaders/mainLoader.js'
+import pageLoader from '../loaders/pageLoader.js'
 
-window.addEventListener('load', (e) => {
-  setTimeout(() => {
-    mainLoader()
-  }, 4200)
-})
+
 
 class CustomRendererMain extends Highway.Renderer {
-	
   onEnterCompleted() {
 
+    window.addEventListener('load', () => {
+      pageLoader(mainLoader)
+    })
 
     if (document.querySelector('.loader').style.opacity === '0') {
       mainLoader()

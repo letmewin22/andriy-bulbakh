@@ -1,18 +1,8 @@
 import Splitting from 'splitting'
 
-export const extraTextSplit = () => {
-  const texts = document.querySelectorAll('.extra-text p')
-  for (let text of texts) {
-    Splitting({ target: text, by: 'words' })
-  }
-}
-
-
-export const h2Split = () => {
-  const allH2 = document.querySelectorAll('.default-text h2')
-
-  for (let h2 of allH2) {
-    Splitting({ target: h2, by: 'words' })
+export const TextSplit = (elems, by) => {
+  for (let elem of elems) {
+    Splitting({ target: elem, by })
   }
 }
 

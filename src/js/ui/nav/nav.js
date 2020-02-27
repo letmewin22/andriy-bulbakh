@@ -1,4 +1,4 @@
-import { TimelineMax } from 'gsap'
+import { TimelineMax, Power1 } from 'gsap'
 import LinkStroke from '../linksStroke.js'
 export default class Nav {
 
@@ -40,6 +40,7 @@ export default class Nav {
       this.store.logo.classList.toggle('active')
     }, 200)
 
+    LinkStroke.strokeSvgEvents()
     this.openAnim()
   }
 
@@ -57,8 +58,7 @@ export default class Nav {
   }
 
   openAnim() {
-    
-    LinkStroke.strokeSvgEvents()
+ 
     let tl = new TimelineMax({
       onComplete: () => {
         this.store.body.style.pointerEvents = 'auto'
@@ -87,6 +87,7 @@ export default class Nav {
       .staggerFromTo(this.store.navItems, 0.5, { x: 0, opacity: 1 }, { x: -80, opacity: 0 }, 0.1, 0)
       .to(this.store.nav, 0.1, { display: 'none' })
   }
+
 }
 
 

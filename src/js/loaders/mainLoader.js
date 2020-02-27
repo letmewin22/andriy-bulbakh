@@ -1,8 +1,7 @@
 import Splitting from 'splitting'
-import { TimelineMax } from 'gsap'
+import { TimelineMax, Power2, Power1, Expo, Sine} from 'gsap'
 
 const mainLoader = () => {
-
   const shadow = document.querySelector('.header-img-shadow')
   const imgRewealer = document.querySelector('.header__img__rewealer')
   const img = document.querySelector('.header__img img')

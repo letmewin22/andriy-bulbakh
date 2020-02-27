@@ -1,0 +1,63 @@
+<footer>
+  <div class="container">
+    <div class="footer-left">
+      <h2>Contacts</h2>
+      <div class="contacts-cols">
+        <div class="contacts-first-col">
+          <div class="stroke-a">
+            <a class="stroke-link" href="#">Instagram</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+          <div class="stroke-a">
+            <a class="stroke-link" href="#">Twitter</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+          <div class="stroke-a">
+            <a class="stroke-link" href="#">Facebook</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+        </div>
+        <div class="contacts-second-col">
+          <div class="stroke-a">
+            <a class="stroke-link" href="mailto:vulbach2@gmail.com">vulbach2@gmail.com</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+          <div class="stroke-a">
+            <a class="stroke-link" href="tel:+380676294813">+38 (067) 629 4813</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+          <div class="stroke-a">
+            <a class="stroke-link" href="#">Ukraine, Kiev<br>st. Parkovo-Syretskaya, 4V</a>
+            {% include "partials/_stroke.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <h2>Have a question?</h2>
+      <div class="form-wrapper">
+        <form class="form" name="form">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="emotiON site">
+          <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
+          <input type="hidden" name="form_subject" value="Заявка с главной emotiON">
+          <!-- END Hidden Required Fields -->
+          <div class="input-wrapper first">
+            <div class="input-wrapper">
+              <input type="tel" class="text-field" maxlength="256" name="Телефон" id="phone" autocomplete="off">
+              <label for="phone" class="label">
+                <span class="label-content">enter your phone</span>
+              </label>
+            </div>
+          </div>
+          <span data-value="5" class="form-validate-text">phone must be at least <span class="koef-inp"></span> characters. Left: <span class="koef-outp"></span></span>
+          <div class="stroke-a">
+            <input type="submit" value="send" class="form-button stroke-link">
+            {% include "partials/_stroke.html" %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-shadow"></div>
+  </div>
+</footer>

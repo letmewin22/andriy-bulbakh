@@ -1,4 +1,4 @@
-import { TimelineMax } from 'gsap'
+import { TweenMax, Expo } from 'gsap'
   
 // The Slide (Product) class.
 export default class Slide {
