@@ -1,4 +1,3 @@
-import { TweenMax } from 'gsap'
 
 // The navigation class. Controls the .boxnav animations (e.g. pagination animation).
 export default class Navigation {
@@ -15,32 +14,7 @@ export default class Navigation {
     this.DOM.prevCtrl = this.DOM.el.querySelector('.boxnav__item--prev')
     this.DOM.nextCtrl = this.DOM.el.querySelector('.boxnav__item--next')
     // The current and total pages elements.
-    this.DOM.pagination = {
-      current: this.DOM.el.querySelector('.boxnav__label--current'),
-      total: this.DOM.el.querySelector('.boxnav__label--total')
-    }
     this.initEvents()
-  }
-  setCurrent(val, direction) {
-    //this.DOM.pagination.current.innerHTML = val;
-    TweenMax.to(this.DOM.pagination.current, 0.4, {
-      ease: 'Back.easeIn',
-      y: direction === 'right' ? '-100%' : '100%',
-      opacity: 0,
-      onComplete: () => {
-        this.DOM.pagination.current.innerHTML = val
-        TweenMax.to(this.DOM.pagination.current, 0.8, {
-          ease: 'Expo.easeOut',
-          startAt: { y: direction === 'right' ? '50%' : '-50%', opacity: 0 },
-          y: '0%',
-          opacity: 1
-        })
-      }
-    })
-  }
-  // Sets the total pages value.
-  setTotal(val) {
-    this.DOM.pagination.total.innerHTML = val
   }
 
   initEvents() {

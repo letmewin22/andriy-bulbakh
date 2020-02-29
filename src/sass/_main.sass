@@ -73,7 +73,8 @@ img
 		justify-content: flex-end
 		width: auto
 		padding-top: 8vh
-
+	&.services-header
+		justify-content: center
 
 
 
@@ -82,6 +83,7 @@ img
 	// width: 100%
 	height: 100%
 	overflow: hidden
+	pointer-events: none
 	// canvas
 	// 	position: absolute
 	// 	top: 0
@@ -97,9 +99,30 @@ img
 		z-index: 5
 	img
 		transform: scale(1.25)
+	.img-overlay
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background: rgba(black, 0.2)
+		z-index: 5
+		transition: opacity .5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+		opacity: 0
+		pointer-events: none
+		&.hovered
+			opacity: 1
 				
-
-
+a
+	&.img-wrapper
+		&:hover
+			.img-overlay
+				opacity: 1
+			+ .service-name
+				.stroke-a
+					 svg
+						path
+							stroke-dashoffset: 0px !important
 
 
 .header-img-shadow
@@ -142,6 +165,9 @@ img
 		margin-top: -25px
 		margin-right: 10px
 		+serif
+	&:hover
+		~ .service-item__content-wrapper 
+			opacity: 0.3
 
 .img-shadow
 	width: 100%
@@ -241,6 +267,7 @@ img
 		+ svg
 			path
 				stroke-dashoffset: 0px !important
+
 
 
 .page-rewealer

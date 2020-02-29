@@ -73,3 +73,101 @@ footer
 	width: 35%
 	background: $main-color
 	z-index: -1
+
+.slider-section
+	.container
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+	.extra-text
+		margin-top: 11vh
+		text-align: center
+		padding-bottom: 18vh
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		width: 100vw
+		height: 100%
+		padding-bottom: $vertical-distance
+		padding-top: $vertical-distance
+		z-index: -1
+		.bg
+			width: 100%
+			height: 100%
+			background: $main-color
+		&::before
+			content: ''
+			width: 100%
+			height: 17vw
+			background: $bg-color
+			position: absolute
+			left: 0
+
+.services-header-imgs
+	position: absolute
+	z-index: -1
+	width: 100%
+	height: 100%
+	overflow: hidden
+	.header-image
+		height: auto
+		width: auto
+		position: absolute
+		overflow: hidden
+		will-change: transform
+		&.first
+			top: 50% 
+			left: -7% 
+			img
+				width: 15vw
+				height: 15.6vw 
+		&.second
+			top: -40% 
+			left: 17.2vw 
+			img
+				width: 27.7vw 
+				height: 35.3vw 
+		&.third
+			bottom: 0%
+			right: 20.7vw
+			img
+				width: 25.26vw 
+				height: 18.1vw 
+		&.fourth
+			top: 15%
+			right: -5%
+			img
+				width: 10.6vw 
+				height: 15.6vw 
+		img
+			display: block
+			object-fit: cover
+
+
+.services-header__text-content
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	.services-descriptor
+		left: 17.2vw
+		bottom: 10.6vw
+		position: absolute
+		max-width: 487px
+		line-height: 1.7em
+		opacity: 0
+	.moc-text
+		right: 28.6vw
+		top: 7.8vw 
+		position: absolute
+		max-width: 327px
+		line-height: 1.7em
+		font-size: 18px
+		opacity: 0.8
+		display: inline-block 
+		opacity: 0
+
+

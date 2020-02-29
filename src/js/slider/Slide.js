@@ -1,4 +1,4 @@
-import { TweenMax, Expo } from 'gsap'
+import { TweenMax, Power2 } from 'gsap'
   
 // The Slide (Product) class.
 export default class Slide {
@@ -16,8 +16,8 @@ export default class Slide {
 
     this.config = {
       animation: {
-        duration: 1.2,
-        ease: Expo.easeInOut
+        duration: 1.4,
+        ease: Power2.easeInOut
       }
     }
   }
@@ -48,7 +48,7 @@ export default class Slide {
 
       TweenMax.to(this.DOM.img, this.config.animation.duration, {
         ease: this.config.animation.ease,
-        startAt: action === 'hide' ? {} : {x: direction === 'right' ? '-100%' : '100%', scale: 1.1},
+        startAt: action === 'hide' ? {} : {x: direction === 'right' ? '-100%' : '100%', scale: 1.25},
         x: '0%',
         scale: action === 'hide' ? 1.1 : 1,
         onStart: () => {

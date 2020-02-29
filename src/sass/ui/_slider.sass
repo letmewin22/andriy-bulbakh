@@ -4,10 +4,10 @@
 	fill: $dark-color 
 .slideshow 
 	position: relative 
-	width: 1076px 
+	width: 64vw 
 	overflow: hidden 
 	margin: 0 
-	height: 800px 
+	height: 34vw 
 	&::after 
 		content: '' 
 		position: absolute 
@@ -50,26 +50,17 @@
 	pointer-events: none 
 	background-position: 50% 50% 
 .boxnav 
-	position: absolute 
 	display: flex 
-	z-index: 1000 
-	width: 1076px 
-	top: 50%
-	transform: translateY(-50%)
+	width: 64vw 
 	justify-content: space-between
-	padding-left: 40px
-	padding-right: 40px
+	margin-top: 45px
 .boxnav__item 
 	display: flex 
 	align-items: center 
 	justify-content: center 
-	background: white 
 	border: 0
 	left: auto 
 	right: 0 
-	width: 47px 
-	height: 47px
-	border-radius: 50%
 	flex: none
 	// position: absolute
 	+medium
@@ -77,6 +68,8 @@
 		outline: none 
 	svg
 		display: block
+		width: 94px
+		height: 16px
 
 // .boxnav__item--prev
 // 	left: 40px

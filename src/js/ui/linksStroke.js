@@ -33,10 +33,10 @@ export default class LinkStroke {
 
     const strokeSvgWrap = document.querySelectorAll('.stroke-a')
 
-    strokeSvgWrap.forEach(elem => LinkStroke.strokeOut.bind(elem)())
-    strokeSvgWrap.forEach(elem => LinkStroke.strokeSize.bind(elem)())
+    strokeSvgWrap.forEach(elem => this.strokeOut.bind(elem)())
+    strokeSvgWrap.forEach(elem => this.strokeSize.bind(elem)())
     
-    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseenter', LinkStroke.strokeOn))
-    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseleave', LinkStroke.strokeOut))
+    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseenter', this.strokeOn))
+    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseleave', this.strokeOut))
   }
 }

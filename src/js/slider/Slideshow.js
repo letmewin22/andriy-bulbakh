@@ -14,14 +14,11 @@ export default class Slideshow {
     this.DOM.detailsWrap = document.querySelector('.details-wrap')
 
     this.slides = []
-
-    Array.from(this.DOM.el.querySelectorAll('.slide')).forEach((slideEl,pos) => this.slides.push(new Slide(slideEl, {
-
-    })))
+    this.slidesHTML = [...this.DOM.el.querySelectorAll('.slide')]
+    this.slidesHTML.forEach((slideEl,pos) => this.slides.push(new Slide(slideEl, {})))
 
     this.slidesTotal = this.slides.length
 
-    this.navigation.setTotal(this.slidesTotal)
 
     if ( this.slidesTotal < 2 ) {
       return false
@@ -45,7 +42,6 @@ export default class Slideshow {
       this.current > 0 ? this.current-1 : this.slidesTotal-1
 
 
-    this.navigation.setCurrent(nextSlidePos+1, direction)
                 
     Promise.all([this.slides[this.current].hide(direction), this.slides[nextSlidePos].show(direction)])
       .then(() => {

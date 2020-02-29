@@ -1,7 +1,7 @@
 import { TimelineMax, Power1 } from 'gsap'
 import Highway from '@dogstudio/highway'
 
-export default class Fade extends Highway.Transition {
+export default class Transition extends Highway.Transition {
   // Built-in methods
   out({ done }) {
     let tl = new TimelineMax({ onComplete: done })
@@ -18,7 +18,7 @@ export default class Fade extends Highway.Transition {
     from.remove()
     window.scrollTo(0, 0)
     let tl = new TimelineMax()
-    setTimeout(done, 400)
+    setTimeout(done, 800)
     tl
       .fromTo(document.querySelector('.page-rewealer--slide'), 
         1.5, { x: '0%' }, { x: '100%', ease: Power1.easeInOut }, 0)
