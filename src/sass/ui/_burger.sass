@@ -3,13 +3,16 @@
 	cursor: pointer
 	padding-top: 2px
 	padding-bottom: 2px
+	transition: transform .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+	// transform-origin: center
 	.burger-line
 		display: block
 		width: 45px
 		height: 2px
 		background: $dark-color
-		transition: transform .3s ease-in-out
+		transition: transform .5s cubic-bezier(0.445, 0.05, 0.55, 0.95), margin .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
 		overflow: hidden
+		transform-origin: center
 	.line-bottom
 		margin-top: 11px
 		&::after
@@ -32,10 +35,12 @@
 			background: $accent-color
 
 	&.clicked
+		transform: rotate(180deg)
 		.line-top
-			transform: rotate(-45deg) translateY(8px)
+			transform: rotate(-45deg)
 		.line-bottom
-			transform: rotate(45deg) translateY(-10px)
+			transform: rotate(45deg)
+			margin-top: -2px
 
 	&:hover
 		.line-top::after, .line-bottom::after 

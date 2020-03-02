@@ -33,14 +33,20 @@ gulp.task('copy:audio', function () {
 
 gulp.task('copy:rootfiles', function () {
     return gulp
-        .src(config.src.root + '/*.*')
+        .src(config.src.root + '/*.php')
         .pipe(gulp.dest(config.dest.root));
 });
+
+// gulp.task('copy:mail', function () {
+//     return gulp
+//         .src(config.src.mail + '/*.php')
+//         .pipe(gulp.dest(config.dest.mail));
+// });
 
 gulp.task('copy:img', function () {
     return gulp
         .src([
-            config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,webp}',
+            config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,webp,ico}',
             '!' + config.src.img + '/svgo/**/*.*'
         ])
         .pipe(gulp.dest(config.dest.img));
@@ -50,7 +56,7 @@ gulp.task('copy', [
     'copy:img',
     'copy:video',
     'copy:audio',
-    // 'copy:rootfiles',
+    'copy:rootfiles',
     // 'copy:lib',
     // 'copy:data',
     'copy:fonts'

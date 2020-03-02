@@ -12,10 +12,13 @@ import imgsOptimizer from './mobileImgs.js'
 import './loaders/loader.js'
 import './ui/nav/navbarScrolling.js'
 import './lib/smoothscroll.js'
+import './lib/ie-detect.js'
 import './mobileImgs.js'
+import './ui/scrollProgress.js'
 
 import CustomRendererMain from './pageRenders/CustomRenderMain'
 import CustomRendererServices from './pageRenders/CustomRenderServices'
+import CustomRendererAbout from './pageRenders/CustomRenderAbout'
 import Transition from './Transition'
 import SimpleTransition from './SimpleTransition'
 
@@ -46,7 +49,8 @@ window.addEventListener('load', () => {
 const H = new Highway.Core({
   renderers: {
     main: CustomRendererMain,
-    services: CustomRendererServices
+    services: CustomRendererServices,
+    about: CustomRendererAbout
   },
   transitions: {
     default: Transition,
@@ -75,3 +79,5 @@ H.on('NAVIGATE_END', () => {
   TextSplit(document.querySelectorAll('.def-h2'), 'words')
 
 })
+
+

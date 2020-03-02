@@ -7,7 +7,6 @@ const servicesLoader = (calback) => {
   const descriptor = document.querySelector('.services-descriptor')
   const moc = document.querySelector('.moc-text')
   const h1 = document.querySelector('h1')
-
   // document.querySelector('.header-image.second').style.left = h1.getBoundingClientRect().x + 'px'
   // descriptor.style.left = h1.getBoundingClientRect().x + 'px'
 

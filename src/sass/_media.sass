@@ -122,6 +122,8 @@ $vertical-distance-mob: 80px
 						width: 100%
 					p
 						margin-top: 30px
+	.scroll-progress
+		display: none 
 
 @media (max-width: 880px)
 	.header
@@ -155,6 +157,7 @@ $vertical-distance-mob: 80px
 	.services-h1
 		font-size: 36px
 
+
 	h2
 		font-size: 32px
 	.boxnav
@@ -184,7 +187,7 @@ $vertical-distance-mob: 80px
 			.footer-shadow
 				left: 0
 				right: auto
-				height: 70vh
+				height: 60vh
 				width: 100%
 	.extra-text
 		p
@@ -192,6 +195,8 @@ $vertical-distance-mob: 80px
 			width: 60vw
 	.default-item__content-wrapper
 		flex-direction: column
+	.copyright
+		display: none
 
 
 
@@ -236,15 +241,12 @@ $vertical-distance-mob: 80px
 			h2
 				width: 100%
 	.burger
+		padding-top: 10px
+		padding-bottom: 10px
 		.burger-line
-			width: 21px
+			width: 26px
 		.line-bottom
 			margin-top: 6px
-		&.clicked
-			.line-top
-				transform: rotate(-45deg) translateY(6px)
-			.line-bottom
-				transform: rotate(45deg) translateY(-6px)
 	.logo
 		width: 26px
 	.slider-section
@@ -285,6 +287,24 @@ $vertical-distance-mob: 80px
 				
 			&.fourth
 				display: none
+	.header
+		&__container.about-container
+			justify-content: center
+		&__about-img
+			width: 100%
+			margin-top: 48px
+			right: -40px
+			height: 38vh
+			bottom: 10vh
+	.header-img-shadow
+		&.about-shadow
+			height: 55vh
+			width: 80vw
+			bottom: 0
+			right: auto
+			left: 0
+	.about-container .header__text-content
+		margin-bottom: 47vh
 
 
 @media (max-width: 480px)
@@ -292,6 +312,10 @@ $vertical-distance-mob: 80px
 		width: fit-content
 		display: grid
 		line-height: 1.3em
+		&.about-h1
+			font-size: 68px
+	.header .descriptor.about-descriptor
+		margin-top: 10px
 	.header
 		overflow: hidden
 		&__img
@@ -317,9 +341,9 @@ $vertical-distance-mob: 80px
 				margin-left: 0px
 				margin-top: 20px 
 		.container
-			padding-bottom: 80px
+			padding-bottom: 120px
 			.footer-shadow
-					height: 280px
+					height: 310px
 	
 	.default-item__content-wrapper
 		.default-text
@@ -349,4 +373,4 @@ $vertical-distance-mob: 80px
 	footer 
 		.container 
 			.footer-shadow
-				height: 300px
+				height: 340px

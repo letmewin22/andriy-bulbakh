@@ -7,7 +7,6 @@ const mainLoader = () => {
   const img = document.querySelector('.header__img img')
   const descriptor = document.querySelector('.descriptor')
   const h1 = document.querySelector('h1')
-
   Splitting({ target: h1, by: 'chars' })
 
   let tl = new TimelineMax()
