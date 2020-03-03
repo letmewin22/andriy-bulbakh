@@ -3,7 +3,9 @@
 <body class="custom loading">
   <div class="loader">
     {% include "partials/_loader-logo.html" %}
-    <span class="loader-text">Aesthetics of living space</span>
+    <span class="loader-text">
+    {% if lang %}Естетика життєвого простору{% else %}Aesthetics of living space{% endif %}
+  </span>
   </div>
   <div class="page-rewealer">
     <div class="page-rewealer--bg"></div>
@@ -19,7 +21,7 @@
     </div>
   </div>
   <!-- BEGIN scripts -->
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script>
   <!-- END scripts -->
 </body>
 

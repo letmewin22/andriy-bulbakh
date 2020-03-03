@@ -1,0 +1,107 @@
+{% extends "./_layout.html" %}
+{% block content %}
+<header class="header">
+  <div class="container header__container">
+    <div class="header__text-content">
+      <h1>{{ h1 }}</h1>
+      <p class="descriptor">{{ descriptor }}</p>
+    </div>
+    <div class="header__img">
+      <div class="header__img__wrapper img-wrapper">
+        <div class="header__img__rewealer"></div>
+        <img data-mob="../img/mob/header-img" data-pc="../img/header-img" src="/" alt="house">
+      </div>
+    </div>
+    <div class="header-img-shadow"></div>
+  </div>
+</header>
+<main>
+  <div class="extra-text center">
+    <div class="container margin-top center-container">
+      <p>{{ secondScreenText }}</p>
+    </div>
+  </div>
+  <section class="section service">
+    <div class="service-item mob-left">
+      <div class="container">
+        <div class="service-item__content-wrapper">
+          <a href="./architecture.html" class="img-wrapper">
+            <div class="img-rewealer left"></div>
+            <div class="img-overlay"></div>
+            <img data-mob="../img/mob/services-main/1" data-pc="../img/services-main/1" src="/" alt="services-1">
+          </a>
+          <div class="service-name left">
+            <span class="service-name__num">01</span>
+            <div class="stroke-a">
+              <h2 class="stroke-link" data-size="30"><span><a href="./architecture.html">{{ firstServiceName }}</a></span></h2>
+              {% include "partials/_stroke.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section service">
+    <div class="service-item mob-right">
+      <div class="container">
+        <div class="service-item__content-wrapper reverse">
+          <a href="./interior.html" class="img-wrapper">
+            <div class="img-rewealer right"></div>
+            <div class="img-overlay"></div>
+            <img data-mob="../img/mob/services-main/2" data-pc="../img/services-main/2" src="/" alt="services-2">
+          </a>
+          <div class="service-name right">
+            <span class="service-name__num">02</span>
+            <div class="stroke-a">
+              <h2 class="stroke-link" data-size="30"><span><a href="./interior.html">{{ secondServiceName }}</a></span></h2>
+              {% include "partials/_stroke.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section service">
+    <div class="service-item mob-left">
+      <div class="container">
+        <div class="service-item__content-wrapper">
+          <a href="./handmade.html" class="img-wrapper">
+            <div class="img-rewealer left"></div>
+            <div class="img-overlay"></div>
+            <img data-mob="../img/mob/services-main/3" data-pc="../img/services-main/3" src="/" alt="services-3">
+          </a>
+          <div class="service-name left">
+            <span class="service-name__num">03</span>
+            <div class="stroke-a">
+              <h2 class="stroke-link" data-size="30"><span><a href="./handmade.html">{{ thirdServiceName }}</a></span></h2>
+              {% include "partials/_stroke.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="extra-text">
+    <div class="container second-line margin-top">
+      <p>{{ afterServicesScreenText|safe }}</p>
+    </div>
+  </div>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container last">
+        <div class="default-item__content-wrapper">
+          <div class="img-wrapper">
+            <div class="img-rewealer left"></div>
+            <img data-mob="../img/mob/handmade" data-pc="../img/handmade" src="/" alt="handmade">
+          </div>
+          <div class="default-text left">
+            <h2 class="def-h2">{{ lastScreenH2 }}</h2>
+            <p>{{ lastScreenText }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% include "partials/_footer.html" %}
+{% endblock %}

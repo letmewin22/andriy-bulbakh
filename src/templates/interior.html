@@ -2,123 +2,28 @@
 title: "Interior Design in Kiev by Andriy Bulbach: All Real Estate Types."
 description: "Creating interior design for commercial and residential real estate in Kiev. Design project, planning, selection of materials, furniture and accessories."
 route: services
+
+h1: "Interior"
+descriptor: "The interior is an extension of the exterior that provides aesthetics, comfort and functionality."
+mocText: "We believe that the design of the house is a reflection of its owners. It tells who their owners are and what they are unique about."
+
+secondScreenH2: "Interior design in Kiev"
+secondScreenText: "We create interior design for private and commercial real estate. <br><br>We develop design projects, help to choose materials, furniture and bring it to life."
+
+thirdScreenText: "When we create an interior, we take into account the wishes of the customers, their preferences, looks, style and lifestyle."
+
+fourthScreenH2: "We approach the client as a psychologist"
+fourthScreenText: "We see and feel what design the client needs. We believe that the interior should be comfortable, cozy, functional and reflect the lifestyle."
+
+fivethScreenH2: "Let's realize the dream of a perfect interior"
+fivethScreenText: "We make design sketches that we bring to life using invoices of real materials. It means that reality will be no different from the project."
+
+sixthScreenH2: "Take a look at our projects"
+sixthScreenText: "We created these based on inspiration from meeting with our customers. We’re inspired by people and their lifestyles that can be reflected in design."
+
+sliderText: "When you wiil drink coffee in your house, you will understand that you made the right choice."
+
+
 ---
-{% extends "layouts/_layout.html" %}
-{% block content %}
-<header class="header services-header">
-  <div class="container">
-    <div class="services-header__text-content">
-      <span class="moc-text">We believe that the design of the house is a reflection of its owners. It tells who their owners are and what they are unique about.</span>
-      <h1 class="services-h1">Interior</h1>
-      <p class="services-descriptor">The interior is an extension of the exterior that provides aesthetics, comfort and functionality.</p>
-    </div>
-  </div>
-  <div class="services-header-imgs">
-    <div class="header-image first">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-1.jpg" alt="header-1">
-    </div>
-    </div>
-    <div class="header-image second">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-2.jpg" alt="header-2">
-    </div>
-  </div>
-  <div class="header-image third">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-3.jpg" alt="header-3">
-    </div>
-  </div>
-  <div class="header-image fourth">
-    <div class="img-wrapper fourth">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-4.jpg" alt="header-4">
-    </div>
-  </div>
-  </div>
-</header>
-<main>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper">
-          <div class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <img data-mob="img/mob/architecture/def-1" data-pc="img/architecture/def-1" src="/" alt="architecture-1">
-          </div>
-          <div class="default-text left">
-            <h2 class="def-h2">Interior design in Kiev</h2>
-            <p>We create interior design for private and commercial real estate. <br><br>We develop design projects, help to choose materials, furniture and bring it to life. </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="extra-text">
-    <div class="container second-line margin-top">
-      <p>When we create an interior, we take into account the wishes of the customers, their preferences, looks, style and lifestyle.</p>
-    </div>
-  </div>
-  <div class="section">
-    <div class="container center-container img-container">
-      <div class="img-wrapper">
-        <div class="img-rewealer left"></div>
-        <img data-mob="img/mob/architecture/def-2" data-pc="img/architecture/def-2" src="/" alt="architecture-2">
-      </div>
-    </div>
-  </div>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper reverse">
-          <div class="img-wrapper">
-            <div class="img-rewealer right"></div>
-            <img data-mob="img/mob/architecture/def-3" data-pc="img/architecture/def-3" src="/" alt="architecture-3">
-          </div>
-          <div class="default-text right">
-            <h2 class="def-h2">We approach the client as a psychologist</h2>
-            <p>We see and feel what design the client needs. We believe that the interior should be comfortable, cozy, functional and reflect the lifestyle.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper">
-          <div class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <img data-mob="img/mob/architecture/def-4" data-pc="img/architecture/def-4" src="/" alt="architecture-4">
-          </div>
-          <div class="default-text left">
-            <h2 class="def-h2 big-width">Let's realize the dream of a perfect interior</h2>
-            <p>We make design sketches that we bring to life using invoices of real materials. It means that reality will be no different from the project.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section center-content">
-    <div class="container center-container second-line both">
-      <h2 class="def-h2">Take a look at our projects</h2>
-      <p>We created these based on inspiration from meeting with our customers. We’re inspired by people and their lifestyles that can be reflected in design.</p>
-    </div>
-  </section>
-  <section class="section slider-section">
-    <div class="container last">
-      {% include "./partials/_slider.html" %}
-      <div class="extra-text">
-        <p>When you wiil drink coffee in your house, you will understand that you made the right choice.</p>
-      </div>
-      <div class="slider-section__bg">
-        <div class="bg"></div>
-      </div>
-    </div>
-  </section>
-</main>
-{% include "./partials/_footer.html" %}
-{% endblock %}
+
+{% include "layouts/_interior.html" %}

@@ -4,9 +4,10 @@ export default class LinkStroke {
 
     const strokeSvg = this.querySelector('svg')
     const strokeLink = this.querySelector('.stroke-link')
+    const strokeSize = +strokeLink.getAttribute('data-size')
 
     strokeLink.getBoundingClientRect().width
-    strokeSvg.setAttribute('width', `${strokeLink.getBoundingClientRect().width +30}px`)
+    strokeSvg.setAttribute('width', `${strokeLink.getBoundingClientRect().width + strokeSize}px`)
     strokeSvg.setAttribute('height', `${strokeLink.getBoundingClientRect().height}px`)
   }
 

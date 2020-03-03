@@ -2,123 +2,28 @@
 title: "Architectural projects in Kiev: visualization and engineering project."
 description: "Architectural design of residential and commercial real estate in Kiev by Andrey Bulbach. 3D rendering and construction. Typical and individual projects."
 route: services
+
+h1: "Architecture"
+descriptor: "We study and take into account the experience of architects of past generations and draw on modern design methods"
+mocText: "Like in music, the beauty of architecture is the rhythm, proportions, correlation of shapes, colors and materials."
+
+secondScreenH2: "Architectural design in Kiev"
+secondScreenText: "We design private homes and commercial properties. <br><br>We create architectural, structural and engineering projects. We develop project documentation and help to choose materials."
+
+thirdScreenText: "We work with typical and individual projects. Already at the stage of architectural planning you will see how your house or building will look at real life."
+
+fourthScreenH2: "Architecture complements life and makes it better"
+fourthScreenText: "We carry out projects taking into account the rose of winds, sides of the world, proportions and other important details in composition and architecture."
+
+fivethScreenH2: "Our design experience for over 20 years"
+fivethScreenText: "Taking into account the wishes of the customer, we study the environment, objects, tastes and lifestyle of future residents."
+
+sixthScreenH2: "Our projects are a symbiosis of art and architecture"
+sixthScreenText: "We take on projects, making sure that they are exclusive and successful. Why? Because we also want to get a great result!"
+
+sliderText: "When you will drink coffee on the terrace of your house, you will understand that you made the right choice."
+
+
 ---
-{% extends "layouts/_layout.html" %}
-{% block content %}
-<header class="header services-header">
-  <div class="container">
-    <div class="services-header__text-content">
-      <span class="moc-text">Like in music, the beauty of architecture is the rhythm, proportions, correlation of shapes, colors and materials.</span>
-      <h1 class="services-h1">Architecture</h1>
-      <p class="services-descriptor">We study and take into account the experience of architects of past generations and draw on modern design methods.</p>
-    </div>
-  </div>
-  <div class="services-header-imgs">
-    <div class="header-image first">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-1.jpg" alt="header-1">
-    </div>
-    </div>
-    <div class="header-image second">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-2.jpg" alt="header-2">
-    </div>
-  </div>
-  <div class="header-image third">
-    <div class="img-wrapper">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-3.jpg" alt="header-3">
-    </div>
-  </div>
-  <div class="header-image fourth">
-    <div class="img-wrapper fourth">
-      <div class="img-rewealer top"></div>
-      <img src="img/architecture/header-4.jpg" alt="header-4">
-    </div>
-  </div>
-  </div>
-</header>
-<main>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper">
-          <div class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <img data-mob="img/mob/architecture/def-1" data-pc="img/architecture/def-1" src="/" alt="architecture-1">
-          </div>
-          <div class="default-text left">
-            <h2 class="def-h2">Architectural design in&nbsp;Kiev</h2>
-            <p>We design private homes and commercial properties. <br><br>We create architectural, structural and engineering projects. We develop project documentation and help to choose materials.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="extra-text">
-    <div class="container second-line margin-top">
-      <p>We work with typical and individual projects. Already at the stage of architectural planning you will see how your house or building will look at real life.</p>
-    </div>
-  </div>
-  <div class="section">
-    <div class="container center-container img-container">
-      <div class="img-wrapper">
-        <div class="img-rewealer left"></div>
-        <img data-mob="img/mob/architecture/def-2" data-pc="img/architecture/def-2" src="/" alt="architecture-2">
-      </div>
-    </div>
-  </div>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper reverse">
-          <div class="img-wrapper">
-            <div class="img-rewealer right"></div>
-            <img data-mob="img/mob/architecture/def-3" data-pc="img/architecture/def-3" src="/" alt="architecture-3">
-          </div>
-          <div class="default-text right">
-            <h2 class="def-h2">Architecture complements life and makes it better</h2>
-            <p>We carry out projects taking into account the rose of winds, sides of the world, proportions and other important details in composition and architecture.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section default">
-    <div class="default-item">
-      <div class="container">
-        <div class="default-item__content-wrapper">
-          <div class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <img data-mob="img/mob/architecture/def-4" data-pc="img/architecture/def-4" src="/" alt="architecture-4">
-          </div>
-          <div class="default-text left">
-            <h2 class="def-h2 big-width">Our design experience for over 20 years</h2>
-            <p>Taking into account the wishes of the customer, we study the environment, objects, tastes and lifestyle of future residents.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section center-content">
-    <div class="container center-container second-line both">
-      <h2 class="def-h2">Our projects are a symbiosis of art and architecture</h2>
-      <p>We take on projects, making sure that they are exclusive and successful. Why? Because we also want to get a great result!</p>
-    </div>
-  </section>
-  <section class="section slider-section">
-    <div class="container last">
-      {% include "./partials/_slider.html" %}
-      <div class="extra-text">
-        <p>When you will drink coffee on the terrace of your house, you will understand that you made the right choice.</p>
-      </div>
-      <div class="slider-section__bg">
-        <div class="bg"></div>
-      </div>
-    </div>
-  </section>
-</main>
-{% include "./partials/_footer.html" %}
-{% endblock %}
+
+{% include "layouts/_architecture.html" %}

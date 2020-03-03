@@ -1,12 +1,18 @@
 <div class="navbar">
   <div class="navbar__container container">
     <a href="./" class="logo">
-      <img src="img/logo.svg" alt="logo">
+      <img src="../img/logo.svg" alt="logo">
     </a>
-    <div class="burger-wrapper">
-      <div class="burger">
-        <span class="burger-line line-top"></span>
-        <span class="burger-line line-bottom"></span>
+    <div class="navbar-right">
+      <div class="stroke-a">
+        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="uk" href="/">UA</a>
+        {% include "partials/_stroke.html" %}
+      </div>
+      <div class="burger-wrapper">
+        <div class="burger">
+          <span class="burger-line line-top"></span>
+          <span class="burger-line line-bottom"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -15,12 +21,47 @@
   <div class="nav__container container">
     <div class="nav__wrapper">
       <ul class="nav__items">
-        <li class="nav__item stroke-a"><a class="stroke-link" href="./" data-transition="simple"><span>01</span>Home</a>{% include "partials/_stroke.html" %}</li>
-        <li class="nav__item stroke-a"><a class="stroke-link" href="architecture.html" data-transition="simple"><span>02</span>Architecture</a>{% include "partials/_stroke.html" %}</li>
-        <li class="nav__item stroke-a"><a class="stroke-link" href="interior.html" data-transition="simple"><span>03</span>Interior</a>{% include "partials/_stroke.html" %}</li>
-        <li class="nav__item stroke-a"><a class="stroke-link" href="handmade.html" data-transition="simple"><span>04</span>Handmade</a>{% include "partials/_stroke.html" %}</li>
-        <li class="nav__item stroke-a"><a class="stroke-link" href="about.html" data-transition="simple"><span>05</span>About</a>{% include "partials/_stroke.html" %}</li>
-        <li class="nav__item stroke-a"><a class="stroke-link" href="contacts.html" data-transition="simple"><span>06</span>Contacts</a>{% include "partials/_stroke.html" %}</li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="./" data-transition="simple">
+            <span>01</span>
+            {% if lang %}Головна{% else %}Home{% endif %}
+          </a>
+          {% include "partials/_stroke.html" %}
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="architecture.html" data-transition="simple">
+            <span>02</span>
+            {% if lang %}Архітектура{% else %}Architecture{% endif %}
+          </a>
+          {% include "partials/_stroke.html" %}
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="interior.html" data-transition="simple">
+            <span>03</span>
+            {% if lang %}Інтер'єр{% else %}Interior{% endif %}
+          </a>
+          {% include "partials/_stroke.html" %}
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="handmade.html" data-transition="simple">
+            <span>04</span>
+            {% if lang %}Декор{% else %}Handmade{% endif %}
+          </a>{% include "partials/_stroke.html" %}
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="about.html" data-transition="simple">
+            <span>05</span>
+            {% if lang %}Про нас{% else %}About{% endif %}
+          </a>
+          {% include "partials/_stroke.html" %}
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="contacts.html" data-transition="simple">
+            <span>06</span>
+            {% if lang %}Контакти{% else %}Contacts{% endif %}
+          </a>
+          {% include "partials/_stroke.html" %}
+        </li>
       </ul>
       <div class="nav__contacts">
         {% include "partials/_logo.html" %}
