@@ -1,3 +1,5 @@
+import { TimelineMax, Power1} from 'gsap'
+
 import FormInputs from './FormInputs.js'
 import serialize from '../lib/formSend.js'
 import pseudoPrototype from '../lib/pseudo.prototype.js'
@@ -7,6 +9,10 @@ export default class FormSubmit extends FormInputs {
   constructor() {
     super()
     pseudoPrototype()
+
+    this.thankYouWindow = document.querySelector('.thank-you-window')
+    this.thankYouWindowText = this.thankYouWindow.querySelector('span')
+    this.height = this.form.getBoundingClientRect().height
     
     this.form.onsubmit = (e) => this.submit(e)
 
@@ -23,12 +29,13 @@ export default class FormSubmit extends FormInputs {
   }
 
   requestLoad() {
-    // let tl = new TimelineMax()
-    // tl
-    //   .to(that.thankYouScreen, 0.01, { display: 'flex', ease: Power1.easeInOut })
-    //   .to(that.thankYouScreenBg2, 1, { opacity: 0.8, ease: Power1.easeInOut })
-    //   .fromTo(that.thankYouScreenBg, 1.5, { y: '100%' }, { y: '0%', ease: Power1.easeInOut }, 0.2)
-    //   .to(that.thankYouScreenContent, 1, { opacity: 1, ease: Power1.easeInOut }, 0.8)
+    let tl = new TimelineMax()
+    tl
+      .to(this.thankYouWindow, 1, { opacity: 1, height: this.height, ease: Power1.easeInOut })
+      .to(this.thankYouWindowText, 1, { opacity: 1, y: 0, ease: Power1.easeInOut }, 0.5)
+      .to(this.thankYouWindowText, 1, { opacity: 0, y: 10, ease: Power1.easeInOut }, 4)
+      .to(this.thankYouWindow, 1, { opacity: 0, height: 0, ease: Power1.easeInOut }, 4.5)
+      
 
     this.form.reset()
     document.body.classList.remove('form-focused')

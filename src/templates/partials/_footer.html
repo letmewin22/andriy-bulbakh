@@ -59,6 +59,11 @@
             <input type="submit" value="{% if lang %}надіслати{% else %}send{% endif %}" class="form-button stroke-link" data-size="10">
             {% include "partials/_stroke.html" %}
           </div>
+          <div class="thank-you-window">
+            <span>
+            {% if lang %}Дякуємо, ваша заявка була успішно відправлена{% else %}Thank you, your message has been sent successfully.{% endif %}
+          </span>
+          </div>
         </form>
       </div>
       {% include "partials/_e.html" %}

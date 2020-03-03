@@ -27,15 +27,15 @@ export const langCurrentPage = () => {
 
   switch (document.documentElement.lang) {
     case 'uk':
-      newHref = location.pathname.slice(4)
+      newHref = document.querySelector('nav a.active').getAttribute('href')
       langBtn.setAttribute('href', `../${newHref}`)
       langBtn.setAttribute('hreflang', 'en')
       langBtn.innerText = 'EN'
       break
 
     case 'en':
-      newHref = location.pathname
-      langBtn.setAttribute('href', `../ua${newHref}`)
+      newHref = document.querySelector('nav a.active').getAttribute('href')
+      langBtn.setAttribute('href', `./ua/${newHref}`)
       langBtn.setAttribute('hreflang', 'uk')
       langBtn.innerText = 'UA'
       break

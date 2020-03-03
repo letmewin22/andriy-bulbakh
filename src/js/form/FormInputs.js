@@ -9,13 +9,6 @@ export default class FormInputs {
     this.formButton = document.querySelector('.form .button')
     this.label = document.querySelector('label')
 
-    this.thankyouButton = document.querySelector('.thank-you-screen .button')
-    this.thankYouScreen = document.querySelector('.thank-you-screen')
-    this.thankYouScreenBg = document.querySelector('.thank-you-bg')
-    this.thankYouScreenBg2 = document.querySelector('.thank-you-bg-white')
-    this.thankYouScreenContent = document.querySelector('.thank-you-content')
-
-
     this.koef = +this.validateText.getAttribute('data-value')
 
     this.focus()

@@ -5,7 +5,6 @@ const contactsLoader = () => {
   const h1 = document.querySelector('h1')
   const footer = document.querySelector('footer')
   Splitting({ target: h1, by: 'chars' })
-  console.log(h1)
   let tl = new TimelineMax()
   tl
     .to(h1, 0.01, {opacity: 1}, 0.2)
