@@ -37,7 +37,7 @@
     <div class="footer-right">
       <h2>{% if lang %}Є питання?{% else %}Have a question?{% endif %}</h2>
       <div class="form-wrapper">
-        <form class="form" name="form">
+        <form data-url="{% if lang %}.{% endif %}./mail.php" class="form" name="form">
           <!-- Hidden Required Fields -->
           <input type="hidden" name="project_name" value="Andriy Bulbakh site">
           <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
@@ -52,7 +52,7 @@
             </div>
           </div>
           <span data-value="5" class="form-validate-text">
-            {% if lang %}телефон повинен бути не коротший{% else %}phone must be at least{% endif %} 
+            {% if lang %}мінімум{% else %}phone must be at least{% endif %} 
             <span class="koef-inp"></span>
             {% if lang %}символів. Залишилось:{% else %}characters. Left:{% endif %} <span class="koef-outp"></span></span>
           <div class="stroke-a">

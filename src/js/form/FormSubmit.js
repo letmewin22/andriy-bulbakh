@@ -49,7 +49,7 @@ export default class FormSubmit extends FormInputs {
 
   async requestSend() {
 
-    const URL = './mail.php'
+    const URL = this.form.getAttribute('data-url')
 
     try {
 
