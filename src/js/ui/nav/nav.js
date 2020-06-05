@@ -1,5 +1,4 @@
 import { TimelineMax, Power1 } from 'gsap'
-import LinkStroke from '../linksStroke.js'
 export default class Nav {
 
   constructor() {
@@ -40,7 +39,6 @@ export default class Nav {
       this.store.logo.classList.toggle('active')
     }, 200)
 
-    LinkStroke.strokeSvgEvents()
     this.openAnim()
   }
 

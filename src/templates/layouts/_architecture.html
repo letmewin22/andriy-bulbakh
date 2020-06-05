@@ -1,4 +1,4 @@
-
+{% import "data/data.html" as items %}
 {% extends "layouts/_layout.html" %}
 {% block content %}
 <header class="header services-header">
@@ -106,7 +106,7 @@
   </section>
   <section class="section slider-section">
     <div class="container last">
-      {% include "partials/_slider.html" %}
+      {{mixins.slider(items.architecture)}}
       <div class="extra-text">
         <p>{{ sliderText }}</p>
       </div>

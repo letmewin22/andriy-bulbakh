@@ -5,7 +5,6 @@ import { TextSplit, navLinksDetect, langCurrentPage } from './helperFuncs.js'
 import Nav from './ui/nav/nav.js'
 import FormSubmit from './form/FormSubmit.js'
 import ScrollAnimation from './scroll.js'
-import LinkStroke from './ui/linksStroke.js'
 import imgsOptimizer from './mobileImgs.js'
 
 
@@ -36,7 +35,6 @@ window.addEventListener('load', () => {
   }
 
   new Nav()
-  LinkStroke.strokeSvgEvents()
 
   setTimeout(() => new ScrollAnimation(), 500)
 
@@ -72,7 +70,6 @@ H.on('NAVIGATE_IN', () => {
 
 H.on('NAVIGATE_END', () => {
   imgsOptimizer()
-  LinkStroke.strokeSvgEvents()
 
   setTimeout(() => new ScrollAnimation(), 500)
 

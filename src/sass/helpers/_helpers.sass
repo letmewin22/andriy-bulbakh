@@ -4,11 +4,14 @@
 @function img-url($image)
   @return url('../img/#{$image}')
 
+@function size($pcSize, $mobSize)
+  $addSize: $pcSize - $mobSize
+  $maxWidth: $maxWidth - $minWidth
+  $total = calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}))
+  @return $total
+
 =image($image)
   background-image: img-url($image)
-
-=trans($what: all, $dur: 0.2s, $easing: ease)
-  transition: $what $dur $easing
 
 =smooth-scroll
   -webkit-overflow-scrolling: touch
@@ -19,15 +22,3 @@
 
 =gpu
   transform: translate3d(0,0,0)
-
-=md
-  +r(1023)
-    @content
-
-=sm
-  +r(767)
-    @content
-
-=xs
-  +r(599)
-    @content

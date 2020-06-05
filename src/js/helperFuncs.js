@@ -23,19 +23,20 @@ export const navLinksDetect = () => {
 export const langCurrentPage = () => {
 
   const langBtn = document.querySelector('.lang')
+  const reg = /\/ua/gi
   let newHref
-
+  
   switch (document.documentElement.lang) {
     case 'uk':
-      newHref = document.querySelector('nav a.active').getAttribute('href')
-      langBtn.setAttribute('href', `../${newHref}`)
+      newHref = location.pathname.replace(reg, '')
+      langBtn.setAttribute('href', `..${newHref}`)
       langBtn.setAttribute('hreflang', 'en')
       langBtn.innerText = 'EN'
       break
 
     case 'en':
-      newHref = document.querySelector('nav a.active').getAttribute('href')
-      langBtn.setAttribute('href', `./ua/${newHref}`)
+      newHref = location.pathname.replace(reg, '')
+      langBtn.setAttribute('href', `./ua${newHref}`)
       langBtn.setAttribute('hreflang', 'uk')
       langBtn.innerText = 'UA'
       break

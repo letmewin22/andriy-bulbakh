@@ -1,8 +1,4 @@
----
-title: "Interior Design by Andrew Bulbach: Handmade Custom."
-description: "Handmade interior design elements: lamps, paintings, vases, collages, bas-reliefs and more. Creating interior design accessories."
-route: services
----
+{% import "data/data.html" as items %}
 {% extends "layouts/_layout.html" %}
 {% block content %}
 <header class="header services-header">
@@ -17,25 +13,25 @@ route: services
     <div class="header-image first">
     <div class="img-wrapper">
       <div class="img-rewealer top"></div>
-      <img src="{% if lang %}.{% endif %}./img/architecture/header-1.jpg" alt="header-1">
+      <img src="{% if lang %}.{% endif %}./img/handmade/header-1.jpg" alt="header-1">
     </div>
     </div>
     <div class="header-image second">
     <div class="img-wrapper">
       <div class="img-rewealer top"></div>
-      <img src="{% if lang %}.{% endif %}./img/architecture/header-2.jpg" alt="header-2">
+      <img src="{% if lang %}.{% endif %}./img/handmade/header-2.jpg" alt="header-2">
     </div>
   </div>
   <div class="header-image third">
     <div class="img-wrapper">
       <div class="img-rewealer top"></div>
-      <img src="{% if lang %}.{% endif %}./img/architecture/header-3.jpg" alt="header-3">
+      <img src="{% if lang %}.{% endif %}./img/handmade/header-3.jpg" alt="header-3">
     </div>
   </div>
   <div class="header-image fourth">
     <div class="img-wrapper fourth">
       <div class="img-rewealer top"></div>
-      <img src="{% if lang %}.{% endif %}./img/architecture/header-4.jpg" alt="header-4">
+      <img src="{% if lang %}.{% endif %}./img/handmade/header-4.jpg" alt="header-4">
     </div>
   </div>
   </div>
@@ -47,7 +43,7 @@ route: services
         <div class="default-item__content-wrapper">
           <div class="img-wrapper">
             <div class="img-rewealer left"></div>
-            <img data-mob="{% if lang %}.{% endif %}./img/mob/architecture/def-1" data-pc="{% if lang %}.{% endif %}./img/architecture/def-1" src="/" alt="architecture-1">
+            <img data-mob="{% if lang %}.{% endif %}./img/mob/handmade/def-1" data-pc="{% if lang %}.{% endif %}./img/handmade/def-1" src="/" alt="handmade-1">
           </div>
           <div class="default-text left">
             <h2 class="def-h2">{{ secondScreenH2 }}</h2>
@@ -66,7 +62,7 @@ route: services
     <div class="container center-container img-container">
       <div class="img-wrapper">
         <div class="img-rewealer left"></div>
-        <img data-mob="{% if lang %}.{% endif %}./img/mob/architecture/def-2" data-pc="{% if lang %}.{% endif %}./img/architecture/def-2" src="/" alt="architecture-2">
+        <img data-mob="{% if lang %}.{% endif %}./img/mob/handmade/def-2" data-pc="{% if lang %}.{% endif %}./img/handmade/def-2" src="/" alt="handmade-2">
       </div>
     </div>
   </div>
@@ -76,7 +72,7 @@ route: services
         <div class="default-item__content-wrapper reverse">
           <div class="img-wrapper">
             <div class="img-rewealer right"></div>
-            <img data-mob="{% if lang %}.{% endif %}./img/mob/architecture/def-3" data-pc="{% if lang %}.{% endif %}./img/architecture/def-3" src="/" alt="architecture-3">
+            <img data-mob="{% if lang %}.{% endif %}./img/mob/handmade/def-3" data-pc="{% if lang %}.{% endif %}./img/handmade/def-3" src="/" alt="handmade-3">
           </div>
           <div class="default-text right">
             <h2 class="def-h2">{{ fourthScreenH2 }}</h2>
@@ -92,7 +88,7 @@ route: services
         <div class="default-item__content-wrapper">
           <div class="img-wrapper">
             <div class="img-rewealer left"></div>
-            <img data-mob="{% if lang %}.{% endif %}./img/mob/architecture/def-4" data-pc="{% if lang %}.{% endif %}./img/architecture/def-4" src="/" alt="architecture-4">
+            <img data-mob="{% if lang %}.{% endif %}./img/mob/handmade/def-4" data-pc="{% if lang %}.{% endif %}./img/handmade/def-4" src="/" alt="handmade-4">
           </div>
           <div class="default-text left">
             <h2 class="def-h2 big-width">{{ fivethScreenH2 }}</h2>
@@ -110,7 +106,7 @@ route: services
   </section>
   <section class="section slider-section">
     <div class="container last">
-      {% include "partials/_slider.html" %}
+      {{mixins.slider(items.handmade)}}
       <div class="extra-text">
         <p>{{ sliderText }}</p>
       </div>
