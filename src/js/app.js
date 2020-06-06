@@ -5,7 +5,8 @@ import { TextSplit, navLinksDetect, langCurrentPage } from './helperFuncs.js'
 import Nav from './ui/nav/nav.js'
 import FormSubmit from './form/FormSubmit.js'
 import ScrollAnimation from './scroll.js'
-import imgsOptimizer from './mobileImgs.js'
+import webP from './lib/testWebP'
+// import imgsOptimizer from './mobileImgs.js'
 
 
 import './loaders/loader.js'
@@ -28,8 +29,8 @@ window.addEventListener('beforeunload', () => {
 })
 
 window.addEventListener('load', () => {
-
-  imgsOptimizer()
+  webP()
+  // imgsOptimizer()
   if (document.querySelector('form')) {
     new FormSubmit()
   }
@@ -69,7 +70,8 @@ H.on('NAVIGATE_IN', () => {
 })
 
 H.on('NAVIGATE_END', () => {
-  imgsOptimizer()
+  // imgsOptimizer()
+  webP()
 
   setTimeout(() => new ScrollAnimation(), 500)
 
