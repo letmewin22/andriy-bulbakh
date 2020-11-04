@@ -20,7 +20,7 @@ export default class FormInputs {
   }
 
   onInput() {
-
+    this.phone.value = this.phone.value.replace(/[A-z]|[А-я]|\s|[*!@#$%^&{}[\]~""\/\|=]/g, '')
     if (this.phone.value.length < this.koef) {
       this.validation()
     } else {
