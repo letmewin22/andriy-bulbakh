@@ -1,7 +1,9 @@
+const projectName = 'emotion'
+
 const foldersName = {
   projectFolder: 'build',
-  // projectFolder: 'C:/MAMP/htdocs/test/twp-content/themes',
-  // projectFolder: require('path').basename(__dirname)
+  // projectFolder: projectName,
+  // projectFolder: 'C:/MAMP/htdocs/' + projectName + '/wp-content/themes/' + projectName,
   sourceFolder: 'src'
 }
 

@@ -18,7 +18,6 @@ body
 img
 	display: block
 	max-width: 100%
-
 .custom 
   scrollbar-width: none 
   -ms-overflow-style: none 
@@ -325,3 +324,86 @@ a
 	position: absolute
 	right: 0
 	opacity: 0
+
+
+.portfolio 
+	margin-top: size(180, 80)
+	margin-bottom: size(100, 60)
+	width: 100%
+.portfolio__items 
+	margin-top: size(44, 32) 
+	width: 100% 
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 28px
+	@media screen and (max-width: 768px) 
+		display: block 
+.portfolio__li 
+	width: 100%
+	@media screen and (max-width: 768px)
+		+ .portfolio__li
+			margin-top: size(44, 32) 
+.portfolio__li-img 
+	width: 100%
+	height: 100%
+	+cover
+	padding-bottom: toimg(545, 354)
+
+.portfolio__slider-pop-up
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: darken(#fffbf6, 5%)
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+
+.portfolio__slider
+	width: 65%
+
+.portfolio__slides
+	width: 100%
+	position: relative
+	padding-bottom: 50%
+	overflow: hidden
+	
+
+.portfolio__slide
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 0
+	overflow: hidden
+	&.active
+		opacity: 1
+
+.portfolio__slide-img
+	width: 100%
+	height: 100%
+	+cover
+	padding-bottom: 50%
+
+.portfolio__slider-nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 65%
+	margin-top: 20px
+
+.portfolio__slider-nav-item
+	cursor: pointer
+
+.portfolio__slider-icon
+	display: block
+	max-width: 100%
+
+.portfolio__slider-nav-item--next
+	.portfolio__slider-icon
+		transform: rotate(-180deg)

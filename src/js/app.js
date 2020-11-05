@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway'
 
-import { TextSplit, navLinksDetect, langCurrentPage } from './helperFuncs.js'
+import {textSplit, navLinksDetect, langCurrentPage} from './helperFuncs.js'
 
 import Nav from './ui/nav/nav.js'
 import FormSubmit from './form/FormSubmit.js'
@@ -20,6 +20,7 @@ import CustomRendererMain from './pageRenders/CustomRenderMain'
 import CustomRendererServices from './pageRenders/CustomRenderServices'
 import CustomRendererAbout from './pageRenders/CustomRenderAbout'
 import CustomRendererContacts from './pageRenders/CustomRenderContacts'
+import CustomRendererPortfolio from './pageRenders/CustomRenderPortfolio'
 import Transition from './Transition'
 import SimpleTransition from './SimpleTransition'
 
@@ -39,8 +40,8 @@ window.addEventListener('load', () => {
 
   setTimeout(() => new ScrollAnimation(), 500)
 
-  TextSplit(document.querySelectorAll('.extra-text p'), 'words')
-  TextSplit(document.querySelectorAll('.def-h2'), 'words')
+  textSplit(document.querySelectorAll('.extra-text p'), 'words')
+  textSplit(document.querySelectorAll('.def-h2'), 'words')
   navLinksDetect()
 
   langCurrentPage()
@@ -53,7 +54,8 @@ const H = new Highway.Core({
     main: CustomRendererMain,
     services: CustomRendererServices,
     about: CustomRendererAbout,
-    contacts: CustomRendererContacts
+    contacts: CustomRendererContacts,
+    portfolio: CustomRendererPortfolio
   },
   transitions: {
     default: Transition,
@@ -79,8 +81,8 @@ H.on('NAVIGATE_END', () => {
     new FormSubmit()
   }
 
-  TextSplit(document.querySelectorAll('.extra-text p'), 'words')
-  TextSplit(document.querySelectorAll('.def-h2'), 'words')
+  textSplit(document.querySelectorAll('.extra-text p'), 'words')
+  textSplit(document.querySelectorAll('.def-h2'), 'words')
 
 })
 

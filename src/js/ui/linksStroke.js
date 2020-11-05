@@ -1,18 +1,21 @@
 export default class LinkStroke {
-
   static strokeSize() {
-
     const strokeSvg = this.querySelector('svg')
     const strokeLink = this.querySelector('.stroke-link')
     const strokeSize = +strokeLink.getAttribute('data-size')
 
     strokeLink.getBoundingClientRect().width
-    strokeSvg.setAttribute('width', `${strokeLink.getBoundingClientRect().width + strokeSize}px`)
-    strokeSvg.setAttribute('height', `${strokeLink.getBoundingClientRect().height}px`)
+    strokeSvg.setAttribute(
+      'width',
+      `${strokeLink.getBoundingClientRect().width + strokeSize}px`,
+    )
+    strokeSvg.setAttribute(
+      'height',
+      `${strokeLink.getBoundingClientRect().height}px`,
+    )
   }
 
   static strokeOn() {
-
     const strokeSvg = this.querySelector('svg')
     const strokeSvgPath = strokeSvg.querySelector('path')
 
@@ -21,7 +24,6 @@ export default class LinkStroke {
   }
 
   static strokeOut() {
-
     const strokeSvg = this.querySelector('svg')
     const strokeSvgPath = strokeSvg.querySelector('path')
 
@@ -31,13 +33,16 @@ export default class LinkStroke {
   }
 
   static strokeSvgEvents() {
-
     const strokeSvgWrap = document.querySelectorAll('.stroke-a')
 
-    strokeSvgWrap.forEach(elem => this.strokeOut.bind(elem)())
-    strokeSvgWrap.forEach(elem => this.strokeSize.bind(elem)())
-    
-    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseenter', this.strokeOn))
-    strokeSvgWrap.forEach(elem => elem.addEventListener('mouseleave', this.strokeOut))
+    strokeSvgWrap.forEach((elem) => this.strokeOut.bind(elem)())
+    strokeSvgWrap.forEach((elem) => this.strokeSize.bind(elem)())
+
+    strokeSvgWrap.forEach((elem) =>
+      elem.addEventListener('mouseenter', this.strokeOn),
+    )
+    strokeSvgWrap.forEach((elem) =>
+      elem.addEventListener('mouseleave', this.strokeOut),
+    )
   }
 }

@@ -1,15 +1,18 @@
-const { src, dest } = require('gulp')
-const webpack = require('webpack-stream')
-const webpackConfig = require('../../webpack.config.js').createConfig
+const {src, dest} = require('gulp')
+const webpackStream = require('webpack-stream')
+const webpack = require('webpack')
+const webpackConfig = require('../../webpack.config.js')
+const gulpif = require('gulp-if')
 
 const config = require('../config')
 
 // webpack
 function js(bs) {
   return src(config.src.js)
-    .pipe(webpack(webpackConfig(config.env)))
+    // @ts-ignore
+    .pipe(webpackStream(webpackConfig(config.env)), webpack)
     .pipe(dest(config.build.js))
-    .pipe(bs.stream())
+    .pipe(gulpif(!config.production, bs.stream()))
 }
 
 module.exports = js

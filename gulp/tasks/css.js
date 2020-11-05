@@ -1,4 +1,4 @@
-const { src, dest } = require('gulp')
+const {src, dest} = require('gulp')
 const config = require('../config')
 
 const scss = require('gulp-sass')
@@ -8,6 +8,7 @@ const cleanCss = require('gulp-clean-css')
 const gulpif = require('gulp-if')
 const sourcemaps = require('gulp-sourcemaps')
 const webpcss = require('gulp-webpcss')
+const rename = require('gulp-rename')
 
 
 function css(bs) {
@@ -29,8 +30,9 @@ function css(bs) {
     .pipe(gulpif(config.production, webpcss()))
     .pipe(cleanCss())
     .pipe(gulpif(!config.production, sourcemaps.write()))
+    .pipe(gulpif(config.production, rename('app.' + config.hash + '.css')))
     .pipe(dest(config.build.css))
-    .pipe(bs.stream())
+    .pipe(gulpif(!config.production, bs.stream()))
 }
 
 module.exports = css

@@ -1,0 +1,54 @@
+{% extends "./_layout.html" %}
+{% block content %}
+  <div class="portfolio">
+    <div class="container">
+      <h1>{{ h1 }}</h1>
+      <ul class="portfolio__items">
+        {% for i in range(0, 7) -%}
+          <li class="portfolio__li">
+            <div class="portfolio__li-img" style="background-image:url('./img/architecture/slider/1.jpg')"></div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="portfolio__slider-pop-up">
+      <div class="portfolio__slider">
+        <div class="portfolio__slides">
+          <div data-slide class="portfolio__slide">
+            <div
+            data-slide-img
+            class="portfolio__slide-img" 
+            style="background-image:url('./img/architecture/slider/1.jpg')"
+            ></div>
+          </div>
+          <div data-slide class="portfolio__slide">
+            <div 
+            data-slide-img
+            class="portfolio__slide-img" 
+            style="background-image:url('./img/architecture/slider/2.jpg')"
+            ></div>
+          </div>
+          <div data-slide class="portfolio__slide">
+            <div 
+            data-slide-img
+            class="portfolio__slide-img" 
+            style="background-image:url('./img/architecture/slider/3.jpg')"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <nav class="portfolio__slider-nav">
+        <div data-nav="prev" class="portfolio__slider-nav-item portfolio__slider-nav-item--prev">
+          <svg width="94px" height="14px" class="portfolio__slider-icon">
+            <path d="M0.292892 8.7071C-0.0976334 8.31657 -0.0976333 7.68341 0.292893 7.29289L6.65685 0.928925C7.04738 0.5384 7.68054 0.5384 8.07107 0.928925C8.46159 1.31945 8.46159 1.95261 8.07107 2.34314L2.41422 7.99999L8.07107 13.6568C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292892 8.7071ZM94 9L1 8.99999L1 6.99999L94 7L94 9Z" fill="#292B33" fill-opacity="0.7"/>
+          </svg>
+        </div>
+        <div data-nav="next" class="portfolio__slider-nav-item portfolio__slider-nav-item--next">
+          <svg width="94px" height="14px" class="portfolio__slider-icon">
+            <path d="M0.292892 8.7071C-0.0976334 8.31657 -0.0976333 7.68341 0.292893 7.29289L6.65685 0.928925C7.04738 0.5384 7.68054 0.5384 8.07107 0.928925C8.46159 1.31945 8.46159 1.95261 8.07107 2.34314L2.41422 7.99999L8.07107 13.6568C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292892 8.7071ZM94 9L1 8.99999L1 6.99999L94 7L94 9Z" fill="#292B33" fill-opacity="0.7"/>
+          </svg>
+        </div>
+      </nav>
+    </div>
+  </div>
+{% endblock %}

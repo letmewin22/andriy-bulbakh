@@ -1,7 +1,5 @@
 export default class FormInputs {
-
   constructor() {
-
     this.input = document.querySelectorAll('.input-wrapper input')
     this.form = document.querySelector('form')
     this.phone = document.getElementById('phone')
@@ -16,11 +14,13 @@ export default class FormInputs {
     this.reset()
 
     this.phone.oninput = () => this.onInput()
-
   }
 
   onInput() {
-    this.phone.value = this.phone.value.replace(/[A-z]|[А-я]|\s|[*!@#$%^&{}[\]~""\/\|=]/g, '')
+    this.phone.value = this.phone.value.replace(
+      /[A-z]|[А-я]|\s|[*!@#$%^&{}[\]~""/|=]/g,
+      '',
+    )
     if (this.phone.value.length < this.koef) {
       this.validation()
     } else {
@@ -30,37 +30,34 @@ export default class FormInputs {
   }
 
   focus() {
+    const that = this
 
-    let that = this
-
-    function focus() {
-      this.classList.add('focus')
+    function focus(e) {
+      e.target.classList.add('focus')
       document.body.classList.add('form-focused')
     }
 
-    for (let input of that.input) {
+    for (const input of that.input) {
       input.addEventListener('focus', focus)
     }
   }
 
   blur() {
+    const that = this
 
-    let that = this
-
-    function blur() {
-      if (this.value === '') {
-        this.classList.remove('focus')
+    function blur(e) {
+      if (e.target.value === '') {
+        e.target.classList.remove('focus')
         document.body.classList.remove('form-focused')
       }
     }
 
-    for (let input of that.input) {
+    for (const input of that.input) {
       input.addEventListener('blur', blur)
     }
   }
 
   reset() {
-
     document.body.onclick = () => {
       this.validateText.style.opacity = '0'
       this.label.classList = 'label'
@@ -69,8 +66,6 @@ export default class FormInputs {
     this.phone.oninput = () => {
       this.validateText.style.opacity = '0'
       this.label.pseudoStyle().classList = 'label'
-
     }
   }
-
 }

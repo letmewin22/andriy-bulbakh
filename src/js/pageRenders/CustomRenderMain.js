@@ -1,7 +1,7 @@
 import Highway from '@dogstudio/highway'
 import mainLoader from '../loaders/mainLoader.js'
 import pageLoader from '../loaders/pageLoader.js'
-import { mainLinksHover } from '../helperFuncs.js'
+import {mainLinksHover} from '../helperFuncs.js'
 
 
 class CustomRendererMain extends Highway.Renderer {

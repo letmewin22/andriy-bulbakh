@@ -1,12 +1,14 @@
-
-// The navigation class. Controls the .boxnav animations (e.g. pagination animation).
 export default class Navigation {
   constructor(el, settings) {
-    this.DOM = { el: el }
+    this.DOM = {el: el}
 
     this.settings = {
-      next: () => { return false },
-      prev: () => { return false }
+      next: () => {
+        return false
+      },
+      prev: () => {
+        return false
+      },
     }
     Object.assign(this.settings, settings)
 

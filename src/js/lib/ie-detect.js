@@ -4,12 +4,13 @@ const ua = window.navigator.userAgent
 const oldIe = ua.indexOf('MSIE ')
 const newIe = ua.indexOf('Trident/')
 
-if ((oldIe > -1) || (newIe > -1)) {
+if (oldIe > -1 || newIe > -1) {
   isIE = true
 }
 
-if ( isIE ) {
-  document.body.innerHTML = "Sorry, your browser isn't supported. Please install a more modern browser."
+if (isIE) {
+  document.body.innerHTML =
+    "Sorry, your browser isn't supported. Please install a more modern browser."
   document.body.style.display = 'flex'
   document.body.style.justifyContent = 'center'
   document.body.style.alignItems = 'center'
@@ -17,4 +18,3 @@ if ( isIE ) {
   document.body.style.paddingLeft = '30px'
   document.body.style.paddingRight = '30px'
 }
-

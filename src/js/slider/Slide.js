@@ -1,13 +1,15 @@
-import { TweenMax, Power2 } from 'gsap'
-  
+import {TweenMax, Power2} from 'gsap'
+
 // The Slide (Product) class.
 export default class Slide {
   constructor(el, settings) {
     this.DOM = {el: el}
-            
+
     this.settings = {
       detailsEl: null,
-      onHideDetails: () => {return false}
+      onHideDetails: () => {
+        return false
+      },
     }
     Object.assign(this.settings, settings)
 
@@ -17,8 +19,8 @@ export default class Slide {
     this.config = {
       animation: {
         duration: 1.4,
-        ease: Power2.easeInOut
-      }
+        ease: Power2.easeInOut,
+      },
     }
   }
   // Sets the current class.
@@ -37,33 +39,39 @@ export default class Slide {
   // Show/Hide the slide.
   toggle(action, direction) {
     return new Promise((resolve, reject) => {
-
-      if ( action === 'show' ) {
+      if (action === 'show') {
         TweenMax.to(this.DOM.wrap, this.config.animation.duration, {
           ease: this.config.animation.ease,
           startAt: {x: direction === 'right' ? '100%' : '-100%'},
-          x: '0%'
+          x: '0%',
         })
       }
 
       TweenMax.to(this.DOM.img, this.config.animation.duration, {
         ease: this.config.animation.ease,
-        startAt: action === 'hide' ? {} : {x: direction === 'right' ? '-100%' : '100%', scale: 1.25},
+        startAt:
+          action === 'hide'
+            ? {}
+            : {x: direction === 'right' ? '-100%' : '100%', scale: 1.25},
         x: '0%',
         scale: action === 'hide' ? 1.1 : 1,
         onStart: () => {
-          this.DOM.img.style.transformOrigin = action === 'hide' ? 
-            direction === 'right' ? '100% 50%' : '0% 50%':
-            direction === 'right' ? '0% 50%' : '100% 50%'
+          this.DOM.img.style.transformOrigin =
+            action === 'hide'
+              ? direction === 'right'
+                ? '100% 50%'
+                : '0% 50%'
+              : direction === 'right'
+                ? '0% 50%'
+                : '100% 50%'
           this.DOM.el.style.opacity = 1
         },
         onComplete: () => {
           this.DOM.el.style.zIndex = 999
           this.DOM.el.style.opacity = action === 'hide' ? 0 : 1
           resolve()
-        }
+        },
       })
     })
   }
-
 }
