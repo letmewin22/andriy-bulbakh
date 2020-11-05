@@ -6,7 +6,6 @@ import Slideshow from '@/ui/slider/Slideshow'
 
 class CustomRendererPortfolio extends Highway.Renderer {
   onEnterCompleted() {
-
     new Slideshow(document.querySelector('.portfolio__slider'))
     window.addEventListener('load', () => {
       pageLoader(portfolioLoader)

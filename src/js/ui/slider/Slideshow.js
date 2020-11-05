@@ -1,6 +1,7 @@
 import {Power2, TimelineMax} from 'gsap'
 
 import Slider from './Slider'
+import Navigation from './Navigation'
 
 export default class Slideshow extends Slider {
 
@@ -15,6 +16,14 @@ export default class Slideshow extends Slider {
     }
     this.isAnimating = false
     this.$slides[this.counter].classList.add('active')
+  }
+
+  init() {
+    super.init()
+    new Navigation(this.$el, {
+      prev: this.prev,
+      next: this.next
+    })
   }
 
   prev() {
@@ -38,25 +47,25 @@ export default class Slideshow extends Slider {
     const to = dir === 'left' ? '-100%' : '100%'
 
     this.$slides[this.counter].style.zIndex = 999
-    this.$slides[this.$prev].style.zIndex = 1000
+    this.$slides[this.previous].style.zIndex = 1000
     this.$slides[this.counter].classList.add('active')
 
     const tl = new TimelineMax({
       onComplete: () => {
-        this.$slides[this.$prev].classList.remove('active')
+        this.$slides[this.previous].classList.remove('active')
         this.isAnimating = false
       },
     })
 
     tl.fromTo(
-      this.$slides[this.$prev],
+      this.$slides[this.previous],
       this.opts.time,
       {x: '0%'},
       {x: from, ease: this.opts.ease},
     )
 
       .fromTo(
-        this.$imgs[this.$prev],
+        this.$imgs[this.previous],
         this.opts.time,
         {x: '0%', scale: 1},
         {x: to, scale: 1.2, ease: this.opts.ease},
