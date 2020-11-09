@@ -1,10 +1,10 @@
 export default class Slider {
 
-  constructor($el) {
+  constructor($el, counter = 0) {
     this.$el = $el
     this.$slides = this.$el.querySelectorAll('[data-slide]')
 
-    this.counter = 0
+    this.counter = counter
     this.previous = null
     this.length = this.$slides.length
 
@@ -40,5 +40,12 @@ export default class Slider {
       this.counter = 0
       this.previous = this.length - 1
     }
+  }
+
+  destroy() {
+    this.$slides.forEach(slide => {
+      slide.classList.remove('active')
+      slide.style = ''
+    })
   }
 }

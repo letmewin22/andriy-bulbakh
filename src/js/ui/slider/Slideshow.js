@@ -5,8 +5,8 @@ import Navigation from './Navigation'
 
 export default class Slideshow extends Slider {
 
-  constructor($el) {
-    super($el)
+  constructor($el, counter = 0) {
+    super($el, counter)
 
     this.$imgs = this.$el.querySelectorAll('[data-slide-img]')
 
@@ -14,13 +14,14 @@ export default class Slideshow extends Slider {
       time: 1.4,
       ease: Power2.easeInOut,
     }
+
     this.isAnimating = false
     this.$slides[this.counter].classList.add('active')
   }
 
   init() {
     super.init()
-    new Navigation(this.$el, {
+    this.nav = new Navigation(this.$el, {
       prev: this.prev,
       next: this.next
     })
@@ -87,5 +88,13 @@ export default class Slideshow extends Slider {
         {x: '0%', scale: 1, ease: this.opts.ease},
         0,
       )
+  }
+  destroy() {
+    super.destroy()
+    this.$imgs.forEach(img => {
+      img.style = `
+      background-image: ${window.getComputedStyle(img).backgroundImage}`
+    })
+    this.nav.destroy()
   }
 }

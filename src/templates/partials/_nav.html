@@ -5,7 +5,8 @@
     </a>
     <div class="navbar-right">
       <div class="stroke-a">
-        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="uk" href="/">UA</a></div>
+        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="uk" href="/">UA</a>
+      </div>
       <div class="burger-wrapper">
         <div class="burger">
           <span class="burger-line line-top"></span>
@@ -45,14 +46,20 @@
           </a>
         </li>
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="about.html" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="portfolio.html" data-transition="simple">
             <span>05</span>
+            {% if lang %}Наші роботи{% else %}Portfolio{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="about.html" data-transition="simple">
+            <span>06</span>
             {% if lang %}Про нас{% else %}About{% endif %}
           </a>
         </li>
         <li class="nav__item stroke-a">
           <a class="stroke-link" data-size="30" href="contacts.html" data-transition="simple">
-            <span>06</span>
+            <span>07</span>
             {% if lang %}Контакти{% else %}Contacts{% endif %}
           </a>
         </li>

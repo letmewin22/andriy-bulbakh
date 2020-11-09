@@ -4,37 +4,26 @@
     <div class="container">
       <h1>{{ h1 }}</h1>
       <ul class="portfolio__items">
-        {% for i in range(0, 7) -%}
-          <li class="portfolio__li">
-            <div class="portfolio__li-img" style="background-image:url('./img/architecture/slider/1.jpg')"></div>
+        {% for i in range(0, 6) -%}
+          <li data-counter={{i}} class="portfolio__li">
+            <div class="portfolio__li-img" style="background-image:url('./img/architecture/slider/{{i+1}}.jpg')"></div>
           </li>
         {% endfor %}
       </ul>
     </div>
     <div class="portfolio__slider-pop-up">
+      <div data-popup-close class="portfolio__slider-pop-up-close"></div>
       <div class="portfolio__slider">
         <div class="portfolio__slides">
-          <div data-slide class="portfolio__slide">
-            <div
+          {% for i in range(0, 6) -%}
+            <div data-slide class="portfolio__slide">
+              <div
             data-slide-img
             class="portfolio__slide-img" 
-            style="background-image:url('./img/architecture/slider/1.jpg')"
+            style="background-image:url('./img/architecture/slider/{{i+1}}.jpg')"
             ></div>
-          </div>
-          <div data-slide class="portfolio__slide">
-            <div 
-            data-slide-img
-            class="portfolio__slide-img" 
-            style="background-image:url('./img/architecture/slider/2.jpg')"
-            ></div>
-          </div>
-          <div data-slide class="portfolio__slide">
-            <div 
-            data-slide-img
-            class="portfolio__slide-img" 
-            style="background-image:url('./img/architecture/slider/3.jpg')"
-            ></div>
-          </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
       <nav class="portfolio__slider-nav">
