@@ -3,6 +3,7 @@ import {Power2, TimelineMax} from 'gsap'
 import Slider from './Slider'
 import Navigation from './Navigation'
 
+
 export default class Slideshow extends Slider {
 
   constructor($el, counter = 0) {

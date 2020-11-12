@@ -1,4 +1,5 @@
 import Slideshow from '@/ui/slider/Slideshow'
+import {TweenMax} from 'gsap'
 
 
 export default class PortfolioPopUp {
@@ -25,18 +26,16 @@ export default class PortfolioPopUp {
 
   open(e) {
     const counter = +e.target.dataset.counter
-    this.$popUp.style.cssText = `
-      opacity: 1;
-      visibility: visible;
-    `
+
     this.slideshow = new Slideshow(document.querySelector('.portfolio__slider'), counter)
+    TweenMax.to(this.$popUp, 0.5, {opacity: 1, visibility: 'visible'})
   }
 
   close() {
 
-    this.$popUp.style.cssText = `
-    opacity: 0;
-    visibility: hidden;`
-    this.slideshow.destroy()
+    TweenMax.to(this.$popUp, 0.5, {opacity: 0, onComplete: () => {
+      this.$popUp.style.visibility = 'hidden'
+      this.slideshow.destroy()
+    }})
   }
 }
