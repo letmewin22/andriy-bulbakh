@@ -8,13 +8,13 @@ get_header();
 <header class="header">
   <div class="container header__container">
     <div class="header__text-content">
-      <h1>{{ h1 }}</h1>
-      <p class="descriptor">{{ descriptor }}</p>
+      <h1><?php echo get_field('заголовок_h1'); ?></h1>
+      <p class="descriptor"><?php echo get_field('опис'); ?></p>
     </div>
     <div class="header__img">
       <div class="header__img__wrapper img-wrapper">
         <div class="header__img__rewealer"></div>
-        <img src="<?php echo get_template_directory_uri() ?>/img/header-img.jpg" alt="house">
+        <img src="<?php echo get_field('зображення_на_першому_екрані'); ?>" alt="house">
       </div>
     </div>
     <div class="header-img-shadow"></div>
@@ -23,69 +23,50 @@ get_header();
 <main>
   <div class="extra-text center">
     <div class="container margin-top center-container">
-      <p>{{ secondScreenText }}</p>
+      <p><?php echo get_field('текст_на_другому_екрані'); ?></p>
     </div>
   </div>
-  <section class="section service">
-    <div class="service-item mob-left">
-      <div class="container">
-        <div class="service-item__content-wrapper">
-          <a href="<?php echo get_site_url()?>/architecture" class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <div class="img-overlay"></div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/services-main/1.jpg" alt="services-1">
-          </a>
-          <div class="service-name left">
-            <span class="service-name__num">01</span>
-            <div class="stroke-a">
-              <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/architecture">{{ firstServiceName }}</a></span></h2>
+  <!-- if odd > different classes algoritm example: 5 % 3 -->
+  <?php 
+        $counter = 0;
+        $args = array(
+          'post_type' => 'services',
+          'posts_per_page' => 3
+        );    
+        $my_query = new WP_Query( $args ); 
+        if ( $my_query->have_posts() ) {
+          while ( $my_query->have_posts() ) {
+            $my_query->the_post();
+            $counter++;
+        ?>
+          <section class="section service">
+            <div class="service-item mob-left">
+              <div class="container">
+                <div class="service-item__content-wrapper">
+                  <a href="<?php echo get_the_permalink()?>" class="img-wrapper">
+                    <div class="img-rewealer left"></div>
+                    <div class="img-overlay"></div>
+                    <img src="<?php echo get_field('зображення_на_головній'); ?>" alt="services-1">
+                  </a>
+                  <div class="service-name left">
+                    <span class="service-name__num">0<?php echo $counter;?></span>
+                    <div class="stroke-a">
+                      <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/architecture"><?php the_title(); ?></a></span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section service">
-    <div class="service-item mob-right">
-      <div class="container">
-        <div class="service-item__content-wrapper reverse">
-          <a href="<?php echo get_site_url()?>/interior" class="img-wrapper">
-            <div class="img-rewealer right"></div>
-            <div class="img-overlay"></div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/services-main/2.jpg" alt="services-2">
-          </a>
-          <div class="service-name right">
-            <span class="service-name__num">02</span>
-            <div class="stroke-a">
-              <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/interior">{{ secondServiceName }}</a></span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section service">
-    <div class="service-item mob-left">
-      <div class="container">
-        <div class="service-item__content-wrapper">
-          <a href="<?php echo get_site_url()?>/handmade" class="img-wrapper">
-            <div class="img-rewealer left"></div>
-            <div class="img-overlay"></div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/services-main/3.jpg" alt="services-3">
-          </a>
-          <div class="service-name left">
-            <span class="service-name__num">03</span>
-            <div class="stroke-a">
-              <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/handmade">{{ thirdServiceName }}</a></span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </section>
+        <?php             
+            }            
+          }       
+          wp_reset_postdata();             
+        ?> 
+
   <div class="extra-text">
     <div class="container second-line margin-top">
-      <p>{{ afterServicesScreenText|safe }}</p>
+      <?php echo get_field('текст_після_послуг'); ?>
     </div>
   </div>
   <section class="section default">
@@ -97,8 +78,8 @@ get_header();
             <img src="<?php echo get_template_directory_uri() ?>/img/handmade.jpg" alt="handmade">
           </div>
           <div class="default-text left">
-            <h2 class="def-h2">{{ lastScreenH2 }}</h2>
-            <p>{{ lastScreenText }}</p>
+            <h2 class="def-h2"><?php echo get_field('заголовок_про_підхід'); ?></h2>
+            <p><?php echo get_field('текст_про_підхід'); ?></p>
           </div>
         </div>
       </div>

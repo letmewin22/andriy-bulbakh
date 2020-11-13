@@ -21,14 +21,14 @@
     <div class="nav__wrapper">
       <ul class="nav__items">
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/" data-transition="simple">
-            <span>01</span>
-            <!-- {% if lang %}Головна{% else %}Home{% endif %} -->
-            Home
-          </a>
+            <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/" data-transition="simple">
+              <span>01</span>
+              <!-- {% if lang %}Головна{% else %}Home{% endif %} -->
+              Home
+            </a>
         </li>
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/architecture" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/services/architecture" data-transition="simple">
             <span>02</span>
             <!-- {% if lang %}Архітектура{% else %}Architecture{% endif %} -->
             Architecture

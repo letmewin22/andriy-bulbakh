@@ -1,0 +1,125 @@
+<?php
+get_header();
+?>
+<?php get_router('services') ?>
+
+<header class="header services-header">
+  <div class="container">
+    <div class="services-header__text-content">
+      <span class="moc-text">{{ mocText }}</span>
+      <h1 class="services-h1">{{ h1 }}</h1>
+      <p class="services-descriptor">{{ descriptor }}</p>
+    </div>
+  </div>
+  <div class="services-header-imgs">
+    <div class="header-image first">
+    <div class="img-wrapper">
+      <div class="img-rewealer top"></div>
+      <img src="<?php echo get_template_directory_uri() ?>/img/architecture/header-1.jpg" alt="header-1">
+    </div>
+    </div>
+    <div class="header-image second">
+    <div class="img-wrapper">
+      <div class="img-rewealer top"></div>
+      <img src="<?php echo get_template_directory_uri() ?>/img/architecture/header-2.jpg" alt="header-2">
+    </div>
+  </div>
+  <div class="header-image third">
+    <div class="img-wrapper">
+      <div class="img-rewealer top"></div>
+      <img src="<?php echo get_template_directory_uri() ?>/img/architecture/header-3.jpg" alt="header-3">
+    </div>
+  </div>
+  <div class="header-image fourth">
+    <div class="img-wrapper fourth">
+      <div class="img-rewealer top"></div>
+      <img src="<?php echo get_template_directory_uri() ?>/img/architecture/header-4.jpg" alt="header-4">
+    </div>
+  </div>
+  </div>
+</header>
+<main>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container">
+        <div class="default-item__content-wrapper">
+          <div class="img-wrapper">
+            <div class="img-rewealer left"></div>
+            <img src="<?php echo get_template_directory_uri() ?>/img/architecture/def-1.jpg" alt="architecture-1">
+          </div>
+          <div class="default-text left">
+            <h2 class="def-h2">{{ secondScreenH2 }}</h2>
+            <p>{{ secondScreenText|safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="extra-text">
+    <div class="container second-line margin-top">
+      <p>{{ thirdScreenText }}</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container center-container img-container">
+      <div class="img-wrapper">
+        <div class="img-rewealer left"></div>
+        <img src="{<?php echo get_template_directory_uri() ?>/img/architecture/def-2.jpg" alt="architecture-2">
+      </div>
+    </div>
+  </div>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container">
+        <div class="default-item__content-wrapper reverse">
+          <div class="img-wrapper">
+            <div class="img-rewealer right"></div>
+            <img src="<?php echo get_template_directory_uri() ?>/img/architecture/def-3.jpg" alt="architecture-3">
+          </div>
+          <div class="default-text right">
+            <h2 class="def-h2">{{ fourthScreenH2 }}</h2>
+            <p>{{ fourthScreenText }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section default">
+    <div class="default-item">
+      <div class="container">
+        <div class="default-item__content-wrapper">
+          <div class="img-wrapper">
+            <div class="img-rewealer left"></div>
+            <img src="<?php echo get_template_directory_uri() ?>/img/architecture/def-4.jpg" alt="architecture-4">
+          </div>
+          <div class="default-text left">
+            <h2 class="def-h2 big-width">{{ fivethScreenH2 }}</h2>
+            <p>{{ fivethScreenText }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section center-content">
+    <div class="container center-container second-line both">
+      <h2 class="def-h2">{{ sixthScreenH2 }}</h2>
+      <p>{{ sixthScreenText }}</p>
+    </div>
+  </section>
+  <section class="section slider-section">
+    <div class="container last">
+      <!-- {{mixins.slider(items.architecture)}} -->
+      <div class="extra-text">
+        <p>{{ sliderText }}</p>
+      </div>
+      <div class="slider-section__bg">
+        <div class="bg"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<?php include get_theme_file_path( './partials/components/footer.php' ); ?>
+<?php
+get_footer();
+?>
