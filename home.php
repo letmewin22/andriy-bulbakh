@@ -26,7 +26,6 @@ get_header();
       <p><?php echo get_field('текст_на_другому_екрані'); ?></p>
     </div>
   </div>
-  <!-- if odd > different classes algoritm example: 5 % 3 -->
   <?php 
         $counter = 0;
         $args = array(
@@ -52,7 +51,7 @@ get_header();
                   <div class="service-name <?php echo ($counter) % 2 === 1  ? 'left' : 'right'?>">
                     <span class="service-name__num">0<?php echo $counter;?></span>
                     <div class="stroke-a">
-                      <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/architecture"><?php the_title(); ?></a></span></h2>
+                      <h2 class="stroke-link" data-size="30"><span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span></h2>
                     </div>
                   </div>
                 </div>
@@ -67,7 +66,7 @@ get_header();
 
   <div class="extra-text">
     <div class="container second-line margin-top">
-      <?php echo get_field('текст_після_послуг'); ?>
+      <p><?php echo get_field('текст_після_послуг'); ?></p>
     </div>
   </div>
   <section class="section default">

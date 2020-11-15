@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="custom">
+<html lang="<?php echo translateUaEn('uk', 'en') ?>" class="custom">
 
 <head>
   <meta charset="utf-8">

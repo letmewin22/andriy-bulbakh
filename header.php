@@ -4,8 +4,7 @@
 <body class="custom loading">
   <div class="loader">
     <span class="loader-text">
-    <!-- {% if lang %}Естетика життєвого простору{% else %}Aesthetics of living space{% endif %} -->
-    Aesthetics of living space
+    <?php echo translateUaEn('Естетика життєвого простору', 'Aesthetics of living space') ?>
   </span>
   </div>
   <div class="page-rewealer">

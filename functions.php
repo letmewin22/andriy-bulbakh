@@ -125,15 +125,24 @@ function showCurrentLangAtt($langVal, $currentSwitch){
 			};   
 	}
 }
-function translateRusUaEn($rus, $ua, $en){
+
+function show_translate() {
+	$translations = pll_the_languages(array('raw'=>1)); 
+	if ($translations['uk']['current_lang']){
+		return $translations['en']['url'];
+	} 
+	if ($translations['en']['current_lang']){
+		 return $translations['uk']['url'];
+	}; 
+	}
+
+function translateUaEn($ua, $en) {
 $translations = pll_the_languages(array('raw'=>1)); 
 if ($translations['uk']['current_lang']){
 	return $ua;
 } elseif ($translations['en']['current_lang']){
 	 return $en;
-} elseif ($translations['ru']['current_lang']){
-	return $rus;
-};  
+}; 
 }
 
 

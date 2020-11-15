@@ -1,3 +1,10 @@
+<?php 
+  function page_url($ukUrl, $enUrl) {
+    $text = translateUaEn($ukUrl, $enUrl);
+    return get_site_url().'/'.$text;
+  }
+?>
+
 <div class="navbar">
   <div class="navbar__container container">
     <a href="<?php echo get_site_url()?>/" class="logo">
@@ -5,7 +12,9 @@
     </a>
     <div class="navbar-right">
       <div class="stroke-a">
-        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="uk" href="/">UA</a>
+        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="<?php echo translateUaEn('en', 'uk') ?>" href="/">
+          <?php echo translateUaEn('EN', 'UA') ?>
+        </a>
       </div>
       <div class="burger-wrapper">
         <div class="burger">
@@ -21,10 +30,9 @@
     <div class="nav__wrapper">
       <ul class="nav__items">
         <li class="nav__item stroke-a">
-            <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/" data-transition="simple">
+            <a class="stroke-link" data-size="30" href="<?php echo page_url('holovna','/')?>" data-transition="simple">
               <span>01</span>
-              <!-- {% if lang %}Головна{% else %}Home{% endif %} -->
-              Home
+              <?php echo translateUaEn('Головна', 'Home') ?>
             </a>
         </li>
         <?php 
@@ -42,9 +50,8 @@
         ?>
 
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/services/architecture" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="<?php the_permalink(); ?>" data-transition="simple">
             <span>0<?php echo $counter; ?></span>
-            <!-- {% if lang %}Архітектура{% else %}Architecture{% endif %} -->
             <?php the_title() ?>
           </a>
         </li>
@@ -55,24 +62,21 @@
           wp_reset_postdata();             
         ?> 
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/portfolio" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="<?php echo page_url('nashi-roboty','portfolio')?>" data-transition="simple">
             <span>05</span>
-            Portfolio
-            <!-- {% if lang %}Наші роботи{% else %}Portfolio{% endif %} -->
+            <?php echo translateUaEn('Наші роботи', 'Portfolio') ?>
           </a>
         </li>
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/about" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="<?php echo page_url('pro-nas','about')?>" data-transition="simple">
             <span>06</span>
-            <!-- {% if lang %}Про нас{% else %}About{% endif %} -->
-            About
+            <?php echo translateUaEn('Про нас', 'About') ?>
           </a>
         </li>
         <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/contacts" data-transition="simple">
+          <a class="stroke-link" data-size="30" href="<?php echo page_url('kontakty','contacts')?>" data-transition="simple">
             <span>07</span>
-            Contacts
-            <!-- {% if lang %}Контакти{% else %}Contacts{% endif %} -->
+            <?php echo translateUaEn('Контакти', 'Contacts') ?>
           </a>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
-    <div class="footer-left">
-      <h2>{% if lang %}Контакти{% else %}Contacts{% endif %}</h2>
+    <div class="footer-left">    
+      <h2><?php echo translateUaEn('Контакти', 'Contacts') ?></h2>
       <div class="contacts-cols">
         <div class="contacts-first-col">
           <div class="stroke-a">
@@ -29,7 +29,7 @@
       <div class="copyright">©2020 Andriy Bulbakh</div>
     </div>
     <div class="footer-right">
-      <h2>{% if lang %}Є питання?{% else %}Have a question?{% endif %}</h2>
+      <h2><?php echo translateUaEn('Є питання?', 'Have a question?') ?></h2>
       <div class="form-wrapper">
         <form data-url="{% if lang %}.{% endif %}./mail.php" class="form" name="form">
           <!-- Hidden Required Fields -->
@@ -41,20 +41,22 @@
             <div class="input-wrapper">
               <input type="tel" class="text-field" maxlength="256" name="Телефон" id="phone" autocomplete="off">
               <label for="phone" class="label">
-                <span class="label-content">{% if lang %}введіть ваш телефон{% else %}enter your phone{% endif %}</span>
+                <span class="label-content">
+                <?php echo translateUaEn('введіть ваш телефон', 'enter your phone') ?></span>
               </label>
             </div>
           </div>
           <span data-value="5" class="form-validate-text">
-            {% if lang %}мінімум{% else %}phone must be at least{% endif %} 
+          <?php echo translateUaEn('мінімум', 'phone must be at least') ?> 
             <span class="koef-inp"></span>
-            {% if lang %}символів. Залишилось:{% else %}characters. Left:{% endif %} <span class="koef-outp"></span></span>
+          <?php echo translateUaEn('символів. Залишилось:', 'characters. Left:') ?> 
+           <span class="koef-outp"></span></span>
           <div class="stroke-a">
-            <input type="submit" value="{% if lang %}надіслати{% else %}send{% endif %}" class="form-button stroke-link" data-size="10">
+            <input type="submit" value="<?php echo translateUaEn('надіслати', 'send') ?>" class="form-button stroke-link" data-size="10">
           </div>
           <div class="thank-you-window">
             <span>
-            {% if lang %}Дякуємо, ваша заявка була успішно відправлена{% else %}Thank you, your message has been sent successfully.{% endif %}
+            <?php echo translateUaEn('Дякуємо, ваша заявка була успішно відправлена', 'Thank you, your message has been sent successfully.') ?>
           </span>
           </div>
         </form>
