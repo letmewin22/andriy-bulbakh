@@ -1,0 +1,77 @@
+<div class="navbar">
+  <div class="navbar__container container">
+    <a href="./" class="logo">
+      <img src="{% if lang %}.{% endif %}./img/logo.svg" alt="logo">
+    </a>
+    <div class="navbar-right">
+      <div class="stroke-a">
+        <a class="stroke-link lang" data-router-disabled data-size="0" hreflang="uk" href="/">UA</a>
+      </div>
+      <div class="burger-wrapper">
+        <div class="burger">
+          <span class="burger-line line-top"></span>
+          <span class="burger-line line-bottom"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="nav">
+  <div class="nav__container container">
+    <div class="nav__wrapper">
+      <ul class="nav__items">
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="./" data-transition="simple">
+            <span>01</span>
+            {% if lang %}Головна{% else %}Home{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="architecture.html" data-transition="simple">
+            <span>02</span>
+            {% if lang %}Архітектура{% else %}Architecture{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="interior.html" data-transition="simple">
+            <span>03</span>
+            {% if lang %}Інтер'єр{% else %}Interior{% endif %}
+          </a>
+
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="handmade.html" data-transition="simple">
+            <span>04</span>
+            {% if lang %}Декор{% else %}Handmade{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="portfolio.html" data-transition="simple">
+            <span>05</span>
+            {% if lang %}Наші роботи{% else %}Portfolio{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="about.html" data-transition="simple">
+            <span>06</span>
+            {% if lang %}Про нас{% else %}About{% endif %}
+          </a>
+        </li>
+        <li class="nav__item stroke-a">
+          <a class="stroke-link" data-size="30" href="contacts.html" data-transition="simple">
+            <span>07</span>
+            {% if lang %}Контакти{% else %}Contacts{% endif %}
+          </a>
+        </li>
+      </ul>
+      <div class="nav__contacts">
+        {% include "partials/_logo.html" %}
+        <a href="#" class="contact">+38 (067) 629 4813</a>
+        <a href="#" class="contact">vulbach2@gmail.com</a>
+        <a href="#" class="contact">Ukraine, Kiev<br>st. Parkovo-Syretskaya, 4V</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav__rewealer"></div>
+  <div class="nav__rewealer-white"></div>
+</nav>

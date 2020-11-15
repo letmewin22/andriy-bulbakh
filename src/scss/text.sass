@@ -1,0 +1,39 @@
+a
+	text-decoration: none
+	color: inherit
+
+
+h1, h2
+	+serif
+	color: #292B33
+	letter-spacing: 0.05em
+
+h1
+	font-size: 100px
+	text-transform: uppercase
+	line-height: 1em
+	opacity: 0
+	.word
+		display: inline-block
+	.char
+		opacity: 0
+		transform: translateX(60px)
+		display: inline-block
+	&.services-h1
+		font-size: 7.3vw
+	&.about-h1
+		font-size: 10.4vw
+
+
+h2
+	font-size: 60px
+	// opacity: 0
+	// transform: translateY(40px)
+	line-height: 1.3em
+	&.def-h2
+		.word
+			display: inline-block
+			transform: translateY(50px)
+			opacity: 0
+
+

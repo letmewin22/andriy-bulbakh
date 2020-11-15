@@ -1,0 +1,466 @@
+*
+	::selection
+		background: $main-color
+		// color: white
+
+body
+	+main
+	font-size: 24px
+	color: $dark-light
+	transition: opacity .5s ease
+	overflow-x: hidden
+	overflow-y: scroll 
+	background: $bg-color
+	&.loading
+		opacity: 0
+
+
+img
+	display: block
+	max-width: 100%
+.custom 
+  scrollbar-width: none 
+  -ms-overflow-style: none 
+  &::-webkit-scrollbar 
+    width: 0px 
+    background: transparent 
+
+
+.header
+	height: 100vh
+	position: relative
+	display: flex
+	justify-content: flex-end
+	&__img
+		width: 76vw
+		height: 73vh
+		// height: 689px
+		position: relative
+		bottom: 0
+		overflow: hidden
+		&__rewealer
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 100
+			background: $bg-color
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			position: relative
+			transform: scale(1.25)
+
+	&__text-content
+		margin-bottom: 4vh
+		width: fit-content 
+	.descriptor
+		margin-top: 15px
+		line-height: 1em
+		float: right
+		opacity: 0
+		// transform: translateX(40px)
+		+medium
+		&.about-descriptor
+			margin-top: 46px
+	&__container
+		padding-left: 0px
+		padding-right: 0px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: flex-end
+		width: auto
+		padding-top: 8vh
+	&.services-header
+		justify-content: center
+
+
+
+.img-wrapper
+	position: relative
+	// width: 100%
+	height: 100%
+	overflow: hidden
+	pointer-events: none
+	// canvas
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	object-fit: cover
+	.img-rewealer
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background: #FFFBF6
+		z-index: 5
+	img
+		transform: scale(1.25)
+	.img-overlay
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background: rgba(black, 0.2)
+		z-index: 5
+		transition: opacity .5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+		opacity: 0
+		pointer-events: none
+		&.hovered
+			opacity: 1
+				
+a
+	&.img-wrapper
+		&:hover
+			.img-overlay
+				opacity: 1
+			+ .service-name
+				.stroke-a
+					 svg
+						path
+							stroke-dashoffset: 0px !important
+
+
+.header-img-shadow
+	position: absolute
+	left: 0
+	bottom: 0
+	background: $main-color
+	width: 48vw
+	height: 65vh
+	z-index: -1
+	transform-origin: 50% 100% 0
+	transform: scaleY(0)
+	&.about-shadow
+		width: 37.6vw
+		height: 43.7vh
+		left: auto
+		right: 10.3vw
+		bottom: 7%
+
+
+.service-item
+	&__content-wrapper
+		display: flex
+		align-items: flex-end
+		&.reverse
+			flex-direction: row-reverse
+		.img-wrapper
+			max-width: 50%
+			// img
+			// 	width: 100%
+	h2
+		opacity: 0
+		transform: translateY(50px)
+
+.service-name
+	display: flex
+	align-items: flex-start
+	margin-left: 3.6vw
+	padding-bottom: 15px
+	&.right
+		margin-right: 3.6vw
+	&.left
+		margin-left: 3.6vw
+	&__num
+		font-size: 30px
+		display: inline-block
+		margin-top: -25px
+		margin-right: 10px
+		+serif
+	&:hover
+		~ .service-item__content-wrapper 
+			opacity: 0.3
+
+.img-shadow
+	width: 100%
+	height: 100%
+	position: absolute
+	z-index: -1
+	background: $main-color
+	top: 2.2vh
+	&.right
+		right: 1.15vw
+	&.left
+		left: 1.15vw
+
+
+.default-item
+	&__content-wrapper
+		width: 100%
+		display: flex
+		align-items: center 
+		&.reverse
+			flex-direction: row-reverse
+			justify-content: space-between
+		.img-wrapper
+			max-width: 50%
+			// img
+			// 	width: 100%
+
+.default-text
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding-top: 20px
+	padding-bottom: 20px
+	width: 35%
+	position: relative
+	p
+		line-height: 1.6em
+		margin-top: 30%
+		opacity: 0
+		transform: translateY(30px)
+	&.right
+		margin-right: 3.6vw
+		h2
+			left: 14vw 
+			width: 130%
+			position: relative
+			z-index: 10
+
+	&.left
+		margin-left: 11.8vw
+		h2
+			left: -17vw 
+			width: 100%
+			position: relative
+			z-index: 10
+			&.big-width
+				width: 120%
+			.word
+				display: inline-block
+				transform: translateY(50px)
+				opacity: 0
+
+.extra-text
+	p
+		width: 46vw
+		+serif
+		font-size: 35px
+		color: $dark-light
+		line-height: 1.7em
+		letter-spacing: 0.05em 
+		.word
+			display: inline-block
+			opacity: 0
+			transform: translateY(60px)
+	&.center
+		p
+			text-align: center
+
+.stroke-a
+	position: relative
+	a
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: auto
+			right: 0
+			display: block
+			width: 0
+			height: 2px
+			background: $accent-color
+			transition: width .5s ease
+	&:hover
+		a
+			&::after
+				left: 0
+				right: auto
+				width: 100%
+
+.stroke-link
+	cursor: pointer
+
+.page-rewealer
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	z-index: 1101
+	opacity: 0
+	pointer-events: none
+	overflow: hidden
+	&--bg
+		width: 100%
+		height: 100%
+		background: white
+		position: absolute
+		z-index: 1
+	&--slide
+		width: 100%
+		height: 100%
+		background: $main-color
+		position: absolute
+		z-index: 2
+
+.center-content
+	p
+		margin-top: 42px
+		line-height: 1.7em
+		width: 50%
+		align-self: flex-end
+		opacity: 0
+		transform: translateY(30px)
+	h2
+		width: 50%
+
+
+	
+
+.header__about-img
+	width: 37.6vw
+	align-self: flex-end
+	height: 33vw
+	justify-self: flex-end
+	position: absolute
+	right: 0
+	opacity: 0
+
+
+.portfolio 
+	margin-top: size(180, 80)
+	margin-bottom: size(100, 60)
+	width: 100%
+	opacity: 0
+.portfolio__items 
+	margin-top: size(44, 32) 
+	width: 100% 
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 28px
+	@media screen and (max-width: 768px) 
+		display: block 
+.portfolio__li 
+	width: 100%
+	cursor: pointer
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #000
+		opacity: 0
+		transition: opacity .4s ease
+	@media screen and (max-width: 768px)
+		+ .portfolio__li
+			margin-top: size(44, 32) 
+	@media screen and (min-width: 960px)
+		&:hover
+			&::after
+				opacity: 0.2
+
+
+.portfolio__li-img 
+	width: 100%
+	height: 100%
+	+cover
+	padding-bottom: toimg(545, 354)
+
+.portfolio__slider-pop-up
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: darken(#fffbf6, 5%)
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	opacity: 0
+	visibility: hidden
+	z-index: 10000
+
+.portfolio__slider-pop-up-close
+	position: absolute
+	right: 3%
+	top: 3%
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	width: 45px
+	height: 45px
+	cursor: pointer
+	&::before
+		content: ''
+		width: 45px
+		height: 2px
+		background-color: $dark-color
+		transform: rotate(45deg) translateY(1px)
+		display: block
+	&::after
+		content: ''
+		width: 45px
+		height: 2px
+		background-color: $dark-color
+		transform: rotate(-45deg) translateY(-2px)
+		display: block
+
+.portfolio__slider
+	width: 65%
+	@media screen and (max-width: 460px)
+		width: calc(100% - 40px)
+
+.portfolio__slides
+	width: 100%
+	position: relative
+	padding-bottom: 50%
+	overflow: hidden
+	@media screen and (max-width: 460px)
+		padding-bottom: 65%
+	
+
+.portfolio__slide
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 0
+	overflow: hidden
+	&.active
+		opacity: 1
+
+.portfolio__slide-img
+	width: 100%
+	height: 100%
+	+cover
+	padding-bottom: 50%
+
+.portfolio__slider-nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 65%
+	margin-top: 20px
+	@media screen and (max-width: 460px)
+		width: calc(100% - 40px)
+
+.portfolio__slider-nav-item
+	cursor: pointer
+
+.portfolio__slider-icon
+	display: block
+	max-width: 100%
+	@media screen and (max-width: 460px)
+		width: 50%
+
+.portfolio__slider-nav-item--next
+	.portfolio__slider-icon
+		float: right
+		transform: rotate(-180deg)

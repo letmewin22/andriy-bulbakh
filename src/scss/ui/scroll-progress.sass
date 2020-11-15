@@ -1,0 +1,29 @@
+.scroll-progress
+	position: fixed
+	bottom: 4vh
+	right: 5%
+	z-index: 100
+	width: 54px
+	height: 54px
+	transition: opacity .5s ease
+	pointer-events: none
+	.svg
+		position: absolute
+		top: 0
+		left: 0
+		transform: rotate(-94deg)
+	.progress-percent
+		+serif
+		font-size: 12px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	.arrow-top
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		opacity: 0
+		cursor: pointer
+		z-index: 10

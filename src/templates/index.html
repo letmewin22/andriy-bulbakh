@@ -1,175 +1,22 @@
----
-title: Index page
----
-{% extends "layouts/_layout.html" %}
-{% block content %}
-<div class="navbar">
-  <div class="container navbar__container">
-    <a href="#" class="logo">
-      {% include "partials/_logo.html" %}
-    </a>
-    <div class="burger-wrapper">
-      <span id="menu-text" data-alter='Закрити'>Меню</span>
-      <div class="burger">
-        <span></span>
-      </div>
-    </div>
-  </div>
-</div>
-<nav class="nav">
-  <div class="container">
-    <div class="nav__wrapper">
-      <ul class="nav__items">
-        <li class="nav__item"><a href=""><span>01</span>Головна</a></li>
-        <li class="nav__item"><a href=""><span>02</span>Архітектура</a></li>
-        <li class="nav__item"><a href=""><span>03</span>Інтер’єр</a></li>
-        <li class="nav__item"><a href=""><span>04</span>Прикладний дизайн</a></li>
-        <li class="nav__item"><a href=""><span>05</span>Про нас</a></li>
-        <li class="nav__item"><a href=""><span>06</span>Контакти</a></li>
-      </ul>
-      <div class="nav__contacts">
-        {% include "partials/_logo.html" %}
-        <a href="#" class="contact">+38 (067) 629 4813</a>
-        <a href="#" class="contact">vulbach2@gmail.com</a>
-        <a href="#" class="contact">Україна, Київ<br>вул. Парково-Сирецька, 4В</a>
-      </div>
-    </div>
-  </div>
-  <div class="nav__rewealers">
-    <div class="nav__rewealer"></div>
-    <div class="nav__rewealer"></div>
-    <div class="nav__rewealer"></div>
-  </div>
-</nav>
-<div class="scroll-wrap">
-<div id="js-scroll" data-scroll-repeat="false" data-scroll-speed="1000" style="will-change: transform">
-  <header class="header">
-    <div class="container">
-      <div class="header__text-content">
-        <h1>Андрій&nbsp;Бульбах</h1>
-        <p class="descriptor">Архітектура та дизайн</p>
-        <div class="button header__button">
-          <span class="main-text">Зв’язатися зі мною</span>
-          <div class="button__bg"><span>Зв’язатися зі мною</span></div>
-        </div>
-      </div>
-      <div class="header__img">
-        <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="1" data-speedOut="1" data-easing="Power2.easeOut">
-          <img src="img/header-img.jpg" alt="house">
-        </div>
-      </div>
-      <div class="scroll-down"></div>
-    </div>
-  </header>
-  <main>
-    <section class="section">
-      <div class="container section__container last">
-        <h2>Працюємо в напрямах:</h2>
-        <div class="directions">
-          <a href="#" class="directions__item">
-            <h3>Архітектура</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-1.jpg" alt="">
-            </div>
-          </a>
-          <a href="#" class="directions__item">
-            <h3>Інтер’єр</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-2.jpg" alt="">
-            </div>
-          </a>
-          <a href="#" class="directions__item">
-            <h3>Прикладний дизайн</h3>
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/direction-3.jpg" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="slider slider__main">
-        {% include "./partials/_slider.html" %}
-      </div>
-    </section>
-    <section class="section">
-      <div class="container section__container">
-        <h2>Підхід до роботи</h2>
-        <div class="content-wrapper content-wrapper__first">
-          <div class="content-wrapper__left">
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/Andriy-Bulbakh.jpg" alt="Andriy Bulbakh">
-            </div>
-          </div>
-          <div class="content-wrapper__right">
-            <h3>Я та моя команда працюємо неспішно, з насолодою, смакуючи кожну деталь майбутнього об'єкту</h3>
-            <p>Архітектура — це сенс нашого життя вже протягом 25 років. Ми створюємо архітектуру, інтер’єри, меблі та декорування. Не конкуруємо з іншими, а просто рухаємося у своєму векторі.</p>
-            <h3 class="has-margin">Проєктуємо комерційну та житлову нерухомість</h3>
-            <p>Ретельно аналізуємо, вивчаємо історію, а також методи проектування архітектури та дизайну. В роботі враховуємо напрямок вітру, сторони світу, довколишнє середовище, пропорції «золотого перетину» та безліч, на перший погляд, дріб'язкових деталей.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container section__container last">
-        <div class="content-wrapper content-wrapper__second">
-          <div class="content-wrapper__left">
-            <h3>Наш дизайн — це ручна робота</h3>
-            <p>Спочатку ми робимо усі ескізи традиційним шляхом — на папері та з олівцем в руках.
-              Не соромимося цього, оскільки вважаємо, що саме так можна віднайти необхідну ідею для вашого будинку.</p>
-          </div>
-          <div class="content-wrapper__right">
-            <div class="img-wrapper grid__item-img-2" data-intensity="0.4" data-speedIn="0.7" data-speedOut="0.7" data-easing="Power2.easeOut">
-              <img src="img/handmade.jpg" alt="handmade house">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container section__container footer__container">
-      <div class="main-footer__content">
-        <div class="main-footer__content__left-content">
-          <h2>Запрошуємо вас<br>на каву до нас в офіс!</h2>
-          <p>Обговоримо спільні погляди на майбутній будинок чи інтер'єр.</p>
-          <div class="main-footer__content__left-content__contacts-items">
-            <a href="#">+38 (067) 629 4813</a>
-            <a href="mailto:vulbach2@gmail.com">vulbach2@gmail.com</a>
-            <a href="#">Україна, Київ<br>вул. Парково-Сирецька, 4В
-            </a>
-          </div>
-        </div>
-        <div class="main-footer__content__right-content">
-          <form class="form" name="form">
-            <!-- Hidden Required Fields -->
-            <input type="hidden" name="project_name" value="DayTripBali site">
-            <input type="hidden" name="admin_email" value="hello@emotion-agency.com">
-            <input type="hidden" name="form_subject" value="Заявка с главной">
-            <!-- END Hidden Required Fields -->
-            <div class="input-wrapper first">
-              <input type="text" class="text-field" maxlength="256" name="name" id="name" autocomplete="off">
-              <label for="name" class="label">
-                <span class="label-content">Ім’я</span>
-              </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" class="text-field" maxlength="256" name="phone" id="phone" autocomplete="off">
-              <label for="phone" class="label">
-                <span class="label-content">Номер телефону *</span>
-              </label>
-              <span class="form-validate-text"></span>
-            </div>
-            <button type="submit" class="button button__white">
-              <span class="main-text">Надіслати</span>
-              <div class="button__bg"><span>Надіслати</span></div>
-            </button>
-          </form>
-        </div>
-      </div>
-      {% include "./partials/_e.html" %}
-    </div>
-  </footer>
-</div>
-</div>
-{% endblock %}
+{% set 'title' = 'Architect Andrey Bulbach. Architecture and interior design in Kiev.' %}
+{% set 'description' = "Architectural, Interior Design and Applied Design at Kiev from Andrey Bulbach. From the sketch and idea of ​​the house to the construction." %}
+{% set 'route' = 'main' %}
+
+{% set 'h1' = 'Andriy Bulbakh' %}
+{% set 'descriptor' = 'Architecture and design' %}
+
+{% set 'secondScreenText' = "Our team work slowly, enjoying the taste of every detail of a future project. Architecture has been the meaning of our lives for 25 years. We create architecture, interiors, furniture and decor." %}
+
+{% set 'firstServiceName' = "Architecture" %}
+{% set 'secondServiceName' = "Interior" %}
+{% set 'thirdServiceName' = "Handmade" %}
+
+
+{% set 'afterServicesScreenText' = 'We design commercial and residential real estate.<br><br>Our team consider the direction of the wind, the sides of the world, the environment, the proportions of the "golden intersection" and many other details.' %}
+
+{% set 'lastScreenH2' = "Our design is handmade" %}
+
+{% set 'lastScreenText' = "First, we do all the sketches the traditional way: on paper and with a pencil in our hands. We believe this is the right way to find the idea for your home" %}
+
+
+{% include "layouts/_home.html" %}

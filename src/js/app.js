@@ -1,59 +1,89 @@
-import distort from './distortion.js';
-import './nav.js';
-import './scroll.js';
-import './slider.js';
-import './loader.js';
-import FormInputs from './form.js';
-import LocomotiveScroll from 'locomotive-scroll';
+import Highway from '@dogstudio/highway'
 
-window.onload = () => {
-  if (screen.width > 1439) {
-    setTimeout(() => {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('#js-scroll'),
-        smooth: true,
-        inertia: 0.6,
-        getSpeed: true
-      });
-      let w = scroll.el.getBoundingClientRect().height;
-      document.body.style.height = `${w}px`;
-      document.querySelector('.scroll-wrap').style.position = 'fixed';
-    }, 200);
-    window.onresize = () => {
-      let w = document.querySelector('#js-scroll').getBoundingClientRect().height;
-      document.body.style.height = `${w}px`;
-    };
+import {textSplit, navLinksDetect, langCurrentPage} from './helperFuncs.js'
+
+import Nav from './ui/nav/nav.js'
+import FormSubmit from './form/FormSubmit.js'
+import ScrollAnimation from './scroll.js'
+import webP from './lib/testWebP'
+// import imgsOptimizer from './mobileImgs.js'
+
+
+import './loaders/loader.js'
+import './ui/nav/navbarScrolling.js'
+import './lib/smoothscroll.js'
+import './lib/ie-detect.js'
+import './mobileImgs.js'
+import './ui/scrollProgress.js'
+
+import CustomRendererMain from './pageRenders/CustomRenderMain'
+import CustomRendererServices from './pageRenders/CustomRenderServices'
+import CustomRendererAbout from './pageRenders/CustomRenderAbout'
+import CustomRendererContacts from './pageRenders/CustomRenderContacts'
+import CustomRendererPortfolio from './pageRenders/CustomRenderPortfolio'
+import Transition from './Transition'
+import SimpleTransition from './SimpleTransition'
+
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0)
+})
+
+window.addEventListener('load', () => {
+  webP()
+  // imgsOptimizer()
+  if (document.querySelector('form')) {
+    new FormSubmit()
   }
 
-};
+  new Nav()
 
-if (screen.width > 960) {
-  distort();
-}
+  setTimeout(() => new ScrollAnimation(), 500)
 
-FormInputs();
-let h1 = document.querySelector('h1');
-const h1Span = h1.querySelectorAll('span');
+  textSplit(document.querySelectorAll('.extra-text p'), 'words')
+  textSplit(document.querySelectorAll('.def-h2'), 'words')
+  navLinksDetect()
 
+  langCurrentPage()
 
-let animNew = document.querySelector('.header__img');
-
+})
 
 
-let Distance = (self) => {
-  let i = self,
-    s = animNew.getBoundingClientRect().left - i.getBoundingClientRect().left,
-    d = Math.floor((s - i.getBoundingClientRect().width / 2) / i.getBoundingClientRect().width);
-  if (d < -1) {
-    i.style.color = '#f1f1f1';
+const H = new Highway.Core({
+  renderers: {
+    main: CustomRendererMain,
+    services: CustomRendererServices,
+    about: CustomRendererAbout,
+    contacts: CustomRendererContacts,
+    portfolio: CustomRendererPortfolio
+  },
+  transitions: {
+    default: Transition,
+    contextual: {
+      simple: SimpleTransition
+    }
   }
-};
-if (screen.width > 1024) {
-  for (let i = 0; i < h1Span.length; i++) {
-    Distance(h1Span[i]);
-    window.addEventListener('resize', () => {
-      Distance(h1Span[i]);
-    });
+})
+
+
+H.on('NAVIGATE_IN', () => {
+  navLinksDetect()
+  langCurrentPage()
+})
+
+H.on('NAVIGATE_END', () => {
+  // imgsOptimizer()
+  webP()
+
+  setTimeout(() => new ScrollAnimation(), 500)
+
+  if (document.querySelector('form')) {
+    new FormSubmit()
   }
-}
+
+  textSplit(document.querySelectorAll('.extra-text p'), 'words')
+  textSplit(document.querySelectorAll('.def-h2'), 'words')
+
+})
+
 

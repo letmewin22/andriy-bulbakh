@@ -1,0 +1,390 @@
+$vertical-distance-mob: 80px
+
+@media (max-width: 1605px)
+	body
+		font-size: 20px
+	h1
+		font-size: 90px
+	h2
+		font-size: 45px
+	h3
+		font-size: 22px
+	.service-name__num
+		font-size: 23px
+	.extra-text
+		p
+			font-size: 30px
+			width: 50vw
+
+@media (max-width: 1480px)
+	h1
+		font-size: 75px
+	.contacts-page-wrapper
+		height: auto
+		padding-top: 100px
+		h1
+			margin-bottom: 17vh
+			display: block !important
+
+@media (max-height: 620px)
+	.header
+		justify-content: center
+
+@media (max-width: 1260px)
+	h1
+		font-size: 70px
+	// .header
+	// 	&__container
+	// 		align-items: center
+	.extra-text
+		p
+			font-size: 25px
+			width: 60vw
+
+@media (max-width: 1150px)
+	.header
+		&__img
+			height: auto
+			width: 70vw
+			img
+				width: 100%
+		&__container
+			align-items: flex-start
+	.img-wrapper
+		width: 100%
+	.header__container
+		justify-content: flex-start
+	body
+		font-size: 18px
+	h1
+		font-size: 60px
+	h3
+		font-size: 20px
+	h2
+		font-size: 36px
+	.default-text p
+		margin-top: 30%
+	.section
+		.container
+			padding-top: 140px
+			&.last
+				padding-bottom: 140px
+			&.img-container
+				padding-top: 70px
+	.nav__contacts
+		display: none
+	footer 
+		.contacts-cols
+			margin-top: 0px
+			a
+				font-size: 18px
+	h1.services-h1
+		font-size: 9.3vw
+	.services-header__text-content .moc-text
+		right: 10.6vw
+	.services-header__text-content .services-descriptor
+		left: 15.2vw
+		max-width: 357px
+
+
+@media (max-width: 960px)
+	.default-item__content-wrapper
+		flex-direction: column
+		.img-wrapper
+			width: 100%
+			max-width: none
+			margin-left: -12vw
+			img
+				width: 100%
+		.default-text
+			width: 100%
+			margin-top: 50px
+			&.left
+				margin-left: 0px
+				margin-right: 0px
+				h2
+					left: 0
+					width: 100%
+					&.big-width
+						width: 100%
+				p
+					margin-top: 30px
+		&.reverse
+			flex-direction: column
+			.img-wrapper
+				width: 100%
+				max-width: none
+				margin-right: -6vw
+				align-self: flex-end
+			.default-text
+				width: 100%
+				margin-top: 50px
+				padding-top: 0px
+				&.right
+					margin-left: 0px
+					margin-right: 0px
+					h2
+						left: 0
+						width: 100%
+					p
+						margin-top: 30px
+	.scroll-progress
+		display: none 
+	.contacts-page-wrapper
+		h1
+			margin-bottom: 7vh
+
+@media (max-width: 880px)
+	.header
+		&__container
+			justify-content: center
+	.header-img-shadow
+		height: 55vh
+		width: 80vw 
+	.section
+		.container
+			padding-top: 100px
+			&.last
+				padding-bottom: 100px
+			&.img-container
+				padding-top: 100px
+	.nav__item
+		font-size: 20px
+	#menu-text
+		display: none
+
+	.main-footer
+		&__content
+			flex-direction: column
+			&__left-content
+				width: 100%
+			&__right-content
+				width: 100%
+	h1
+		font-size: 48px
+	
+	.services-h1
+		font-size: 36px
+
+
+	h2
+		font-size: 32px
+	.boxnav
+		margin-top: 30px
+	.container
+		padding-left: 20px
+		padding-right: 20px
+	.center-content
+		p
+			margin-top: 42px
+			line-height: 1.7em
+			width: 100%
+			align-self: flex-start
+		h2
+			width: 100%
+	.navbar
+		padding-top: 20px
+	footer 
+		.container
+			flex-direction: column
+			padding-right: 20px
+			.footer-left
+				width: 100%
+			.footer-right
+				width: 100%
+				margin-top: 80px
+			.footer-shadow
+				left: 0
+				right: auto
+				height: 60vh
+				width: 100%
+	.extra-text
+		p
+			font-size: 20px
+			width: 60vw
+	.default-item__content-wrapper
+		flex-direction: column
+	.copyright
+		display: none
+
+
+
+
+@media (max-width: 760px)
+	.service-item
+		&__content-wrapper
+			flex-direction: column
+			&.reverse
+				flex-direction: column
+		&.mob-left
+			.container
+				padding-left: 0px
+				padding-right: 17vw
+		&.mob-right
+			.container
+				padding-right: 0px
+				padding-left: 17vw
+		.service-name
+			margin-top: 40px
+			&__num
+				margin-top: -7px
+				margin-right: 8px
+			&.right
+				align-self: flex-start
+				margin-right: 0px
+				margin-left: 0px
+		.img-wrapper
+			max-width: 100%
+	.container
+		&.margin-top
+			padding-top: $vertical-distance-mob
+	.section
+		.container
+			padding-top: $vertical-distance-mob
+			&.last
+				padding-bottom: $vertical-distance-mob
+			&.img-container
+				padding-top: $vertical-distance-mob / 2 
+	.default-text
+		&.left
+			h2
+				width: 100%
+	.burger
+		padding-top: 10px
+		padding-bottom: 10px
+		.burger-line
+			width: 26px
+		.line-bottom
+			margin-top: 6px
+	.logo
+		width: 26px
+	.slider-section
+		.container
+		.extra-text
+			margin-top: 7vh
+			text-align: center
+			padding-bottom: 8vh
+		&__bg
+			padding-top: $vertical-distance-mob
+			padding-bottom: $vertical-distance-mob
+	.slideshow 
+		width: 90vw
+		height: 64vw
+	.boxnav 
+		width: 90vw
+	.boxnav__item
+		width: 60px
+	.services-header__text-content 
+		flex-direction: column
+		text-align: center
+		.moc-text
+			display: none
+		.services-descriptor
+			position: static
+			margin-top: 23px
+			max-width: none
+	.services-header-imgs
+		.header-image
+			&.first
+				display: none 
+			&.second
+				top: -10%
+				left: 17.2vw 
+				img
+					width: 27.7vw 
+					height: 35.3vw 
+				
+			&.fourth
+				display: none
+	.header
+		&__container.about-container
+			justify-content: center
+		&__about-img
+			width: 100%
+			margin-top: 48px
+			right: -40px
+			height: 38vh
+			bottom: 10vh
+	.header-img-shadow
+		&.about-shadow
+			height: 55vh
+			width: 80vw
+			bottom: 0
+			right: auto
+			left: 0
+	.about-container .header__text-content
+		margin-bottom: 47vh
+	.navbar-right
+		.stroke-a
+			margin-right: 20px
+			font-size: 14px
+
+
+@media (max-width: 480px)
+	h1
+		width: fit-content
+		display: grid
+		line-height: 1.3em
+		&.about-h1
+			font-size: 68px
+	.header .descriptor.about-descriptor
+		margin-top: 10px
+	.header
+		overflow: hidden
+		&__img
+			width: 100%
+			margin-top: 48px
+			right: -40px
+			height: 38vh
+			opacity: 0
+		&__container
+			padding-top: 10px
+	.extra-text 
+		p
+			width: 100%
+	.container
+		&.second-line
+			padding-left: 20px
+			padding-right: 20px
+			&.both
+				padding-right: 20px
+	footer 
+		.contacts-cols
+			flex-direction: column
+			.contacts-second-col
+				margin-left: 0px
+				margin-top: 20px 
+		.container
+			padding-bottom: 120px
+			.footer-shadow
+					height: 310px
+	
+	.default-item__content-wrapper
+		.default-text
+			margin-top: 30px
+	.loader	
+		svg
+			width: 15vh
+		.loader-text
+			font-size: 3vh
+	.services-header-imgs
+		.header-image
+			&.second
+				top: -10%
+				left: 0
+				img
+					width: 55.4vw 
+					height: 61vw	
+			&.third
+				right: 0
+				img
+					width: 50.4vw
+					height: 45.6vw
+
+@media(max-width: 330px)
+	.form-validate-text
+		font-size: 13px
+	footer 
+		.container 
+			.footer-shadow
+				height: 340px

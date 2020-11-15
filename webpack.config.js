@@ -1,113 +1,101 @@
-const webpack = require('webpack');
-const path = require('path');
-const util = require('gulp-util');
-const config = require('./gulp/config');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack')
+const path = require('path')
+const gulpConfig = require('./gulp/config')
+const EntrypointsPlugin = require('emotion-webpack-entrypoints-plugin')
+// const BundleAnalyzerPlugin =
+// require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 
 function createConfig(env) {
-  let isProduction,
-    webpackConfig;
+  const isProduction = env === 'production'
+
+  const devName = '[name].js'
+  const buildName = `[name].${gulpConfig.hash}.js`
+
+  const filename = env === 'production' ? buildName : devName
 
   if (env === undefined) {
-    env = process.env.NODE_ENV;
+    env = process.env.NODE_ENV
   }
 
-  isProduction = env === 'production';
-
-  webpackConfig = {
-    mode: isProduction?'production':'development',
-    context: path.join(__dirname, config.src.js),
+  const webpackConfig = {
     entry: {
-      // vendor: ['jquery'],
-      app: './app.js',
-    },
+      app: path.resolve(__dirname, 'src/js/app.js')
+    }, // If you need support IE11
     output: {
-      path: path.join(__dirname, config.dest.js),
-      filename: '[name].js',
-      publicPath: 'js/',
+      filename,
+      path: path.resolve(__dirname, 'build/js/'),
+      publicPath: './js/'
     },
-    devtool: isProduction ?
-      '#source-map' :
-      '#cheap-module-eval-source-map',
-    plugins: [
-      // new webpack.optimize.CommonsChunkPlugin({
-      //     name: 'vendor',
-      //     filename: '[name].js',
-      //     minChunks: Infinity
-      // }),
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          eslint: {
-            formatter: require('eslint-formatter-pretty')
-          }
-        }
-      }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-      }),
-      new webpack.NoEmitOnErrorsPlugin(),
-
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        analyzerPort: 4000,
-        openAnalyzer: false,
-      }),
-    ],
     resolve: {
       extensions: ['.js'],
       alias: {
-        TweenLite: path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
-        TweenMax: path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
-        TimelineLite: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
-        TimelineMax: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
-        ScrollMagic: path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
-        'animation.gsap': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-        'debug.addIndicators': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
-      },
-    },
-    optimization :{
-      minimize: isProduction
+        '@': path.resolve(__dirname, 'src/js')
+      }
     },
     module: {
       rules: [
         {
           enforce: 'pre',
           test: /\.js$/,
-          exclude: [
-            path.resolve(__dirname, 'node_modules'),
-          ],
+          exclude: '/node_modules/',
           loader: 'eslint-loader',
           options: {
             fix: true,
             cache: true,
-            ignorePattern: __dirname + '/src/js/lib/'
+            ignorePattern: __dirname + '/src/js/lib/',
+            formatter: require.resolve('eslint-formatter-pretty')
           }
-        }, {
-          test: /\.js$/,
-          loader: 'babel-loader',
-          exclude: [
-            path.resolve(__dirname, 'node_modules'),
-          ],
         },
         {
-            test: /\.glsl$/,
-            loader: 'webpack-glsl-loader'
-        }],
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: '/node_modules/',
+          options: {
+            cacheDirectory: true
+          }
+        },
+        {
+          test: /\.glsl$/,
+          exclude: '/node_modules/',
+          loader: 'webpack-glsl-loader'
+        }
+      ]
     },
-  };
-
-  if (isProduction) {
-    webpackConfig.plugins.push(
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
+    mode: isProduction ? 'development' : 'production',
+    devtool: !isProduction ?
+      'eval-cheap-module-source-map' :
+      false,
+    optimization: {
+      minimize: isProduction,
+      splitChunks: {
+        // include all types of chunks
+        chunks: 'all',
+        minSize: 1,
+      }
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }),
+      new EntrypointsPlugin({
+        dir: path.resolve(__dirname, 'src/templates/layouts')
       })
-    );
+    ]
   }
 
-  return webpackConfig;
+  // if (isProduction) {
+  //   // webpackConfig.plugins.push(
+
+  //   //   new BundleAnalyzerPlugin({
+  //   //     analyzerMode: 'server',
+  //   //     analyzerPort: 5500,
+  //   //     openAnalyzer: false
+  //   //   })
+  //   // )
+  // }
+
+  return webpackConfig
 }
 
-module.exports = createConfig();
-module.exports.createConfig = createConfig;
+module.exports = createConfig
