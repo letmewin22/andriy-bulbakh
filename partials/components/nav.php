@@ -27,28 +27,33 @@
               Home
             </a>
         </li>
+        <?php 
+        $counter = 1;
+        $args = array(
+          'post_type' => 'services',
+          'posts_per_page' => 3,
+          'order' => 'ASC'
+        );    
+        $my_query = new WP_Query( $args ); 
+        if ( $my_query->have_posts() ) {
+          while ( $my_query->have_posts() ) {
+            $my_query->the_post();
+            $counter++;
+        ?>
+
         <li class="nav__item stroke-a">
           <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/services/architecture" data-transition="simple">
-            <span>02</span>
+            <span>0<?php echo $counter; ?></span>
             <!-- {% if lang %}Архітектура{% else %}Architecture{% endif %} -->
-            Architecture
+            <?php the_title() ?>
           </a>
         </li>
-        <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/interior" data-transition="simple">
-            <span>03</span>
-            <!-- {% if lang %}Інтер'єр{% else %}Interior{% endif %} -->
-            Interior
-          </a>
 
-        </li>
-        <li class="nav__item stroke-a">
-          <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/handmade" data-transition="simple">
-            <span>04</span>
-            <!-- {% if lang %}Декор{% else %}Handmade{% endif %} -->
-            Handmade
-          </a>
-        </li>
+        <?php             
+            }            
+          }       
+          wp_reset_postdata();             
+        ?> 
         <li class="nav__item stroke-a">
           <a class="stroke-link" data-size="30" href="<?php echo get_site_url()?>/portfolio" data-transition="simple">
             <span>05</span>

@@ -31,7 +31,8 @@ get_header();
         $counter = 0;
         $args = array(
           'post_type' => 'services',
-          'posts_per_page' => 3
+          'posts_per_page' => 3,
+          'order' => 'ASC'
         );    
         $my_query = new WP_Query( $args ); 
         if ( $my_query->have_posts() ) {
@@ -40,15 +41,15 @@ get_header();
             $counter++;
         ?>
           <section class="section service">
-            <div class="service-item mob-left">
+            <div class="service-item <?php echo ($counter) % 2 === 1  ? 'mob-left' : 'mob-right'?>">
               <div class="container">
-                <div class="service-item__content-wrapper">
+                <div class="service-item__content-wrapper <?php echo ($counter) % 2 === 1  ? '' : 'reverse'?>">
                   <a href="<?php echo get_the_permalink()?>" class="img-wrapper">
-                    <div class="img-rewealer left"></div>
+                    <div class="img-rewealer <?php echo ($counter) % 2 === 1  ? 'left' : 'right'?>"></div>
                     <div class="img-overlay"></div>
                     <img src="<?php echo get_field('зображення_на_головній'); ?>" alt="services-1">
                   </a>
-                  <div class="service-name left">
+                  <div class="service-name <?php echo ($counter) % 2 === 1  ? 'left' : 'right'?>">
                     <span class="service-name__num">0<?php echo $counter;?></span>
                     <div class="stroke-a">
                       <h2 class="stroke-link" data-size="30"><span><a href="<?php echo get_site_url()?>/architecture"><?php the_title(); ?></a></span></h2>
